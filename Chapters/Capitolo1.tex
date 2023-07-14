@@ -1,0 +1,14 @@
+\chapter{introduzione a seL4A}
+Un sistema operativo (SO) è un insieme di software che gestisce le risorse hardware e software di un sistema di elaborazione fornendo servizi agli applicativi utente.\\
+In un computer quindi il sistema operativo fornisce l'unica interfaccia diretta con l'hardware e in quanto tale ha un accesso esclusivo con il massimo dei privilegi chiamato \textit{kernel mode}. Questo comporta che una vulnerabilità all'interno del sistema operativo può portare a gravi conseguenze per l'integrità e la sicurezza del sistema e dei dati che gestisce, in quanto qualche malintenzionato potrebbe approfittare di questo bug per trarne profitto.
+Uno degli obiettivi principali di un SO è quindi quello di garantire la sicurezza, un altro importante ... è l'efficienza: un buon sistema operativo deve saper sfruttare al meglio tutte le risorse che ha a disposizione, dalla gestione della memoria per sfruttare al meglio lo spazio alla schedulazione dei processi per ottimizzare i tempi di esecuzione. Come ultimo obiettivo, ma non per questo meno rilevante, deve rendere il più semplice possibile l'utilizzo del dispositivo su cui è installato.\\
+\textcolor{red}{... argomentare ovviamente}
+
+\section{Microkernel e kernel monolitici}
+Esistono vari modelli strutturali per i sistemi operativi: monolitici, modulari, a livelli, microkernel ed ibridi, ad oggi i più diffusi sono gli ibridi, che combinano i vari modelli tra di loro, ma che in gran parte si basano su sistemi monolitici i quali consistono di un unico file binario statico dove ci sono tutte le funzionalità del kernel e che viene eseguito in un unico spazio di indirizzi.\\
+\textcolor{red}{(entrare un pò più nello specifico?)}\\
+All'estremo opposto troviamo i \textit{microkernel} che sono composti da un kernel ridotto al minimo indispensabile mentre tutto il resto deve essere gestito da server che operano sopra al microkernel, quindi in spazi di indirizzi separati.\\
+\textcolor{red}{Magari argomentare menzionando anche le politiche e i meccanismi, pro e contro di entrambi, menzionare anche il fatto che nei microkernel viene quindi ridotta la parte di codice eseguita con i massimi privilegi.}\\
+
+\section{seL4}
+seL4 fa parte della famiglia dei microkernel L4 che risalgono alla prima metà degli anni '90 creato da Jochen Liedtke per sopperire alle scarse performance dei primi sistemi operativi basati su microkernel.
