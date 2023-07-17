@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  13 JUL 2023 19:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  17 JUL 2023 09:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -939,7 +939,11 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box69
 )
 (./thesis.aux (./titlePage.aux) (./Chapters/Capitolo1.aux) (./esercizi.aux)
-(./Chapters/bibliografia.aux))
+(./Chapters/bibliografia.aux
+
+Package natbib Warning: Citation `etichetta2' multiply defined.
+
+))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -1205,32 +1209,46 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 
-] (./thesis.aux
-(./titlePage.aux) (./Chapters/Capitolo1.aux) (./esercizi.aux)
-(./Chapters/bibliografia.aux))
+
+pdfTeX warning (ext4): destination with the same identifier (name{cite.etichett
+a2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.118 \include{Chapters/bibliografia}
+                                     ]
+
+Package natbib Warning: There were multiply defined citations.
+
+(./thesis.aux (./titlePage.aux) (./Chapters/Capitolo1.aux) (./esercizi.aux)
+(./Chapters/bibliografia.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27724 strings out of 476001
- 545286 string characters out of 5793197
+ 27739 strings out of 476001
+ 545411 string characters out of 5793197
  1863068 words of memory out of 5000000
  47454 multiletter control sequences out of 15000+600000
- 599565 words of font info for 277 fonts, out of 8000000 for 9000
+ 600408 words of font info for 289 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,22n,110p,10953b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texliv
 e/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dis
-t/fonts/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/ur
-w/palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr
-i8a.pfb>
-Output written on thesis.pdf (13 pages, 136113 bytes).
+t/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/p
+ublic/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr
+8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (13 pages, 148062 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
+ 147 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  24 named destinations out of 1000 (max. 500000)
  92710 words of extra memory for PDF output out of 106986 (max. 10000000)
 
