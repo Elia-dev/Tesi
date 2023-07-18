@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  17 JUL 2023 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  18 JUL 2023 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -938,12 +938,7 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count338
 \l__pdf_internal_box=\box69
 )
-(./thesis.aux (./titlePage.aux) (./Chapters/Capitolo1.aux) (./esercizi.aux)
-(./Chapters/bibliografia.aux
-
-Package natbib Warning: Citation `etichetta2' multiply defined.
-
-))
+(./thesis.aux (./titlePage.aux) (./Chapters/Capitolo1.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -976,7 +971,8 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 91.
 Package backref Info: ** backref set up for natbib ** on input line 91.
 Package hyperref Info: Link coloring ON on input line 91.
- (./thesis.out) (./thesis.out)
+ (./thesis.out)
+(./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -988,8 +984,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 91.
-
-(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+ (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1165,7 +1160,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 10
  (./Chapters/Capitolo1.tex
 Capitolo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--12
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
 
  []
 
@@ -1173,82 +1168,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
 
 
-]) [8]
-\openout2 = `esercizi.aux'.
-
- (./esercizi.tex
-Capitolo 2.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 7.
-
-(c:/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 7.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `fvm' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- [9
-
-
-
-
-
-]) [10]
-\openout2 = `Chapters/bibliografia.aux'.
-
-
-(./Chapters/bibliografia.tex (./thesis.brf)
+]) [8] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write6
 \openout6 = `thesis.brf'.
 
-) [11
+) [9
 
 
 
 
-
-
-pdfTeX warning (ext4): destination with the same identifier (name{cite.etichett
-a2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.118 \include{Chapters/bibliografia}
-                                     ]
-
-Package natbib Warning: There were multiply defined citations.
-
-(./thesis.aux (./titlePage.aux) (./Chapters/Capitolo1.aux) (./esercizi.aux)
-(./Chapters/bibliografia.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-))
+] (./thesis.aux (./titlePage.aux)
+(./Chapters/Capitolo1.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27749 strings out of 476001
- 545496 string characters out of 5793197
+ 27658 strings out of 476001
+ 543508 string characters out of 5793197
  1864068 words of memory out of 5000000
- 47454 multiletter control sequences out of 15000+600000
- 600970 words of font info for 297 fonts, out of 8000000 for 9000
+ 47400 multiletter control sequences out of 15000+600000
+ 597060 words of font info for 281 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,22n,110p,10953b,1256s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,22n,110p,10953b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/
-texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texliv
-e/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dis
-t/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/p
-ublic/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr
-8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (13 pages, 148779 bytes).
+texlive/2023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/tex
+mf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/t
+ype1/urw/palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palati
+no/uplri8a.pfb>
+Output written on thesis.pdf (11 pages, 129743 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 92710 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 120 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
+ 92190 words of extra memory for PDF output out of 106986 (max. 10000000)
 

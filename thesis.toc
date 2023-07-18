@@ -4,5 +4,4 @@
 \contentsline {chapter}{\numberline {1}{introduzione a seL4A}}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1}{Microkernel e kernel monolitici}}{7}{section.1.1}%
 \contentsline {section}{\numberline {1.2}{seL4}}{8}{section.1.2}%
-\contentsline {chapter}{\numberline {2}{esercizi}}{9}{chapter.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
