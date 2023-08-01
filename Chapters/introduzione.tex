@@ -1,4 +1,6 @@
-\chapter{introduzione a seL4A}
+\chapter{introduzione}
+In questa introduzione sarà presente una prima parte che andrà a dare le conoscenze di base minime per comprendere cosa sia un sistema operativo e una piccola classificazione, dopodiché seguiranno la descrizione di alcuni concetti che sono fondamentali per comprendere il resto dell'elaborato.
+\section{Cos'è un sistema operativo}
 Un sistema operativo (SO) è un insieme di software che gestisce le risorse hardware e software di un sistema di elaborazione fornendo servizi agli applicativi utente.\\
 In un computer quindi il sistema operativo fornisce l'unica interfaccia diretta con l'hardware e in quanto tale ha un accesso esclusivo con il massimo dei privilegi detto \textit{kernel mode}. Questo comporta che una vulnerabilità all'interno del sistema operativo può portare a gravi conseguenze per l'integrità e la sicurezza del sistema, inoltre qualche malintenzionato potrebbe approfittare di questo bug per trarne profitto.
 Uno degli obiettivi principali di un SO è quindi quello di garantire la sicurezza, ulteriore scopo è l'efficienza: un buon sistema operativo deve saper sfruttare al meglio tutte le risorse che ha a disposizione, dalla gestione della memoria per sfruttare al meglio lo spazio alla schedulazione dei processi per ottimizzare i tempi di esecuzione. Come ultimo obiettivo, ma non per questo meno rilevante, deve rendere il più semplice possibile l'utilizzo del dispositivo su cui è installato.
@@ -30,10 +32,9 @@ e dall'altro lato ha un grande svantaggio:
 
 \begin{figure}[h]
   \includegraphics[width=\linewidth]{img/MonolithicVSmicrokernel.png}
-  \caption{Kernel monolitici (sinistra) vs microkernel (destra)}
+  \caption{Kernel monolitici (sinistra) VS microkernel (destra)}
   \label{fig:MonolithicVSmicrokernel}
 \end{figure}
-
-\section{seL4}
-seL4 fa parte della famiglia dei microkernel L4 che risalgono alla prima metà degli anni '90 creato da Jochen Liedtke e ad oggi fa parte del Trustworthy System per sopperire alle scarse performance dei primi sistemi operativi basati su microkernel.\\
-seL4 è un microkernel non un sistema operativo, infatti non fornisce nessun servizio che siamo solitamente abitati a trovare su un comune SO ma "è solo un sottile involucro attorno all'hardware" \cite{sel4-whitepaper}, tutti i servizi devono essere eseguiti in modalità utente, chiaramente questi dovranno essere importati ad esempio da sistemi operativi open-source come Linux (oppure scritto da zero).
+\newpage
+\section{hypervisor}
+Un \textit{hypervisor}, chiamato anche virtual machine monitor (VMM), è un tipo di sotware/firmware che permette di creare ed eseguire macchine virtuali. Un computer sul quale un hypervisor esegue una o più macchine virtuali prende il nome di host machine mentre le singole macchina virtuali prenderanno il nome di guest machine, su ognuna di queste è possibile far girare un sistema operativo diverso che eseguirà la maggior parte delle istruzioni direttamente sulle risorse hardware virtualizzate rese disponibili dall'hypervisor.

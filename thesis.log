@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  1 AUG 2023 11:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  1 AUG 2023 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -938,7 +938,12 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count338
 \l__pdf_internal_box=\box69
 )
-(./thesis.aux (./titlePage.aux) (./Chapters/Capitolo1.aux))
+(./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+(./Chapters/sel4.aux
+
+LaTeX Warning: Label `fig:MonolithicVSmicrokernel' multiply defined.
+
+))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -971,8 +976,7 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 91.
 Package backref Info: ** backref set up for natbib ** on input line 91.
 Package hyperref Info: Link coloring ON on input line 91.
- (./thesis.out)
-(./thesis.out)
+ (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -984,7 +988,8 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 91.
- (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+
+(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1155,12 +1160,12 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 10
 
 
 ]
-\openout2 = `Chapters/Capitolo1.aux'.
+\openout2 = `Chapters/introduzione.aux'.
 
- (./Chapters/Capitolo1.tex
+ (./Chapters/introduzione.tex
 Capitolo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--6
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
 
  []
 
@@ -1169,38 +1174,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--6
 
 
 ] [8]
-<img/MonolithicVSmicrokernel.png, id=74, 851.43094pt x 347.04657pt>
+<img/MonolithicVSmicrokernel.png, id=80, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
-Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 32
+Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 34
 .
-(pdftex.def)             Requested size: 384.1122pt x 156.56667pt.
-)
+(pdftex.def)             Requested size: 384.1122pt x 91.45473pt.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [9 <./img/MonolithicVSmicrokernel.png>] [10] (./thesis.bbl
-(./thesis.brf)
+ [9 <./img/MonolithicVSmicrokernel.png>]) [10]
+\openout2 = `Chapters/sel4.aux'.
+
+ (./Chapters/seL4.tex
+Capitolo 2.
+<img/seL4Hypervisor.png, id=90, 1136.245pt x 481.8pt>
+File: img/seL4Hypervisor.png Graphic file (type png)
+<use img/seL4Hypervisor.png>
+Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
+(pdftex.def)             Requested size: 384.1122pt x 162.87616pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--9
+
+ []
+
+[11
+
+
+
+
+
+ <./img/seL4Hypervisor.png>]) [12] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write6
 \openout6 = `thesis.brf'.
 
-) [11
+) [13
 
 
 
 
-] (./thesis.aux (./titlePage.aux) (./Chapters/Capitolo1.aux))
+]
+(./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+(./Chapters/sel4.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: EB42C4441285C9BD8C05E08AF7455BAB;52.
+(rerunfilecheck)             Checksum: A40A9E2DC0FD85439615919E3E293714;48.
  ) 
 Here is how much of TeX's memory you used:
- 27711 strings out of 476001
- 544424 string characters out of 5793197
+ 27814 strings out of 476001
+ 546138 string characters out of 5793197
  1863068 words of memory out of 5000000
- 47423 multiletter control sequences out of 15000+600000
- 599087 words of font info for 301 fonts, out of 8000000 for 9000
+ 47455 multiletter control sequences out of 15000+600000
+ 602258 words of font info for 347 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,22n,117p,10953b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
@@ -1209,10 +1238,10 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 onts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/
 palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8
 a.pfb>
-Output written on thesis.pdf (13 pages, 170823 bytes).
+Output written on thesis.pdf (15 pages, 192817 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
- 92195 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 92224 words of extra memory for PDF output out of 106986 (max. 10000000)
 

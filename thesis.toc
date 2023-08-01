@@ -1,7 +1,10 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \vspace {-\cftbeforepartskip }
-\contentsline {chapter}{\numberline {1}{introduzione a seL4A}}{7}{chapter.1}%
-\contentsline {section}{\numberline {1.1}{Microkernel e kernel monolitici}}{8}{section.1.1}%
-\contentsline {section}{\numberline {1.2}{seL4}}{10}{section.1.2}%
+\contentsline {chapter}{\numberline {1}{introduzione}}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}{Cos'è un sistema operativo}}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}{Microkernel e kernel monolitici}}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}{hypervisor}}{10}{section.1.3}%
+\contentsline {chapter}{\numberline {2}{sel4}}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}{capability}}{12}{section.2.1}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

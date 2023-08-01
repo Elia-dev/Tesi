@@ -4,6 +4,8 @@
 \ttl@tocsep 
 \ttl@tocsep 
 \ttl@tocsep 
-\contentsline {figure}{\numberline {1}{\ignorespaces Kernel monolitici (sinistra) vs microkernel (destra)\relax }}{9}{figure.caption.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Kernel monolitici (sinistra) VS microkernel (destra)\relax }}{9}{figure.caption.1}%
+\ttl@tocsep 
+\contentsline {figure}{\numberline {2}{\ignorespaces Virtualizzazione del SO Linux per l'intergrazione dei servizi di networking e file system\relax }}{11}{figure.caption.2}%
 \ttl@tocsep 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
