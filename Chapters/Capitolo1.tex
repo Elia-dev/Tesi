@@ -5,19 +5,35 @@ Uno degli obiettivi principali di un SO è quindi quello di garantire la sicurez
 Dalla definizione di SO data a inizio capitolo possiamo isolare una specifica parte di codice che è quella che permette al software di interfacciarsi con l'hardware, quindi l'accesso e la gestione delle risorse di un dispositivo, questa specifica parte si chiama \textit{kernel} che come suggerisci il nome (nocciolo dall'inglese) rappresenta la parte centrale di un sistema operativo su cui tutto il resto si appoggia.\\
 \newpage
 \section{Microkernel e kernel monolitici}
-Esistono vari modelli strutturali per i sistemi operativi: monolitici, modulari, a livelli, microkernel ed ibridi, ad oggi i più diffusi sono gli ibridi, che combinano i vari modelli tra di loro, ma che in gran parte si basano su sistemi monolitici i quali consistono di un unico file binario statico al cui interno sono definite tutte le funzionalità del kernel e che viene eseguito in un unico spazio di indirizzi, questo comporta dei vantaggi e degli svantaggi: 
+Esistono vari modelli strutturali per i sistemi operativi: monolitici, modulari, a livelli, microkernel ed ibridi, ad oggi i più diffusi sono gli ibridi, che combinano i vari modelli tra di loro, ma che in gran parte si basano su sistemi monolitici i quali consistono di un unico file binario statico al cui interno sono definite tutte le funzionalità del kernel e che viene eseguito in un unico spazio di indirizzi, questo comporta dei vantaggi: 
 \begin{itemize}
-	\item[-] efficienza $\rightarrow$ motivo principale per cui la maggior parte dei sistemi operativi ancora si basano su kernel in gran parte monolitici, lavorando nello stesso spazio di indirizzi e gestendo tutto attraverso chiamate di sistema il SO risulterà molto reattivo e performante
-	\item[-] semplicità $\rightarrow$ in quanto non ha una vera e  propria strutturazione ma il codice è tutto in un unico file binario risulta chiaramente più semplice da sviluppare.
+	\item[-] efficienza $\rightarrow$ motivo principale per cui la maggior parte dei sistemi operativi ancora si basano su kernel in gran parte monolitici, lavorando nello stesso spazio di indirizzi e gestendo tutto attraverso chiamate a procedura il SO risulterà molto reattivo e performante
+	\item[-] semplicità $\rightarrow$ in quanto non ha una vera e  propria strutturazione ma il codice è tutto in un unico file binario risulta chiaramente più semplice da progettare anche se poi l'implementazione risulta difficile
 \end{itemize} 
-D'altra parte ha anche degli svantaggi: 
+d'altra parte ha anche degli svantaggi: 
 \begin{itemize}
-	\item[-] inserimento di un nuovo servizio $\rightarrow$ questo richiede la ricompilazione del kernel, quindi non permette l'inserimento di un nuovo servizio a runtime 
-	\item[-] dimensione $\rightarrow$ dovendo gestire tutte le principali funzionalità del sistema operativo il kernel sarà composto da milioni di righe di codice (MLOC - linux ha circa 20MLOC) e questo porta direttamente al successivo grosso svantaggio
-	\item[-] bug $\rightarrow$ maggiore è il numero di righe di codice maggiore sarà il numero di possibili bug, essendo tutto il codice eseguito nello stesso spazio di indirizzi un bug rischia di far 					bloccare l'intero sistema anche se il problema fosse molto piccolo e isolato a una minima funzione del kernel.
+	\item[-] inserimento di un nuovo servizio $\rightarrow$ questo richiede la ricompilazione del kernel, quindi non permette l'inserimento di un nuovo servizio a runtime (problema risolto nei modelli ibridi)
+	\item[-] dimensione $\rightarrow$ dovendo gestire tutte le principali funzionalità del sistema operativo il kernel sarà composto da milioni di righe di codice sorgente (MSLOC - linux ha circa 20MSLOC) e questo porta direttamente al successivo grosso svantaggio
+	\item[-] sicurezza $\rightarrow$ maggiore è il numero di righe di codice maggiore sarà il numero di possibili bug, essendo tutto il codice eseguito nello stesso spazio di indirizzi un bug rischia di far 	bloccare l'intero sistema anche se il problema è molto piccolo e isolato a una minima funzione del kernel.
 \end{itemize}
-All'estremo opposto troviamo i \textit{microkernel} che sono composti da un kernel ridotto al minimo indispensabile mentre tutto il resto deve essere gestito da server che operano sopra al microkernel, quindi in spazi di indirizzi separati.\\
-\textcolor{red}{Magari argomentare menzionando anche le politiche e i meccanismi, pro e contro di entrambi, menzionare anche il fatto che nei microkernel viene quindi ridotta la parte di codice eseguita con i massimi privilegi.}\\
+All'estremo opposto troviamo i \textit{microkernel} che sono composti da un kernel ridotto al minimo indispensabile, che comprende la gestione della memoria, dei processi e della CPU, le comunicazioni tra processi (IPC) e l'hardware di basso livello, mentre tutto il resto deve essere gestito da server (deamon) che operano sopra al kernel, quindi in spazi di indirizzi separati.\\ I microkernel sono spesso usati in sistemi embedded in applicazioni mission critical di automazione robotica o di medicina, a causa del fatto che i componenti del sistema risiedono in aree di memoria separate, private e protette.\\
+Anche questo modello ha dei vantaggi:
+\begin{itemize}
+	\item[-] flessibilità $\rightarrow$ l'inserimento di un nuovo servizio avviene al di sopra del kernel quindi in qualsiasi momento è possibili aggiungere o togliere servizi senza dover modificare il kernel.
+	\item[-] sicurezza $\rightarrow$ minore quantità di codice eseguita in kernel mode (quindi minore quantità di bug e minore superficie attaccabile) maggiore è la sicurezza del sistema, inoltre i servizi sono lavorano in uno spazio di indirizzi differente da quello del kernel di conseguenza se un server (su cui viene eseguito un servizio) smette di funzionare tutto il resto del sistema continua a funzionare normalmente e si potrà procedere a riavviare quel singolo servizio
+	\item[-] semplicità $\rightarrow$ essendo il codice composto da giusto qualche decina di migliaia di righe di codice (KSLOC) risulta molto più facile da scrivere
+\end{itemize}
+e dall'altro lato ha un grande svantaggio:
+\begin{itemize}
+	\item[-] efficienza $\rightarrow$ dato che ogni servizio gira a livello utente l'utilizzo di uno qualsiasi di questi richiede il ricorso a chiamate di sistema che rallentano fortemente l'esecuzione di ogni operazione, motivo principale per cui ancora oggi i sistemi operativi si basano in gran parte su sistemi monolitici.
+\end{itemize}
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{img/MonolithicVSmicrokernel.png}
+  \caption{Kernel monolitici (sinistra) vs microkernel (destra)}
+  \label{fig:MonolithicVSmicrokernel}
+\end{figure}
 
 \section{seL4}
-seL4 fa parte della famiglia dei microkernel L4 che risalgono alla prima metà degli anni '90 creato da Jochen Liedtke per sopperire alle scarse performance dei primi sistemi operativi basati su microkernel.
+seL4 fa parte della famiglia dei microkernel L4 che risalgono alla prima metà degli anni '90 creato da Jochen Liedtke e ad oggi fa parte del Trustworthy System per sopperire alle scarse performance dei primi sistemi operativi basati su microkernel.\\
+seL4 è un microkernel non un sistema operativo, infatti non fornisce nessun servizio che siamo solitamente abitati a trovare su un comune SO ma "è solo un sottile involucro attorno all'hardware" \cite{sel4-whitepaper}, tutti i servizi devono essere eseguiti in modalità utente, chiaramente questi dovranno essere importati ad esempio da sistemi operativi open-source come Linux (oppure scritto da zero).
