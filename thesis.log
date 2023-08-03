@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  3 AUG 2023 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  3 AUG 2023 23:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1174,7 +1174,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--9
 
 
 ] [8]
-<img/MonolithicVSmicrokernel.png, id=88, 1264.725pt x 301.125pt>
+<img/MonolithicVSmicrokernel.png, id=92, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
@@ -1188,7 +1188,7 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=99, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=102, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
@@ -1217,13 +1217,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: A40A9E2DC0FD85439615919E3E293714;48.
+(rerunfilecheck)             Checksum: B0A6F7479134FD93D03E1B30F2A10DAD;139.
  ) 
 Here is how much of TeX's memory you used:
- 27916 strings out of 476001
- 547383 string characters out of 5793197
+ 27934 strings out of 476001
+ 547620 string characters out of 5793197
  1865068 words of memory out of 5000000
- 47488 multiletter control sequences out of 15000+600000
+ 47504 multiletter control sequences out of 15000+600000
  605374 words of font info for 391 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,22n,117p,10953b,1027s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1233,10 +1233,10 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 onts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/
 palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8
 a.pfb>
-Output written on thesis.pdf (19 pages, 207326 bytes).
+Output written on thesis.pdf (19 pages, 208838 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
  92264 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -1,11 +1,18 @@
 \begin{thebibliography}{1}
 
+\bibitem{CertiKOS}
+Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
+  Sjöberg, , and David Costanzo.
+\newblock Certikos: An extensible architecture for building certified
+  concurrent os kernels, 2016.
+\newblock USENIX Symposium on Operating Systems Design and Implementation.
+
 \bibitem{sel4-whitepaper}
 Gernot Heiser.
 \newblock The sel4 microkernel - an introduction.
 \newblock {\em The seL4 Foundation}, Revision 1.2, 2020.
 
-\bibitem{web:lang:stats}
+\bibitem{HardRealTime}
 JavaTpoint.
 \newblock Hard and soft real-time operating system.
 
@@ -26,6 +33,12 @@ Wikipedia{,} l'enciclopedia libera.
 Wikipedia{,} l'enciclopedia libera.
 \newblock Operating system, 2023.
 \newblock Ultima modifica 16 luglio 2023.
+
+\bibitem{skybridge}
+Zeyu Mi, Dingji Li, Zihan Yang, XinranWang, , and Haibo Chenh.
+\newblock Skybridge: Fast and secure inter-process communication for
+  microkernels, 2019.
+\newblock EuroSys Conference.
 
 \bibitem{Slide}
 Rosario Pugliese.
