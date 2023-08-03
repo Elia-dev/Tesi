@@ -5,15 +5,27 @@ Gernot Heiser.
 \newblock The sel4 microkernel - an introduction.
 \newblock {\em The seL4 Foundation}, Revision 1.2, 2020.
 
+\bibitem{web:lang:stats}
+JavaTpoint.
+\newblock Hard and soft real-time operating system.
+
+\bibitem{PoLAWikipedia}
+Wikipedia{,} l'enciclopedia libera.
+
+\bibitem{hypervisorWikipedia}
+Wikipedia{,} l'enciclopedia libera.
+\newblock Hypervisor, 2023.
+\newblock Ultima modifica 25 luglio 2023.
+
 \bibitem{kernelWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Kernel, 2023.
-\newblock ultima modifica 7 giu 2023.
+\newblock Ultima modifica 7 giu 2023.
 
 \bibitem{SistemaOperativoWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Operating system, 2023.
-\newblock ultima modifica 16 luglio 2023.
+\newblock Ultima modifica 16 luglio 2023.
 
 \bibitem{Slide}
 Rosario Pugliese.
