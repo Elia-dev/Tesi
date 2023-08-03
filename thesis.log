@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  2 AUG 2023 19:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  3 AUG 2023 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1199,17 +1199,17 @@ Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
 
 
 
- <./img/seL4Hypervisor.png>] [12]) [13] (./thesis.bbl (./thesis.brf)
+ <./img/seL4Hypervisor.png>] [12]) [13] [14] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write6
 \openout6 = `thesis.brf'.
 
-
-[14
-
-
+)
+[15
 
 
-]) [15] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+
+
+] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/sel4.aux))
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1220,11 +1220,11 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: A40A9E2DC0FD85439615919E3E293714;48.
  ) 
 Here is how much of TeX's memory you used:
- 27843 strings out of 476001
- 546429 string characters out of 5793197
+ 27860 strings out of 476001
+ 546580 string characters out of 5793197
  1864068 words of memory out of 5000000
- 47461 multiletter control sequences out of 15000+600000
- 603387 words of font info for 363 fonts, out of 8000000 for 9000
+ 47462 multiletter control sequences out of 15000+600000
+ 604235 words of font info for 375 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,22n,117p,10953b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
@@ -1233,10 +1233,10 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 onts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/
 palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8
 a.pfb>
-Output written on thesis.pdf (17 pages, 197318 bytes).
+Output written on thesis.pdf (17 pages, 200506 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 92232 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 92240 words of extra memory for PDF output out of 106986 (max. 10000000)
 
