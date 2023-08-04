@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  4 AUG 2023 16:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  4 AUG 2023 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -943,7 +943,7 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `fig:MonolithicVSmicrokernel' multiply defined.
 
-))
+) (./Chapters/impostazione.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -1164,7 +1164,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--9
 
 
 ] [6]
-<img/MonolithicVSmicrokernel.png, id=80, 1264.725pt x 301.125pt>
+<img/MonolithicVSmicrokernel.png, id=82, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
@@ -1178,7 +1178,7 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=91, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=93, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
@@ -1212,12 +1212,7 @@ Capitolo 3.
 
 ]) [17] (./thesis.aux
 (./titlePage.aux) (./Chapters/introduzione.aux) (./Chapters/sel4.aux)
-(./Chapters/impostazione.aux)
-
-Package mparhack Warning: Marginpars may have changed.
-(mparhack)                Rerun to get them right.
-
-)
+(./Chapters/impostazione.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1227,23 +1222,23 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 1B5AED9FB2EDF3AED4DE34FF440FC99F;138.
  ) 
 Here is how much of TeX's memory you used:
- 27945 strings out of 476001
- 548434 string characters out of 5793197
+ 27950 strings out of 476001
+ 548527 string characters out of 5793197
  1865068 words of memory out of 5000000
- 47517 multiletter control sequences out of 15000+600000
+ 47519 multiletter control sequences out of 15000+600000
  605088 words of font info for 387 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,22n,117p,10953b,1023s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,22n,117p,10953b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/f
 onts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/
 palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8
 a.pfb>
-Output written on thesis.pdf (19 pages, 208838 bytes).
+Output written on thesis.pdf (19 pages, 210704 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 92272 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 92280 words of extra memory for PDF output out of 106986 (max. 10000000)
 
