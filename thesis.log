@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  3 AUG 2023 23:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  4 AUG 2023 16:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1146,17 +1146,7 @@ Package microtype Info: Character `029' is missing
 ] [2
 
 
-]
-Package tocbasic Info: character protrusion at lof deactivated on input line 10
-8.
- (./thesis.lof)
-\tf@lof=\write5
-\openout5 = `thesis.lof'.
-
- [3] [4
-
-
-] [5] [6
+] [3] [4
 
 
 ]
@@ -1169,12 +1159,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--9
 
  []
 
-[7
+[5
 
 
 
-] [8]
-<img/MonolithicVSmicrokernel.png, id=92, 1264.725pt x 301.125pt>
+] [6]
+<img/MonolithicVSmicrokernel.png, id=80, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
@@ -1183,50 +1173,67 @@ Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [9 <./img/MonolithicVSmicrokernel.png>]) [10]
+ [7 <./img/MonolithicVSmicrokernel.png>]) [8]
 \openout2 = `Chapters/sel4.aux'.
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=102, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=91, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
 (pdftex.def)             Requested size: 384.1122pt x 162.87616pt.
-[11
+[9
 
 
 
 
 
- <./img/seL4Hypervisor.png>] [12] [13] [14]) [15] (./thesis.bbl
-(./thesis.brf)
-\tf@brf=\write6
-\openout6 = `thesis.brf'.
+ <./img/seL4Hypervisor.png>] [10] [11] [12]) [13]
+\openout2 = `Chapters/impostazione.aux'.
+
+
+(./Chapters/impostazione.tex
+Capitolo 3.
+[14
+
+
+
+
+
+]) [15] (./thesis.bbl (./thesis.brf)
+\tf@brf=\write5
+\openout5 = `thesis.brf'.
 
  [16
 
 
 
 
-]) [17] (./thesis.aux (./titlePage.aux)
-(./Chapters/introduzione.aux) (./Chapters/sel4.aux))
+]) [17] (./thesis.aux
+(./titlePage.aux) (./Chapters/introduzione.aux) (./Chapters/sel4.aux)
+(./Chapters/impostazione.aux)
+
+Package mparhack Warning: Marginpars may have changed.
+(mparhack)                Rerun to get them right.
+
+)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: B0A6F7479134FD93D03E1B30F2A10DAD;139.
+(rerunfilecheck)             Checksum: 1B5AED9FB2EDF3AED4DE34FF440FC99F;138.
  ) 
 Here is how much of TeX's memory you used:
- 27934 strings out of 476001
- 547620 string characters out of 5793197
+ 27945 strings out of 476001
+ 548434 string characters out of 5793197
  1865068 words of memory out of 5000000
- 47504 multiletter control sequences out of 15000+600000
- 605374 words of font info for 391 fonts, out of 8000000 for 9000
+ 47517 multiletter control sequences out of 15000+600000
+ 605088 words of font info for 387 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,22n,117p,10953b,1027s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,22n,117p,10953b,1023s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/f
@@ -1235,8 +1242,8 @@ palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8
 a.pfb>
 Output written on thesis.pdf (19 pages, 208838 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 92264 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 228 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 92272 words of extra memory for PDF output out of 106986 (max. 10000000)
 
