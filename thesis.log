@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  4 AUG 2023 22:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  7 AUG 2023 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -927,15 +927,37 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
+(c:/texlive/2023/texmf-dist/tex/generic/dirtree/dirtree.sty
+Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
+
+(c:/texlive/2023/texmf-dist/tex/generic/dirtree/dirtree.tex
+`dirtree' v0.32, 2012/12/11 (jcc)
+\DT@offset=\dimen267
+\DT@width=\dimen268
+\DT@sep=\dimen269
+\DT@all=\dimen270
+\DT@rulewidth=\dimen271
+\DT@dotwidth=\dimen272
+\DTbaselineskip=\dimen273
+\DT@counti=\count338
+\DT@countii=\count339
+\DT@countiii=\count340
+\DT@countiv=\count341
+\DT@indent=\dimen274
+\DT@parskip=\dimen275
+\DT@baselineskip=\dimen276
+)
+File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
+)
 LaTeX Font Info:    Trying to load font information for T1+pplj on input line 9
-1.
+2.
 
 (c:/texlive/2023/texmf-dist/tex/latex/psnfss/t1pplj.fd
 File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 )
 (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count338
+\l__color_backend_stack_int=\count342
 \l__pdf_internal_box=\box69
 )
 (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
@@ -946,36 +968,36 @@ LaTeX Warning: Label `fig:MonolithicVSmicrokernel' multiply defined.
 ) (./Chapters/impostazione.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Info: Redefining \it@ocap on input line 91.
-LaTeX Info: Redefining \it@ccap on input line 91.
-LaTeX Info: Redefining \dots on input line 91.
-\c@lstlisting=\count339
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Info: Redefining \it@ocap on input line 92.
+LaTeX Info: Redefining \it@ccap on input line 92.
+LaTeX Info: Redefining \dots on input line 92.
+\c@lstlisting=\count343
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package translations Info: no dictionary file `translations-basic-dictionary-it
-alian.trsl' found. on input line 91.
-Package backref Info: ** backref set up for natbib ** on input line 91.
-Package hyperref Info: Link coloring ON on input line 91.
+alian.trsl' found. on input line 92.
+Package backref Info: ** backref set up for natbib ** on input line 92.
+Package hyperref Info: Link coloring ON on input line 92.
  (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
@@ -987,27 +1009,27 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 91.
+(scrbook)           before \begin{document} on input line 92.
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count340
+\BKM@id=\count344
 ))
 (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count341
-\scratchdimen=\dimen267
+\scratchcounter=\count345
+\scratchdimen=\dimen277
 \scratchbox=\box70
-\nofMPsegments=\count342
-\nofMParguments=\count343
+\nofMPsegments=\count346
+\nofMParguments=\count347
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count344
-\MPscratchDim=\dimen268
-\MPnumerator=\count345
-\makeMPintoPDFobject=\count346
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen278
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
 \everyMPtoPDFconversion=\toks33
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1018,19 +1040,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 91.
-Package microtype Info: Applying patch `item' on input line 91.
-Package microtype Info: Applying patch `toc' on input line 91.
-Package microtype Info: Applying patch `eqnum' on input line 91.
-Package microtype Info: Applying patch `footnote' on input line 91.
-Package microtype Info: Applying patch `verbatim' on input line 91.
+LaTeX Info: Redefining \microtypecontext on input line 92.
+Package microtype Info: Applying patch `item' on input line 92.
+Package microtype Info: Applying patch `toc' on input line 92.
+Package microtype Info: Applying patch `eqnum' on input line 92.
+Package microtype Info: Applying patch `footnote' on input line 92.
+Package microtype Info: Applying patch `verbatim' on input line 92.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 91.
+LaTeX Info: Redefining \showhyphens on input line 92.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1128,7 +1150,7 @@ LaTeX Font Info:    Trying to load font information for TS1+pplj on input line
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )) [2]
 Package tocbasic Info: character protrusion at toc deactivated on input line 10
-7.
+8.
  (./thesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplj/m/sc/12'.
@@ -1164,7 +1186,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--9
 
 
 ] [6]
-<img/MonolithicVSmicrokernel.png, id=82, 1264.725pt x 301.125pt>
+<img/MonolithicVSmicrokernel.png, id=86, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
@@ -1178,7 +1200,7 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=93, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=97, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
@@ -1201,44 +1223,78 @@ Capitolo 3.
 
 
 
-]) [15] (./thesis.bbl (./thesis.brf)
+] [15] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 33
+.
+
+(c:/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 10.20007pt on input line 33.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `fvm' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.50006pt on input line 33.
+ [16]
+
+Package natbib Warning: Citation `l4v' on page 17 undefined on input line 107.
+
+[17]) [18] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
- [16
+)
+
+Package natbib Warning: There were undefined citations.
+
+[19
 
 
 
 
-]) [17] (./thesis.aux
-(./titlePage.aux) (./Chapters/introduzione.aux) (./Chapters/sel4.aux)
-(./Chapters/impostazione.aux))
+] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 1B5AED9FB2EDF3AED4DE34FF440FC99F;138.
+
+Package rerunfilecheck Warning: File `thesis.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `thesis.brf':
+(rerunfilecheck)             Before: 51DD618F654D39B8E1F6BDE5792914A1;138
+(rerunfilecheck)             After:  1B5AED9FB2EDF3AED4DE34FF440FC99F;138.
  ) 
 Here is how much of TeX's memory you used:
- 27950 strings out of 476001
- 548527 string characters out of 5793197
- 1865068 words of memory out of 5000000
- 47519 multiletter control sequences out of 15000+600000
- 605088 words of font info for 387 fonts, out of 8000000 for 9000
+ 28690 strings out of 476001
+ 556532 string characters out of 5793197
+ 2100068 words of memory out of 5000000
+ 48168 multiletter control sequences out of 15000+600000
+ 608546 words of font info for 408 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,22n,117p,10953b,1025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,117p,10953b,1238s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/f
-onts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/
-palatino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8
-a.pfb>
-Output written on thesis.pdf (19 pages, 210704 bytes).
+onts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publ
+ic/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latx
+font/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
+fb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/
+2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (21 pages, 240378 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 92280 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 270 compressed objects within 3 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 99456 words of extra memory for PDF output out of 106986 (max. 10000000)
 

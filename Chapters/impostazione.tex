@@ -1,6 +1,118 @@
 \chapter{Impostazione di seL4}
 Come primo approccio per arrivare alla scrittura di questa tesi ho innanzitutto fatto una ricerca sulla letteratura che si trova disponibile riguardo a seL4, nonostante sia poca e principalmente fornita da Trustworthy (TS) stesso comunque sufficiente per avere una conoscenza abbastanza approfondita del microkernel.\\
-SeL4 è un sistema opensource dunque lo step successivo è stato quello di scaricare seL4 e sperimentare con mano le funzionalità, ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc. che verranno trattati in questo capitolo.
+SeL4 è un sistema open-source dunque lo step successivo è stato quello di scaricare seL4 e sperimentare con mano le funzionalità, ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc. che verranno trattati in questo capitolo.
 
-\section{Fase iniziale}
-Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da TS sarebbe ottimale lavorare in ambiente Linux, non avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il set-up del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà che è stata lo spazio: purtroppo lo spazio nel portatile non era tantissimo, la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il microkernel, cominciava ad occupare molto spazio, dunque ho dovuto cercare un'alternativa; Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul microkernel lavorando sull'SSD esterno collegato via USB.
+\section{Fase iniziale: prerequisiti}
+Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da TS sarebbe ottimale lavorare in ambiente Linux, non avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il set-up del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà che è stata lo spazio: purtroppo lo spazio nel portatile non era tantissimo, la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il microkernel, cominciava ad occupare molto spazio, dunque ho dovuto cercare un'alternativa; Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul microkernel lavorando sull'SSD esterno collegato via USB.\\
+Per lavorare su seL4 è necessario avere installato sul sistema dei programmi che simulino un'architettura su cui farlo girare, per fare ciò è necessario installare delle dipendenze (prerequisiti) cioè compilatori, emulatori software vari e librerie che devono essere installate affinché sia possibile utilizzare seL4.\\
+Prima di tutto ho installato Google repo, così da poter clonare i repository git:
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                  
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{lstlisting}[language=bash]
+sudo apt-get install repo
+\end{lstlisting}
+build-essential, cmake, ninja, curl, python e QEMU abbreviazione di Quick EMUlator, un emulatore open-source che permette di emulare un'architettura informatica e che permette di simulare diversi sistemi operativi, in questo caso è fondamentale perchè permette l'esecuzione di seL4:
+\begin{lstlisting}[language=bash]
+sudo apt-get install build-essential
+sudo apt-get install cmake ccache ninja-build cmake-curses-gui
+sudo apt-get install libxml2-utils ncurses-dev
+sudo apt-get install curl git doxygen device-tree-compiler
+sudo apt-get install u-boot-tools
+sudo apt-get install python3-dev python3-pip python-is-python3
+sudo apt-get install protobuf-compiler python3-protobuf
+sudo apt-get install qemu-system-arm qemu-system-x86 qemu-system-misc
+pip3 install --user setuptools
+pip3 install --user sel4-deps
+\end{lstlisting}
+Altro componente fondamentale è CAmkES (component architecture for microkernel-based embedded systems), un framework per realizzare velocemente sistemi multiserver affidabili basati su microkernel:
+\begin{lstlisting}[language=bash]
+pip3 install --user camkes-deps
+curl -sSL https://get.haskellstack.org/ | sh
+sudo apt-get install haskell-stack
+sudo apt-get install clang gdb
+sudo apt-get install libssl-dev libclang-dev libcunit1-dev libsqlite3-dev
+sudo apt-get install qemu-kvm
+\end{lstlisting}
+Dopodiché sono passato alle dipendenze per l'installazione di Isabelle (theorem prover) che serve per la verifica automatica di sistemi software e hardware:
+\begin{lstlisting}[language=bash]
+sudo apt-get install \
+    python3 python3-pip python3-dev \
+    gcc-arm-none-eabi build-essential libxml2-utils ccache \
+    ncurses-dev librsvg2-bin device-tree-compiler cmake \
+    ninja-build curl zlib1g-dev texlive-fonts-recommended \
+    texlive-latex-extra texlive-metapost texlive-bibtex-extra \
+    mlton-compiler haskell-stack repo
+\end{lstlisting}
+Ancora dipendenze Python e Haskell
+\begin{lstlisting}[language=bash]
+pip3 install --user --upgrade pip
+pip3 install --user sel4-deps
+
+stack upgrade --binary-only
+which stack # should be $HOME/.local/bin/stack
+stack install cabal-install
+\end{lstlisting}
+Con questa serie di comandi bash il sistema operativo Linux, per la precisione Ubuntu \textcolor{red}{VERSIONE}, ha tutti i prerequisiti necessari per procedere alla configurazione.
+
+\section{Configurazione}
+Lo step successivo è stato quello di recuperare, attraverso repo, la collezione di repository necessari per la verifica di seL4; in particolare contiene il sorgente del kernel, il theorem prover Isabelle/HOL e HOL4 e lo strumento di verifica binaria.
+\begin{lstlisting}[language=bash]
+mkdir verification
+cd verification
+repo init -u https://git@github.com/seL4/verification-manifest.git
+repo sync
+\end{lstlisting}
+A questo punto  si avrà quindi una cartella con questa struttura:
+\dirtree{%
+.1 verification.
+.2 HOL4/.
+.2 graph-refine/.
+.2 isabelle/.
+.2 l4v/.
+.2 seL4/.
+}
+Il che indica che l'importazione delle repository è andata a buon fine, quindi possiamo procedere alla configurazione di Isabelle posizionandosi nella cartella \texttt{l4v}:
+\begin{lstlisting}[language=bash]
+mkdir -p ~/.isabelle/etc
+cp -i misc/etc/settings ~/.isabelle/etc/settings
+./isabelle/bin/isabelle components -a
+./isabelle/bin/isabelle jedit -bf
+./isabelle/bin/isabelle build -bv HOL
+\end{lstlisting}
+Questa serie di comandi bash daranno come risultato:
+\begin{itemize}
+	\item[*] la creazione di una cartella per le impostazioni utente di Isabelle.
+	\item installazione delle impostazione Isabelle per L4.verified \cite{l4v} 
+\end{itemize} 
+
+create an Isabelle user settings directory.
+
+install L4.verified Isabelle settings. These settings initialise the Isabelle installation to use the standard Isabelle contrib tools from the Munich Isabelle repository and set up paths such that multiple Isabelle repository installations can be used side by side without interfering with each other.
+
+download contrib components from the Isabelle repository. This includes Scala, a Java JDK, PolyML, and multiple external provers. You should download these, even if you have these tools previously installed elsewhere to make sure you have the right versions. Depending on your internet connection, this may take some time.
+
+compile and build the Isabelle PIDE jEdit interface.
+
+build basic Isabelle images to ensure that the installation works. This may take a few minutes.
