@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  7 AUG 2023 16:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  8 AUG 2023 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -673,7 +673,7 @@ Package: beramono 2004/01/31 (WaS)
 (c:/texlive/2023/texmf-dist/tex/latex/eulervm/eulervm.sty
 Package: eulervm 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+eur on input line 202
+LaTeX Font Info:    Trying to load font information for U+eur on input line 203
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/ueur.fd
@@ -949,11 +949,11 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 )
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 )
-LaTeX Font Info:    Trying to load font information for T1+pplj on input line 9
+LaTeX Font Info:    Trying to load font information for T1+pplx on input line 9
 2.
 
-(c:/texlive/2023/texmf-dist/tex/latex/psnfss/t1pplj.fd
-File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/t1pplx.fd
+File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 )
 (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
@@ -961,11 +961,7 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box69
 )
 (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/sel4.aux
-
-LaTeX Warning: Label `fig:MonolithicVSmicrokernel' multiply defined.
-
-) (./Chapters/impostazione.aux))
+(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
@@ -998,7 +994,8 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 92.
 Package backref Info: ** backref set up for natbib ** on input line 92.
 Package hyperref Info: Link coloring ON on input line 92.
- (./thesis.out) (./thesis.out)
+ (./thesis.out)
+(./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -1010,8 +1007,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 92.
-
-(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+ (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1143,17 +1139,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 {c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/
 texmf-dist/fonts/enc/dvips/base/8r.enc} <./logo/LOGO.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 
 44.
 
-(c:/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplj.fd
-File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/ts1pplx.fd
+File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )) [2]
 Package tocbasic Info: character protrusion at toc deactivated on input line 10
 8.
  (./thesis.toc
 Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplj/m/sc/12'.
+(microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 )
 \tf@toc=\write4
@@ -1176,31 +1172,26 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/introduzione.tex
 Capitolo 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--9
-
- []
-
 [5
 
 
 
 ] [6]
-<img/MonolithicVSmicrokernel.png, id=86, 1264.725pt x 301.125pt>
+<img/MonolithicVSmicrokernel.png, id=88, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
 .
 (pdftex.def)             Requested size: 384.1122pt x 91.45473pt.
 Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/pplj/m/sc/10.95'.
+(microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
  [7 <./img/MonolithicVSmicrokernel.png>]) [8]
 \openout2 = `Chapters/sel4.aux'.
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=97, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=99, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
@@ -1243,58 +1234,43 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 33.
- [16]
-
-Package natbib Warning: Citation `l4v' on page 17 undefined on input line 107.
-
-[17]) [18] (./thesis.bbl (./thesis.brf)
+ [16] [17]) [18]
+(./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
-)
-
-Package natbib Warning: There were undefined citations.
-
-[19
+) [19
 
 
 
 
-] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
-
-LaTeX Warning: There were multiply-defined labels.
-
+] (./thesis.aux (./titlePage.aux)
+(./Chapters/introduzione.aux) (./Chapters/sel4.aux)
+(./Chapters/impostazione.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package rerunfilecheck Warning: File `thesis.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `thesis.brf':
-(rerunfilecheck)             Before: 51DD618F654D39B8E1F6BDE5792914A1;138
-(rerunfilecheck)             After:  1B5AED9FB2EDF3AED4DE34FF440FC99F;138.
+Package rerunfilecheck Info: File `thesis.brf' has not changed.
+(rerunfilecheck)             Checksum: 0A8E6F5F53E08F1076E2DA95FEB42313;181.
  ) 
 Here is how much of TeX's memory you used:
- 28690 strings out of 476001
- 556532 string characters out of 5793197
+ 28651 strings out of 476001
+ 556239 string characters out of 5793197
  2100068 words of memory out of 5000000
- 48168 multiletter control sequences out of 15000+600000
- 608546 words of font info for 408 fonts, out of 8000000 for 9000
+ 48198 multiletter control sequences out of 15000+600000
+ 602003 words of font info for 341 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,117p,10953b,1238s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/f
-onts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publ
-ic/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latx
-font/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
-fb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/
-2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (21 pages, 240378 bytes).
+onts/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publi
+c/amsfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/pa
+latino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.
+pfb>
+Output written on thesis.pdf (21 pages, 226610 bytes).
 PDF statistics:
- 318 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 95 named destinations out of 1000 (max. 500000)
- 99456 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 325 PDF objects out of 1000 (max. 8388607)
+ 281 compressed objects within 3 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 89224 words of extra memory for PDF output out of 106986 (max. 10000000)
 

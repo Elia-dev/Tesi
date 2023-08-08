@@ -4,46 +4,47 @@ The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: titlePage.aux
 A level-1 auxiliary file: Chapters/introduzione.aux
 A level-1 auxiliary file: Chapters/sel4.aux
+A level-1 auxiliary file: Chapters/impostazione.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
-You've used 9 entries,
+You've used 12 entries,
             2118 wiz_defined-function locations,
-            541 strings with 5053 characters,
-and the built_in function-call counts, 2209 in all, are:
-= -- 187
-> -- 125
+            553 strings with 5283 characters,
+and the built_in function-call counts, 2854 in all, are:
+= -- 250
+> -- 146
 < -- 0
-+ -- 52
-- -- 42
-* -- 106
-:= -- 381
-add.period$ -- 23
-call.type$ -- 9
-change.case$ -- 47
++ -- 61
+- -- 48
+* -- 125
+:= -- 491
+add.period$ -- 34
+call.type$ -- 12
+change.case$ -- 60
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 66
-empty$ -- 194
-format.name$ -- 42
-if$ -- 455
+cite$ -- 12
+duplicate$ -- 87
+empty$ -- 260
+format.name$ -- 48
+if$ -- 596
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 12
 missing$ -- 1
-newline$ -- 44
-num.names$ -- 18
-pop$ -- 83
+newline$ -- 61
+num.names$ -- 24
+pop$ -- 111
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 48
 quote$ -- 0
-skip$ -- 75
+skip$ -- 90
 stack$ -- 0
-substring$ -- 46
-swap$ -- 9
+substring$ -- 61
+swap$ -- 12
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 36
+type$ -- 48
 warning$ -- 0
-while$ -- 18
-width$ -- 10
-write$ -- 82
+while$ -- 24
+width$ -- 14
+write$ -- 117

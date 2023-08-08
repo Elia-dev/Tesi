@@ -177,7 +177,8 @@
      \ifthenelse{\boolean{ct@palatino}}% default
        {
        % default: Palatino
-         \PassOptionsToPackage{osf,sc}{mathpazo}%
+         \PassOptionsToPackage{sc}{mathpazo}%
+         %per l'old style font quindi i numeri ad altezze diverse sostituire {sc} con {osf,sc}
          \RequirePackage{mathpazo} % Palatino with real small caps and old style figures
          \linespread{1.05} % a bit more for Palatino
        }{\relax}
@@ -199,7 +200,7 @@
 
        \ifthenelse{\boolean{ct@eulerchapternumbers}}% font for the chapter numbers
           {\DeclareFixedFont{\chapterNumber}{U}{eur}{b}{n}{70}}%
-          {\DeclareFixedFont{\chapterNumber}{T1}{pplj}{m}{n}{70}}%
+          {\DeclareFixedFont{\chapterNumber}{T1}{pplj}{m}{n}{70}}% pplj
          %{\newfont{\chapterNumber}{eurb10 scaled 7000}}%
          %{\newfont{\chapterNumber}{pplr9d scaled 7000}}
          % Euler eurb10 / Palatino OSF pplr9d / Palatino SC pplrc9d
@@ -211,7 +212,6 @@
 
 \RequirePackage{microtype} % character protruding and other micro-typography stuff
 % [expansion=false]
-
 
 % ********************************************************************
 % Textblock size

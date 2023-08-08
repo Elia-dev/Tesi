@@ -2,7 +2,7 @@
 Come primo approccio per arrivare alla scrittura di questa tesi ho innanzitutto fatto una ricerca sulla letteratura che si trova disponibile riguardo a seL4, nonostante sia poca e principalmente fornita da Trustworthy (TS) stesso comunque sufficiente per avere una conoscenza abbastanza approfondita del microkernel.\\
 SeL4 è un sistema open-source dunque lo step successivo è stato quello di scaricare seL4 e sperimentare con mano le funzionalità, ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc. che verranno trattati in questo capitolo.
 
-\section{Fase iniziale: prerequisiti}
+\section{Prerequisiti}
 Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da TS sarebbe ottimale lavorare in ambiente Linux, non avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il set-up del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà che è stata lo spazio: purtroppo lo spazio nel portatile non era tantissimo, la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il microkernel, cominciava ad occupare molto spazio, dunque ho dovuto cercare un'alternativa; Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul microkernel lavorando sull'SSD esterno collegato via USB.\\
 Per lavorare su seL4 è necessario avere installato sul sistema dei programmi che simulino un'architettura su cui farlo girare, per fare ciò è necessario installare delle dipendenze (prerequisiti) cioè compilatori, emulatori software vari e librerie che devono essere installate affinché sia possibile utilizzare seL4.\\
 Prima di tutto ho installato Google repo, così da poter clonare i repository git:
@@ -103,16 +103,18 @@ cp -i misc/etc/settings ~/.isabelle/etc/settings
 \end{lstlisting}
 Questa serie di comandi bash daranno come risultato:
 \begin{itemize}
-	\item[*] la creazione di una cartella per le impostazioni utente di Isabelle.
-	\item installazione delle impostazione Isabelle per L4.verified \cite{l4v} 
+	\item la creazione di una cartella per le impostazioni utente di Isabelle.
+	\item installazione delle impostazione Isabelle per L4.verified \cite{l4v} il rtbj6nmgquale è una repository che contiene formalismi per la verifica di seL4.
+	\item download di Scala, Java JDK, PolyML ed altri dimostratori (prover) esterni.
+	\item compilazione del Prover IDE (PIDE) jEdit di Isabelle
 \end{itemize} 
 
-create an Isabelle user settings directory.
-
-install L4.verified Isabelle settings. These settings initialise the Isabelle installation to use the standard Isabelle contrib tools from the Munich Isabelle repository and set up paths such that multiple Isabelle repository installations can be used side by side without interfering with each other.
-
-download contrib components from the Isabelle repository. This includes Scala, a Java JDK, PolyML, and multiple external provers. You should download these, even if you have these tools previously installed elsewhere to make sure you have the right versions. Depending on your internet connection, this may take some time.
-
-compile and build the Isabelle PIDE jEdit interface.
-
-build basic Isabelle images to ensure that the installation works. This may take a few minutes.
+\section{Esecuzione di SeL4}
+Terminata la prima fase di installazione dei prerequisiti e di configurazione ho potuto effettivamente scaricare ed eseguire seL4:
+\begin{lstlisting}[language=bash]
+mkdir seL4test
+cd seL4test
+repo init -u https://github.com/seL4/sel4test-manifest.git
+repo sync
+\end{lstlisting}
+Con questi comandi si va a creare una directory \texttt{seL4test} 

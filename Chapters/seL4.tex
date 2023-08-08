@@ -3,8 +3,8 @@ seL4 fa parte della famiglia dei microkernel L4 che risalgono alla prima metà d
 Come descritto poco sopra nell'introduzione, seL4 essendo un microkernel, ha un numero di righe di codice sorgente estremamente piccolo e questo è sufficiente per determinare che non è un sistema operativo ma soltanto un microkernel, infatti non fornisce nessun dei servizi che siamo solitamente abituati a trovare su un comune SO, "è solo un sottile involucro attorno all'hardware" \cite{sel4-whitepaper}, tutti i servizi devono essere eseguiti in modalità utente e questi dovranno essere importati ad esempio da sistemi operativi open-source come Linux (oppure scritti da zero). Data questa sua "incapacità" nel fornire servizi all'utente seL4 è anche un \textit{hypervisor}, quindi è possibile eseguire macchine virtuali sulle quali far girare un comune SO che fornirà i servizi non presenti in seL4.
 \begin{figure}[h]
   \includegraphics[width=\linewidth]{img/seL4Hypervisor.png}
-  \caption{Virtualizzazione del SO Linux per l'intergrazione dei servizi di networking e file system}
-  \label{fig:MonolithicVSmicrokernel}
+  \caption{Virtualizzazione del SO Linux per l'integrazione dei servizi di networking e file system}
+  \label{fig:Virtualizzazione}
 \end{figure}
 
 Un esempio pratico può essere quello mostrato in Figura~\ref{fig:MonolithicVSmicrokernel}, in cui è raffigurato seL4, una generica applicazione e due macchine virtuali (VM) sulle quali viene eseguita una versione ridotta al minimo di Linux, che quindi avrà poco più oltre al servizio che dovrà eseguire.

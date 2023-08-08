@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{l4v}
+SeL4 Foundation.
+\newblock l4v, 2023.
+\newblock Ultima modifica 19 luglio 2023.
 
 \bibitem{CertiKOS}
 Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
@@ -16,13 +21,15 @@ Gernot Heiser.
 JavaTpoint.
 \newblock Hard and soft real-time operating system.
 
-\bibitem{PoLAWikipedia}
-Wikipedia{,} l'enciclopedia libera.
-
 \bibitem{hypervisorWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Hypervisor, 2023.
 \newblock Ultima modifica 25 luglio 2023.
+
+\bibitem{isabelle}
+Wikipedia{,} l'enciclopedia libera.
+\newblock Isabelle (proof assistant), 2023.
+\newblock Ultima modifica 1 marzo 2023.
 
 \bibitem{kernelWikipedia}
 Wikipedia{,} l'enciclopedia libera.
@@ -33,6 +40,16 @@ Wikipedia{,} l'enciclopedia libera.
 Wikipedia{,} l'enciclopedia libera.
 \newblock Operating system, 2023.
 \newblock Ultima modifica 16 luglio 2023.
+
+\bibitem{PoLAWikipedia}
+Wikipedia{,} l'enciclopedia libera.
+\newblock Principle of least privilege, 2023.
+\newblock Ultima modifica 2 agosto 2023.
+
+\bibitem{qemu}
+Wikipedia{,} l'enciclopedia libera.
+\newblock Qemu, 2023.
+\newblock Ultima modifica 30 giugno 2023.
 
 \bibitem{skybridge}
 Zeyu Mi, Dingji Li, Zihan Yang, XinranWang, , and Haibo Chenh.
