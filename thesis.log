@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  9 AUG 2023 19:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  9 AUG 2023 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -960,8 +960,7 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count342
 \l__pdf_internal_box=\box69
 )
-(./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
@@ -994,8 +993,7 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 92.
 Package backref Info: ** backref set up for natbib ** on input line 92.
 Package hyperref Info: Link coloring ON on input line 92.
- (./thesis.out)
-(./thesis.out)
+ (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -1007,7 +1005,8 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 92.
- (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+
+(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1191,22 +1190,38 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=101, 1136.245pt x 481.8pt>
+
+Package natbib Warning: Citation `sel4-whitepaper' on page 9 undefined on input
+ line 3.
+
+<img/seL4Hypervisor.png, id=100, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
 (pdftex.def)             Requested size: 384.1122pt x 162.87616pt.
+
+LaTeX Warning: Reference `fig:MonolithicVSmicrokernel' on page 9 undefined on i
+nput line 10.
+
 [9
 
 
 
 
 
- <./img/seL4Hypervisor.png>] [10] [11] [12]) [13]
+ <./img/seL4Hypervisor.png>] [10] [11] [12]
+
+Package natbib Warning: Citation `skybridge' on page 13 undefined on input line
+ 46.
+
+
+Package natbib Warning: Citation `CertiKOS' on page 13 undefined on input line 
+46.
+
+) [13]
 \openout2 = `Chapters/impostazione.aux'.
 
-
-(./Chapters/impostazione.tex
+ (./Chapters/impostazione.tex
 Capitolo 3.
 [14
 
@@ -1234,8 +1249,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 33.
- [16] [17]
-<img/PrimaSimulazione.png, id=199, 477.28313pt x 109.1578pt>
+ [16]
+
+Package natbib Warning: Citation `l4v' on page 17 undefined on input line 107.
+
+[17]
+<img/PrimaSimulazione.png, id=192, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
 Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 133.
@@ -1249,24 +1268,47 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 \openout5 = `thesis.brf'.
 
 )
+
+Package natbib Warning: There were undefined citations.
+
 [21
 
 
 
 
 ] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
+(./Chapters/sel4.aux) (./Chapters/impostazione.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+
+Package mparhack Warning: Marginpars may have changed.
+(mparhack)                Rerun to get them right.
+
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 0A8E6F5F53E08F1076E2DA95FEB42313;181.
+
+Package rerunfilecheck Warning: File `thesis.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `thesis.brf':
+(rerunfilecheck)             Before: 0A8E6F5F53E08F1076E2DA95FEB42313;181
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28697 strings out of 476001
- 556892 string characters out of 5793197
+ 28705 strings out of 476001
+ 556810 string characters out of 5793197
  2100068 words of memory out of 5000000
- 48218 multiletter control sequences out of 15000+600000
- 602449 words of font info for 347 fonts, out of 8000000 for 9000
+ 48214 multiletter control sequences out of 15000+600000
+ 603825 words of font info for 361 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,118p,10953b,1238s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
@@ -1274,12 +1316,12 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
 023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/f
 onts/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publi
 c/amsfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/pa
-latino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.
-pfb>
-Output written on thesis.pdf (23 pages, 247237 bytes).
+latino/uplb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.p
+fb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (23 pages, 258000 bytes).
 PDF statistics:
  360 PDF objects out of 1000 (max. 8388607)
- 311 compressed objects within 4 object streams
+ 309 compressed objects within 4 object streams
  121 named destinations out of 1000 (max. 500000)
- 89237 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 93333 words of extra memory for PDF output out of 106986 (max. 10000000)
 
