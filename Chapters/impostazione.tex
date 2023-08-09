@@ -109,12 +109,26 @@ Questa serie di comandi bash daranno come risultato:
 	\item compilazione del Prover IDE (PIDE) jEdit di Isabelle
 \end{itemize} 
 
-\section{Esecuzione di SeL4}
-Terminata la prima fase di installazione dei prerequisiti e di configurazione ho potuto effettivamente scaricare ed eseguire seL4:
+\section{Avvio di SeL4}
+Terminata la prima fase di installazione dei prerequisiti e di configurazione mi sono procurato ciò che servirà poi per eseguire i test delle varie funzionalità di seL4:
 \begin{lstlisting}[language=bash]
 mkdir seL4test
 cd seL4test
 repo init -u https://github.com/seL4/sel4test-manifest.git
 repo sync
 \end{lstlisting}
-Con questi comandi si va a creare una directory \texttt{seL4test} 
+Con questi comandi si va a creare una directory \texttt{seL4test} al cui interno, attraverso il comando \texttt{repo}, che conterrà tutte le direttive e le librerie necessarie per eseguire i vari test (quindi anche il kernel stesso).\\
+Dopodichè è stato necessario creare una cartella \texttt{build-x86} di configurazine per QEMU in modo da indicargli il target su cui eseguire le simulazioni:
+\begin{lstlisting}[language=bash]
+mkdir build-x86
+cd build-x86
+../init-build.sh -DPLATFORM=x86_64 -DSIMULATION=TRUE
+ninja
+\end{lstlisting}
+Il comando \texttt{ninja}, che si vedrà spesso a seguire, è un assembler che permette di fare il build di sistemi anche complessi molto velocemente.\\
+A questo punto è possibile eseguire il comando \texttt{./simulate} che farà partire la simulazione e dopo una lunga serie di test (IPC, chiamate di sistema, thread...) che appariranno nel terminale concluderà, se tutto è andato a buon fine con:\\
+\texttt{All is well in the universe}
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{img/PrimaSimulazione.png}
+  \label{fig:Prima simulazione}
+\end{figure}

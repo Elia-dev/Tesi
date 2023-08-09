@@ -15,5 +15,5 @@
 \contentsline {chapter}{\numberline {3}{Impostazione di seL4}}{15}{chapter.3}%
 \contentsline {section}{\numberline {3.1}{Prerequisiti}}{15}{section.3.1}%
 \contentsline {section}{\numberline {3.2}{Configurazione}}{17}{section.3.2}%
-\contentsline {section}{\numberline {3.3}{Esecuzione di SeL4}}{18}{section.3.3}%
+\contentsline {section}{\numberline {3.3}{Avvio di SeL4}}{18}{section.3.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
