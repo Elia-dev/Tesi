@@ -126,9 +126,32 @@ cd build-x86
 ninja
 \end{lstlisting}
 Il comando \texttt{ninja}, che si vedrà spesso a seguire, è un assembler che permette di fare il build di sistemi anche complessi molto velocemente.\\
-A questo punto è possibile eseguire il comando \texttt{./simulate} che farà partire la simulazione e dopo una lunga serie di test (IPC, chiamate di sistema, thread...) che appariranno nel terminale concluderà, se tutto è andato a buon fine con:\\
-\texttt{All is well in the universe}
-\begin{figure}[h]
+A questo punto è possibile eseguire il comando \texttt{./simulate} che farà partire la simulazione e dopo una lunga serie di test (IPC, chiamate di sistema, thread...) che appariranno nel terminale, concluderà, se tutto è andato a buon fine, con:\\
+\texttt{All is well in the universe}\\
+Il che indica che seL4 può essere utilizzato in questo ambiente simulato.
+\begin{figure}[h!]
   \includegraphics[width=\linewidth]{img/PrimaSimulazione.png}
   \label{fig:Prima simulazione}
 \end{figure}
+
+\section{Boh ci penso}
+Una volta che mi sono procurato tutti i prerequisiti necessari e appurato che seL4 può girare senza problemi ho iniziato a prendere familiarità con il sistema seguendo dei tutorial forniti dalla seL4 Foundation che sono programmi semicompleti creati appositamente per sperimentare e far comprendere le funzionalità del sistema.
+Come ormai già visto più volte sopra ho recuperato l'ambiente per eseguire i tutorial attraverso l'uso di \texttt{repo}:
+\begin{lstlisting}[language=bash]
+mkdir sel4-tutorials-manifest
+cd sel4-tutorials-manifest
+repo init -u https://github.com/seL4/sel4-tutorials-manifest
+repo sync
+\end{lstlisting}
+Ogni tutorial ha una sua repository da importare nell'ambiente di lavoro nel quale, tra gli altri file e cartelle, c'è un main.c che sarà quello su cui andare a fare le modifiche per completare il tutorial.\\
+$\rightarrow$ Prima di tutti ho fatto un approfondimento sulle capability:\\
+Come avevo già detto nel capitolo precedente una capability è un token unico che dà accesso ad un'entità del sistema, un puntatore con diritti di accesso. In seL4 ci sono 3 tipi di capability:
+\begin{enumerate}
+	\item capability che controllano l'accesso ad entità del kernel come i thread control block (TCB)
+	\item capability che controllano l'accesso a risorse astratte tipo gli interrupt 
+	\item untyped capability che sono rsponsabili per la gestione della memoria
+\end{enumerate}
+Tutte le capability delle risorse del kernel sono date dal processo root all'inizializzazione del sistema, un pò come il processo init nei sistemi unix che è padre di tutti i processi. Quando parliamo di capability ci sono 3 termini fondamentali CNode, CSlot e CSpace:
+il primo di questi è l'abbreviazione di capability-node ed è un oggetto che contiene delle capability, possiamo pensarlo come un vettore (array) di capability, questi elementi dell'array sono chiamati CSlot (capability-slot) ed ogni CSlot può avere due stati: \texttt{empty} o \texttt{full}, ciò equivale che il CNode ha, rispettivamente, una capability nulla oppure una capability ad una risorsa del kernel, per convenzione il primo CSlot quindi quello situato alla posizione 0 del vettore è nullo. Invece un CSpace (capability-space) è il range completo di capability accessibili da un thread che può essere composto da uno o più CNode.
+Per fare riferimento ad una capability ed eseguire operazioni su di essa è necessario fare un \texttt{adress} (indirizzamento) della capability, per farlo ci sono due modi per farlo in seL4: tramite invocazione o con l'indirizzamento diretto.
+Indirizzamento diretto:

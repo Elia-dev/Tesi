@@ -16,4 +16,5 @@
 \contentsline {section}{\numberline {3.1}{Prerequisiti}}{15}{section.3.1}%
 \contentsline {section}{\numberline {3.2}{Configurazione}}{17}{section.3.2}%
 \contentsline {section}{\numberline {3.3}{Avvio di SeL4}}{18}{section.3.3}%
+\contentsline {section}{\numberline {3.4}{Boh ci penso}}{19}{section.3.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
