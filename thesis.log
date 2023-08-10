@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  10 AUG 2023 12:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  10 AUG 2023 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1177,7 +1177,7 @@ Capitolo 1.
 
 
 ] [6]
-<img/MonolithicVSmicrokernel.png, id=90, 1264.725pt x 301.125pt>
+<img/MonolithicVSmicrokernel.png, id=94, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
@@ -1191,7 +1191,7 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=101, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=105, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
@@ -1235,7 +1235,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 33.
  [16] [17]
-<img/PrimaSimulazione.png, id=199, 477.28313pt x 109.1578pt>
+<img/PrimaSimulazione.png, id=203, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
 Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 133.
@@ -1244,7 +1244,8 @@ Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 133.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+[18] [19 <./img/PrimaSimulazione.png>]
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1252,16 +1253,26 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-) [19 <./img/PrimaSimulazione.png>] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
+) [20]
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
-[21]) [22] (./thesis.bbl (./thesis.brf)
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
+
+ []
+
+[22] [23] [24]) [25] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
+ [26
 
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 7--7
 []\T1/pplx/m/n/12 (+20) Sel4 foun-da-tion.  Api re-fe-ren-ce, 2023.
  []
@@ -1272,42 +1283,33 @@ Underfull \hbox (badness 4872) in paragraph at lines 7--7
 i-ted
  []
 
-[23
-
-
-
-
-]) [24] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/sel4.aux) (./Chapters/impostazione.aux)
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+[27]) [28] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: B23E5805C78D8000529DC30F7E67FDAE;274.
  ) 
 Here is how much of TeX's memory you used:
- 28997 strings out of 476001
- 561478 string characters out of 5793197
- 2100068 words of memory out of 5000000
- 48443 multiletter control sequences out of 15000+600000
- 604896 words of font info for 362 fonts, out of 8000000 for 9000
+ 29218 strings out of 476001
+ 564644 string characters out of 5793197
+ 2275068 words of memory out of 5000000
+ 48549 multiletter control sequences out of 15000+600000
+ 610970 words of font info for 389 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,118p,10953b,2583s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,118p,10953b,2553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
-live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2
-023/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/f
-onts/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/publi
-c/amsfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/pa
-latino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.
-pfb>
-Output written on thesis.pdf (26 pages, 259451 bytes).
+live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2
+023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2023/texmf-di
+st/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/p
+ublic/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/l
+atxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8
+a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (30 pages, 284819 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
- 166 named destinations out of 1000 (max. 500000)
- 97429 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 555 PDF objects out of 1000 (max. 8388607)
+ 494 compressed objects within 5 object streams
+ 246 named destinations out of 1000 (max. 500000)
+ 105637 words of extra memory for PDF output out of 106986 (max. 10000000)
 
