@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{sel4API}
+Sel4 foundation.
+\newblock Api reference, 2023.
+\newblock https://docs.sel4.systems/projects/sel4/api-doc.html.
+
 \bibitem{l4v}
 SeL4 Foundation.
 \newblock l4v, 2023.
@@ -50,6 +55,10 @@ Wikipedia{,} l'enciclopedia libera.
 Wikipedia{,} l'enciclopedia libera.
 \newblock Qemu, 2023.
 \newblock Ultima modifica 30 giugno 2023.
+
+\bibitem{capability}
+Elia Matteini.
+\newblock Tutorial capability codice completo.
 
 \bibitem{skybridge}
 Zeyu Mi, Dingji Li, Zihan Yang, XinranWang, , and Haibo Chenh.
