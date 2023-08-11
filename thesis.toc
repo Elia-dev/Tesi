@@ -19,4 +19,5 @@
 \contentsline {section}{\numberline {3.4}{Programmazione con le API livello kernel di seL4}}{19}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}{Capability}}{19}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}{Gestione delle memoria}}{22}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}{Virtual memory management}}{25}{subsection.3.4.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

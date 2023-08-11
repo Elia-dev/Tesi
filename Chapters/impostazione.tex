@@ -292,7 +292,7 @@ Questo errore è molto simile al precedente si sta cercando di identificare un e
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(child_untyped, seL4_EndpointObject, 0, seL4_CapInitThreadCNode, 0, 0, child_ep, 1);
 \end{lstlisting}
-Alla fine il programma tenta di allocare tutto il \texttt{child\_untyped} come endpoint ma fallisce perchè tutto lo spazio è stato consumato dalla allocazioni fatte precedentemente, quindi la soluzione è fare una \texttt{seL4\_CNode\_Revoke} (vista sopra) su di esso in modo che tutto le spazio venga liberato e così facendo il programma termina con successo.
+Alla fine il programma tenta di allocare tutto il \texttt{child\_untyped} come endpoint ma fallisce perchè tutto lo spazio è stato consumato dalla allocazioni fatte precedentemente, quindi la soluzione è fare una \texttt{seL4\_CNode\_Revoke} (vista sopra) su di esso in modo che tutto le spazio venga liberato e così facendo il programma termina con successo. \footnote{codice completo \cite{untyped}}
 \begin{lstlisting}[language=C++]
 // TODO revoke the child untyped
 error = seL4_CNode_Revoke(seL4_CapInitThreadCNode, child_untyped, seL4_WordBits);
@@ -305,3 +305,62 @@ ZF_LOGF_IF(error != seL4_NoError, "Failed to create endpoints.");
 
 printf("Success\n");
 \end{lstlisting}
+
+\subsection{Virtual memory management}
+Incipit, cos'è la memoria virtuale: "la memoria virtuale è un'architettura di sistema capace di simulare uno spazio di memoria centrale (memoria primaria) maggiore di quello fisicamente presente o disponibile, dando l'illusione all'utente di un enorme quantitativo di memoria". \cite{MemoriaVirtuale} Questa tecnica porta con sè diversi vantaggi, uno tra questi la sicurezza dovuta all'isolamento della memoria, la possibilità di condivisione di alcune pagine di memoria tra più processi, tipo quelle contenenti le librerie che ovviamente non cambiano e quindi possono essere usate in contemporanea da più processi e infine l'ultimo ma allo stesso tempo il principale vantaggio avere a disposizione molta più memoria centrale di quella che in realtà disponibile. Giustamente viene da chiedersi com'è possibile tutto ciò e il meccanismo alla base è quello di utilizzare una memoria ausiliaria, solitamente la memoria di massa, per allocare una certa parte di memoria che non è stata utilizzata recentemente, nel momento in cui ne viene richiesto nuovamente la porzione di dati salvati nella memoria ausiliaria (oppure si libera spazio nella memoria centrale) questi vengono nuovamente spostati in memoria centrale, processo che prende il nome di \textit{swapping}. In presenza di memoria virtuale quindi vengono mappati gli indirizzi di memoria in indirizzi fisici e logici, i programmi lavoreranno solo con indirizzi logici (quindi viene anche facilitata la programmazione) e poi a livello di CPU avverrà un processo di traduzione negli indirizzi fisici.\\
+SeL4 non fornisce strumenti per la gestione della memoria virtuale al di là delle primitive per gestione dell'hardware, quindi il servizio di mappatura della memoria e lo swapping deve essere gestito a livello utente che ha tutta la libertà di gestirlo in base alle esigenze del sistema. SeL4 mette dunque a disposizione degli oggetti appositi chiamati \textit{VSpace} (virtual address space), simili ai CSpace, e sono composti da oggetti forniti dal kernel che variano in base all'architettura hardware (x86\_64, RISC-V, ARM). Per mappare le pagine sono necessari "intermediate hardware virtual memory objects", praticamente per mappare una pagina è necessario creare una struttura intermedia che varia in base all'architettura: ad esempio nei sistemi x86\_64 per mappare una pagina sono necessari questi 3 oggetti \texttt{seL4\_PDPT, seL4\_PageDirectory, seL4\_PageTable}. Le API di seL4 forniscono varie funzioni per la mappatura delle memoria in base all'architettura in cui sta girando seL4, tutte le funzione di mapping prendono 3 argomenti:
+\begin{itemize}
+	\item il VSpace in cui mappare l'oggetto
+	\item l'indirizzo virtuale su cui mappare l'oggetto
+	\item attributi della memoria virtuale che dipendono dall'architettura 
+\end{itemize}
+Esempio di mappatura di un oggetto \texttt{seL4\_PDPT} ad un certo indirizzo \texttt{TEST\_VADDR}:
+\begin{lstlisting}[language=C++]
+seL4_X86_PDPT_Map(pdpt, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
+\end{lstlisting}
+Una volta che le strutture di paginazione intermedie sono state mappate in un certo range di indirizzi virtuali i frame fisici possono essere mappati in quel range attraverso l'invocazione del frame capability.\\
+Esempio di mappatura di un frame:
+\begin{lstlisting}[language=C++]
+seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_CanRead, seL4_X86_Default_VMAttributes);
+\end{lstlisting}
+Come si vede questo metodo prende un argomento in più perchè per mappare i frame vengono richiesti anche i diritti che determineranno il tipo di mappatura(nell'esempio sopra diritti di sola lettura).
+Il tutorial di questa sezione fornisce un programma che all'avvio termina lanciando l'errore "Missing intermediate paging structure at level 30" 
+\begin{lstlisting}[language=C++]
+int main(int argc, char *argv[]) {
+    /* parse the location of the seL4_BootInfo data structure from
+    the environment variables set up by the default crt0.S */
+    seL4_BootInfo *info = platsupport_get_bootinfo();
+    seL4_Error error;
+    seL4_CPtr frame = alloc_object(info, seL4_X86_4K, 0);
+    seL4_CPtr pdpt = alloc_object(info, seL4_X86_PDPTObject, 0);
+    seL4_CPtr pd = alloc_object(info, seL4_X86_PageDirectoryObject, 0);
+    seL4_CPtr pt = alloc_object(info, seL4_X86_PageTableObject, 0);
+
+
+    /* map a PDPT at TEST_VADDR */
+    error = seL4_X86_PDPT_Map(pdpt, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
+
+    // TODO map a page directory object
+
+    // TODO map a page table object
+
+    /* map a read-only page at TEST_VADDR */
+    error = seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_CanRead, seL4_X86_Default_VMAttributes);
+    if (error == seL4_FailedLookup) {
+        printf("Missing intermediate paging structure at level %lu\n", seL4_MappingFailedLookupLevel());
+    }
+    ZF_LOGF_IF(error != seL4_NoError, "Failed to map page");
+\end{lstlisting}
+Errore dovuto al fatto che per mappare una pagina tutte le strutture di paginazione intermedie devono essere mappate; il valore \texttt{30} equivale alla costante \texttt{SEL4\_MAPPING\_LOOKUP\_NO\_PD} il che ci indica che è necessario mappare un oggetto page directory che può essere fatto con l'apposito metodo \texttt{seL4\_X86\_PageDirectory\_Map}:
+\begin{lstlisting}[language=C++]
+seL4_X86_PageDirectory_Map(pd, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
+\end{lstlisting}
+Ricompilando ed eseguendo il codice appare un errore simile al precedente "Missing intermediate paging structure at level 21" dove il valore \texttt{21} questa volta indica la costante \texttt{SEL4\_MAPPING\_LOOKUP\_NO\_PT} che suggerisce di mappare un oggetto page table:
+\begin{lstlisting}[language=C++]
+seL4_X86_PageTable_Map(pt, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
+\end{lstlisting}
+Adesso il codice procede mappando la pagina però successivamente, come si può leggere nel codice sotto, avviene un tentativo di scrittura sulla pagina questo genera un errore perchè la pagina era stata mappata in sola lettura \texttt{seL4\_CanRead}, quindi l'errore può essere aggiustato facendo una rimappatura della pagina questa volta in lettura e scrittura:
+\begin{lstlisting}[language=C++]
+seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_ReadWrite, seL4_X86_Default_VMAttributes);
+\end{lstlisting}
+Ovviamente le pagine possono anche essere "unmappate"

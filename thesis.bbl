@@ -3,12 +3,13 @@
 \bibitem{sel4API}
 Sel4 foundation.
 \newblock Api reference, 2023.
-\newblock https://docs.sel4.systems/projects/sel4/api-doc.html.
+\newblock URL: \url{https://docs.sel4.systems/projects/sel4/api-doc.html}.
 
 \bibitem{l4v}
 SeL4 Foundation.
 \newblock l4v, 2023.
 \newblock Ultima modifica 19 luglio 2023.
+\newblock URL: \url{https://github.com/seL4/l4v}.
 
 \bibitem{CertiKOS}
 Ronghui Gu, Zhong Shao, Hao Chen, Xiongnan~(Newman) Wu, Jieung Kim, Vilhelm
@@ -25,46 +26,69 @@ Gernot Heiser.
 \bibitem{HardRealTime}
 JavaTpoint.
 \newblock Hard and soft real-time operating system.
+\newblock URL:
+  \url{https://www.javatpoint.com/hard-and-soft-real-time-operating-system}.
 
 \bibitem{hypervisorWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Hypervisor, 2023.
 \newblock Ultima modifica 25 luglio 2023.
+\newblock URL: \url{https://en.wikipedia.org/wiki/Hypervisor}.
 
 \bibitem{isabelle}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Isabelle (proof assistant), 2023.
 \newblock Ultima modifica 1 marzo 2023.
+\newblock URL: \url{https://en.wikipedia.org/wiki/Isabelle_(proof_assistant)}.
 
 \bibitem{kernelWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Kernel, 2023.
 \newblock Ultima modifica 7 giu 2023.
+\newblock URL: \url{https://it.wikipedia.org/wiki/Kernel}.
 
 \bibitem{SistemaOperativoWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Operating system, 2023.
 \newblock Ultima modifica 16 luglio 2023.
+\newblock URL: \url{https://en.wikipedia.org/wiki/Operating_system}.
 
 \bibitem{PoLAWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Principle of least privilege, 2023.
 \newblock Ultima modifica 2 agosto 2023.
+\newblock URL:
+  \url{https://en.wikipedia.org/wiki/Principle_of_least_privilege}.
 
 \bibitem{qemu}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Qemu, 2023.
 \newblock Ultima modifica 30 giugno 2023.
+\newblock URL: \url{https://en.wikipedia.org/wiki/QEMU}.
 
 \bibitem{capability}
 Elia Matteini.
-\newblock Tutorial capability codice completo.
+\newblock Tutorial capability codice completo, 2023.
+\newblock URL:
+  \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/capabilities/src/main.c}.
+
+\bibitem{untyped}
+Elia Matteini.
+\newblock Tutorial untyped capability codice completo, 2023.
+\newblock URL:
+  \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/untyped/src/main.c}.
 
 \bibitem{skybridge}
 Zeyu Mi, Dingji Li, Zihan Yang, XinranWang, , and Haibo Chenh.
 \newblock Skybridge: Fast and secure inter-process communication for
   microkernels, 2019.
 \newblock EuroSys Conference.
+
+\bibitem{ninja}
+Ninja-build.
+\newblock The ninja build system, 2022.
+\newblock Ultima modifica 30 agosto 2022.
+\newblock URL: \url{https://ninja-build.org/manual.html}.
 
 \bibitem{Slide}
 Rosario Pugliese.

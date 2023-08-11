@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  10 AUG 2023 19:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  11 AUG 2023 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -950,7 +950,7 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
 )
 LaTeX Font Info:    Trying to load font information for T1+pplx on input line 9
-2.
+3.
 
 (c:/texlive/2023/texmf-dist/tex/latex/psnfss/t1pplx.fd
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
@@ -964,36 +964,36 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 (./Chapters/sel4.aux) (./Chapters/impostazione.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Info: Redefining \it@ocap on input line 92.
-LaTeX Info: Redefining \it@ccap on input line 92.
-LaTeX Info: Redefining \dots on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Info: Redefining \it@ocap on input line 93.
+LaTeX Info: Redefining \it@ccap on input line 93.
+LaTeX Info: Redefining \dots on input line 93.
 \c@lstlisting=\count343
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package translations Info: no dictionary file `translations-basic-dictionary-it
-alian.trsl' found. on input line 92.
-Package backref Info: ** backref set up for natbib ** on input line 92.
-Package hyperref Info: Link coloring ON on input line 92.
+alian.trsl' found. on input line 93.
+Package backref Info: ** backref set up for natbib ** on input line 93.
+Package hyperref Info: Link coloring ON on input line 93.
  (./thesis.out)
 (./thesis.out)
 \@outlinefile=\write3
@@ -1006,7 +1006,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 92.
+(scrbook)           before \begin{document} on input line 93.
  (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
@@ -1036,19 +1036,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 92.
-Package microtype Info: Applying patch `item' on input line 92.
-Package microtype Info: Applying patch `toc' on input line 92.
-Package microtype Info: Applying patch `eqnum' on input line 92.
-Package microtype Info: Applying patch `footnote' on input line 92.
-Package microtype Info: Applying patch `verbatim' on input line 92.
+LaTeX Info: Redefining \microtypecontext on input line 93.
+Package microtype Info: Applying patch `item' on input line 93.
+Package microtype Info: Applying patch `toc' on input line 93.
+Package microtype Info: Applying patch `eqnum' on input line 93.
+Package microtype Info: Applying patch `footnote' on input line 93.
+Package microtype Info: Applying patch `verbatim' on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 92.
+LaTeX Info: Redefining \showhyphens on input line 93.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1146,7 +1146,7 @@ LaTeX Font Info:    Trying to load font information for TS1+pplx on input line
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )) [2]
 Package tocbasic Info: character protrusion at toc deactivated on input line 10
-8.
+9.
  (./thesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
@@ -1177,7 +1177,7 @@ Capitolo 1.
 
 
 ] [6]
-<img/MonolithicVSmicrokernel.png, id=94, 1264.725pt x 301.125pt>
+<img/MonolithicVSmicrokernel.png, id=96, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 36
@@ -1191,7 +1191,7 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/seL4.tex
 Capitolo 2.
-<img/seL4Hypervisor.png, id=105, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=107, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
@@ -1235,7 +1235,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 33.
  [16] [17]
-<img/PrimaSimulazione.png, id=203, 477.28313pt x 109.1578pt>
+<img/PrimaSimulazione.png, id=205, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
 Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 133.
@@ -1263,39 +1263,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
 
-[22] [23] [24]) [25] (./thesis.bbl (./thesis.brf)
+[22] [23] [24]
+
+Package natbib Warning: Citation `MemoriaVirtuale' on page 25 undefined on inpu
+t line 310.
+
+[25] [26] [27]) [28] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
- [26
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+[]\T1/pplx/m/n/12 (+20) JavaTpoint.  Hard and soft real-time ope-ra-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+\T1/pplx/m/n/12 (+20) ting sy-stem.  URL: [][]$\T1/fvm/m/n/12 https : / / www .
+ javatpoint . com /
+ []
+
+
+Underfull \hbox (badness 4120) in paragraph at lines 74--74
+[]\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial ca-pa-bi-li-ty co-di-ce co
+m-ple-to, 2023.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+\T1/pplx/m/n/12 (+20) URL: [][]$\T1/fvm/m/n/12 https : / / github . com / Elia-
+[]dev / Tesi / blob / main /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+\T1/fvm/m/n/12 sel4-[]tutorials-[]manifest / capabilities / src / main . c$[][]
+\T1/pplx/m/n/12 (+20) .  (Ci-ted
+ []
+
+[29
 
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 7--7
-[]\T1/pplx/m/n/12 (+20) Sel4 foun-da-tion.  Api re-fe-ren-ce, 2023.
+Underfull \hbox (badness 6063) in paragraph at lines 80--80
+[]\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial un-ty-ped ca-pa-bi-li-ty c
+o-di-ce com-
  []
 
 
-Underfull \hbox (badness 4872) in paragraph at lines 7--7
-\T1/pplx/m/n/12 (+20) https://docs.sel4.systems/projects/sel4/api-doc.html.  (C
-i-ted
+Underfull \hbox (badness 2005) in paragraph at lines 80--80
+\T1/pplx/m/n/12 (+20) ple-to, 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / githu
+b . com / Elia-[]dev / Tesi / blob /
  []
 
-[27]) [28] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+)
+
+Package natbib Warning: There were undefined citations.
+
+[30] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/sel4.aux) (./Chapters/impostazione.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: B23E5805C78D8000529DC30F7E67FDAE;274.
+(rerunfilecheck)             Checksum: B90B4713925A7FD856F9245CADB7B7F7;320.
  ) 
 Here is how much of TeX's memory you used:
- 29218 strings out of 476001
- 564644 string characters out of 5793197
+ 29344 strings out of 476001
+ 566762 string characters out of 5793197
  2275068 words of memory out of 5000000
- 48549 multiletter control sequences out of 15000+600000
- 610970 words of font info for 389 fonts, out of 8000000 for 9000
+ 48625 multiletter control sequences out of 15000+600000
+ 611924 words of font info for 395 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,118p,10953b,2553s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
@@ -1304,12 +1343,13 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2
 xmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2023/texmf-di
 st/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/p
 ublic/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/l
-atxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8
-a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (30 pages, 284819 bytes).
+atxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8
+a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texli
+ve/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on thesis.pdf (32 pages, 308036 bytes).
 PDF statistics:
- 555 PDF objects out of 1000 (max. 8388607)
- 494 compressed objects within 5 object streams
- 246 named destinations out of 1000 (max. 500000)
- 105637 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 641 PDF objects out of 1000 (max. 8388607)
+ 575 compressed objects within 6 object streams
+ 286 named destinations out of 1000 (max. 500000)
+ 109741 words of extra memory for PDF output out of 128383 (max. 10000000)
 
