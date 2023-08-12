@@ -185,7 +185,7 @@ seL4_CPtr last_slot = info->empty.end - 1;
 error = seL4_TCB_SetPriority(last_slot, last_slot, 10);
 ZF_LOGF_IF(error, "Failed to set priority");
 \end{lstlisting}
-Dunque per risolvere il problema è necessario fare un'altra copia della capability del TCB dentro l'ultimo slot del CNode: per fare ciò utilizziamo \texttt{seL4\_CNode\_Copy} che prende come parametri (destination root, slot, depth, source root, slot, depth, rights) dove depth indica quanto bisogna attraversare il CNode per arrivare al CSlot e rights sono i diritti ereditati dalla nuova capability:\\
+Dunque per risolvere il problema è necessario fare un'altra copia della capability del TCB dentro l'ultimo slot del CNode: per fare ciò utilizziamo \texttt{seL4\_CNode\_Copy} che prende come parametri (destination root, slot, depth, source root, slot, depth, rights) dove depth indica quanto bisogna attraversare il CNode per arrivare al CSlot e rights sono i diritti ereditati dalla nuova capability:
 \begin{lstlisting}[language=C++]
 seL4_CNode_Copy(seL4_CapInitThreadCNode, last_slot, seL4_WordBits, seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_AllRights);
 \end{lstlisting}
@@ -214,7 +214,7 @@ seL4_TCB_Suspend(seL4_CapInitThreadTCB);
 \subsection{Gestione delle memoria}
 Nella sezione subito prima di questa quando ho elencato i tipi di capability presenti in seL4 come terza ho elencato le \texttt{untyped capability}, queste sono il modo con il quale è possibile gestire la memoria fisica nel microkernel seL4. Ad accezione di una piccola parte di memoria del kernel tutta la restante è gestita a livello utente, le capability a tutte la memoria fisica disponibile sono passate al processo root come capability all'\texttt{untyped memory}, non altro è che un blocco contiguo di memoria fisica con una dimensione ben specifica, di conseguenza avremo le \texttt{untyped capability} che sono capability all'\texttt{untyped memory}. Inoltre le untyped capability possono essere riscritte in oggetti del kernel insieme alla capability oppure in ulteriori untyped capability più piccole.\\
 Le untyped capability hanno anche un flag booleano \texttt{device} che inidca se la memoria è scrivibile dal kernel oppure no: può non essere supportata dalla RAM ma da altri dispositivi o essere in un area non accessibile dal kernel.\\
-Invocazione: esiste un unico modo per invocare una untyped capability in seL4 cioè attraverso l'utilizzo dell'API \texttt{seL4\_Untyped\_Retype} che serve appunto per creare una nuova capability da una untyped capability, nello specifico, questo retype darà accesso a un sottoinsieme del range di memoria della capability di origine o come una untyped capability più piccola o puntando ad un nuovo oggetto con un tipo specifico.\\
+Invocazione: esiste un unico modo per invocare una untyped capability in seL4 cioè attraverso l'utilizzo dell'API \texttt{seL4\_Untyped\_Retype} che serve appunto per creare una nuova capability da una untyped capability, nello specifico, questo retype darà accesso a un sottoinsieme del range di memoria della capability di origine o come una untyped capability più piccola o puntando ad un nuovo oggetto con un tipo specifico.
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(parent_untyped, // the untyped capability to retype
                     seL4_UntypedObject, // type
@@ -359,8 +359,15 @@ Ricompilando ed eseguendo il codice appare un errore simile al precedente "Missi
 \begin{lstlisting}[language=C++]
 seL4_X86_PageTable_Map(pt, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
 \end{lstlisting}
-Adesso il codice procede mappando la pagina però successivamente, come si può leggere nel codice sotto, avviene un tentativo di scrittura sulla pagina questo genera un errore perchè la pagina era stata mappata in sola lettura \texttt{seL4\_CanRead}, quindi l'errore può essere aggiustato facendo una rimappatura della pagina questa volta in lettura e scrittura:
+Adesso il codice procede mappando la pagina però successivamente, come si può leggere nel codice sotto, avviene un tentativo di scrittura sulla pagina questo genera un errore perchè la pagina era stata mappata in sola lettura \texttt{seL4\_CanRead}, quindi l'errore può essere aggiustato facendo una rimappatura della pagina questa volta in lettura e scrittura:\footnote{codice completo \cite{mapping}}
 \begin{lstlisting}[language=C++]
 seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_ReadWrite, seL4_X86_Default_VMAttributes);
 \end{lstlisting}
-Ovviamente le pagine possono anche essere "unmappate"
+Ovviamente le pagine possono anche essere "unmappate" utilizzando \texttt{unmap} sulla pagina o su qualsiasi struttura intermedia di paginazione oppure eliminando la capability finale di qualsiasi struttura di paginazione.
+
+\subsection{Thread}
+SeL4 per rappresentare l'esecuzione di un processo e gestire i tempi di esecuzione fornisce i thread, essi sono realizzati attraverso \textit{thread control block object} (TCBs) e ce ne sono uno per ogni thread del kernel. Un TCBs contiene:
+\begin{itemize}
+	\item \textcolor{red}{VEDIAMO SE METTERLO OPPURE NO}
+\end{itemize}
+Come sappiamo in un SO è lo scheduler a decidere quale processo e per quanto tempo può utilizzare la CPU, in seL4, come avevamo già visto nel capitolo precedente, la politica di scheduling è un integrazione di round-robin e scheduling sulla priorità: lo scheduler sceglie i thread con maggiore priorità che sono pronti. La priorità è determinata da un range di 

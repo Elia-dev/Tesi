@@ -47,6 +47,12 @@ Wikipedia{,} l'enciclopedia libera.
 \newblock Ultima modifica 7 giu 2023.
 \newblock URL: \url{https://it.wikipedia.org/wiki/Kernel}.
 
+\bibitem{MemoriaVirtuale}
+Wikipedia{,} l'enciclopedia libera.
+\newblock Memoria virtuale, 2023.
+\newblock Ultima modifica 16 giugno 2023.
+\newblock URL: \url{https://it.wikipedia.org/wiki/Memoria_virtuale}.
+
 \bibitem{SistemaOperativoWikipedia}
 Wikipedia{,} l'enciclopedia libera.
 \newblock Operating system, 2023.
@@ -77,6 +83,12 @@ Elia Matteini.
 \newblock Tutorial untyped capability codice completo, 2023.
 \newblock URL:
   \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/untyped/src/main.c}.
+
+\bibitem{mapping}
+Elia Matteini.
+\newblock Tutorial virtual memory management codice completo, 2023.
+\newblock URL:
+  \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/mapping/src/main.c}.
 
 \bibitem{skybridge}
 Zeyu Mi, Dingji Li, Zihan Yang, XinranWang, , and Haibo Chenh.
