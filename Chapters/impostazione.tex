@@ -371,4 +371,47 @@ SeL4 per rappresentare l'esecuzione di un processo e gestire i tempi di esecuzio
 	\item \textcolor{red}{VEDIAMO SE METTERLO OPPURE NO}
 \end{itemize}
 Come sappiamo in un SO è lo scheduler a decidere quale processo e per quanto tempo può utilizzare la CPU, in seL4, come avevamo già visto nel capitolo precedente, la politica di scheduling è un integrazione di round-robin e scheduling sulla priorità: lo scheduler sceglie i thread con maggiore priorità che sono pronti e se ci sono processi con la stessa priorità questi saranno scelti in ordine FIFO seconda la politica round-robin. La priorità è determinata da un range che va da 0 (\texttt{seL4\_MinPrio}) a 255 (\texttt{seL4\_MaxPrio}), oltre alla priorità un TCBs contiene anche un \textit{maximum control priority} (MCP) che serve per controllare che un processo non modifichi la priorità di un altro processo (o di se stesso) impostandola più alta della sua, quindi un processo che vuole modificare una priorità deve fornire la sua capability (di thread) in modo da determinare se è autorizzato a impostare quella priorità. \textcolor{red}{domain scheduling}
-L'esercizio per questa sezione, se fatto partire senza nessuna modifica inizialmente mostrerà a video una tabella di tutti i TCBs, questo ottenuto tramite una chiamata di sistema di debug 
+L'esercizio per questa sezione, se fatto partire senza nessuna modifica inizialmente mostrerà a video una tabella di tutti i TCBs, questo ottenuto tramite una chiamata di sistema di debug \texttt{seL4\_DebugDumpScheduler()} e successivamente lancia un errore \texttt{Failed to retype thread: 2} come in Figura~\ref{fig:TutorialThreads}
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{img/Threads.png}
+  \caption{Avvio esercizio Thread}
+  \label{fig:TutorialThreads}
+\end{figure}
+Questo errore avviene perchè il codice ha un errore nell'invocazione del metodo: \texttt{seL4\_Untyped\_Retype()}
+\begin{lstlisting}[language=C++]
+// the root CNode of the current thread
+extern seL4_CPtr root_cnode;
+// VSpace of the current thread
+extern seL4_CPtr root_vspace;
+// TCB of the current thread
+extern seL4_CPtr root_tcb;
+// Untyped object large enough to create a new TCB object
+
+extern seL4_CPtr tcb_untyped;
+extern seL4_CPtr buf2_frame_cap;
+extern const char buf2_frame[4096];
+
+// Empty slot for the new TCB object
+extern seL4_CPtr tcb_cap_slot;
+// Symbol for the IPC buffer mapping in the VSpace, and capability to the mapping
+extern seL4_CPtr tcb_ipc_frame;
+extern const char thread_ipc_buff_sym[4096];
+// Symbol for the top of a 16 * 4KiB stack mapping, and capability to the mapping
+extern const char tcb_stack_base[65536];
+static const uintptr_t tcb_stack_top = (const uintptr_t)&tcb_stack_base + sizeof(tcb_stack_base);
+
+int main(int c, char* arbv[]) {
+
+    printf("Hello, World!\n");
+
+    seL4_DebugDumpScheduler();
+
+    // TODO fix the parameters in this invocation DONE
+    seL4_Error result = seL4_Untyped_Retype(seL4_CapNull, seL4_TCBObject, seL4_TCBBits, seL4_CapNull, 0, 0, seL4_CapNull, 1);
+    ZF_LOGF_IF(result, "Failed to retype thread: %d", result);
+    seL4_DebugDumpScheduler();
+\end{lstlisting}
+Come si può vedere al metodo viene passata una capability nulla, dunque un modo corretto per sistemare questo errore è utilizzare gli oggetti creati come variabili globali del codice
+\begin{lstlisting}[language=C++]
+result = seL4_TCB_Configure(tcb_cap_slot, seL4_CapNull, root_cnode, 0, root_vspace, 0, (seL4_Word) thread_ipc_buff_sym, tcb_ipc_frame);
+\end{lstlisting}
