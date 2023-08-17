@@ -21,4 +21,5 @@
 \contentsline {subsection}{\numberline {3.4.2}{Gestione delle memoria}}{22}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}{Virtual memory management}}{25}{subsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.4.4}{Thread}}{28}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}{IPC}}{32}{subsection.3.4.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

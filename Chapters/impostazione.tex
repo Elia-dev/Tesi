@@ -484,3 +484,23 @@ ZF_LOGF_IFERR(error, "Failed to write the new thread's register set.\n"
 \end{lstlisting}
 
 \subsection{IPC}
+InterProcess Communication è il meccanismo che utilizza il microkernel per sincronizzare lo scambio di  piccole quantità di dati e capability tra i processi. In seL4 l'IPC è facilitato dal fatto che gli ogetti del kernel sono di piccole dimensioni noti come \textit{endpoint} che fungono da porte per la comunicazione, per mandare e ricevere messaggi IPC lo si fa attraverso invocazioni sugli endpoint.\\
+I thread possono mandare messaggi sugli endpoint  con la system call \texttt{seL4\_Send} che è bloccante, mentre possono usare \texttt{seL4\_Recv} per ricevere messaggi; \texttt{seL4\_Call} invece è una chiamata di sistema che combina le due precedenti con una differenza: nella fase di ricezione il thread che usa questa funzione è bloccato su una "one-time capability" chiamata \textit{reply capability} e non l'endpoint stesso. La replay capability è contenuta nel TCB del ricevente, la system call \texttt{seL4\_Reply} invoca questa capability la quale manderà un IPC che farà risvegliare il processo bloccato. \texttt{seL4\_ReplyRecv} fa lo stesso ma invia la risposta e blocca l'endpoint fornito in una chiamata di sistema combinata. Ogni thread ha un buffer che contiene il payload del messaggio IPC composto da dati e capability. Il mittente del messaggio specifica la lunghezza e il kernel copia questa quantità tra il mittente e il destinatario dell'IPC buffer. Il buffer IPC contiene  un'area limitata di \textit{message register} (MR) che sono utilizzati per trasmettere dati sull'IPC, ogni registro ha dimensione di una parola della macchina e la lunghezza massima di un messaggio è contenuta nella costante \texttt{seL4\_MsgMaxLength}, poer caricare un messaggio dentro il buffer è possibile utilizzare \texttt{seL4\_SetMR} mentre per estrarlo \texttt{seL4\_GetMR}, la quantità di parole che possono entrare in un registro è disponibile nelle costante \texttt{seL4\_FastMessageRegisters}.\\
+Insieme al messaggio il kernel consegna inoltre il \textit{badge} dell'endpoint capability sul quale il mittente ha fatto l'invocazione per mandare il messaggio; gli endpoint possono eddere "bedgati" usando \texttt{seL4\_CNode\_Mint} oppure \texttt{seL4\_CNode\_Mutate}, una volta che è stato messo il badge sull'endpoint questo viene trasferito a tutti i destinatari che ricevono un messaggio su quell'endpoint.\\
+SeL4 usa la struttura dati \texttt{seL4\_MessageInfo\_t} per codificare la descrizione di un messaggio IPC in una singola parola (word) ed è composta dai seguenti campi:
+\begin{itemize}
+	\item[-] \texttt{length} la quantità di dati nel messaggio
+	\item[-] \texttt{extraCaps} numero di capability nel messaggio 
+	\item[-] \texttt{capsUnwrapped} marca le capability unwrapped dal kernel
+	\item[-] \texttt{label} dati che verranno trasferiti che non sono statoi modificati dal kernel
+\end{itemize}
+Come già accennato, insieme ai dati, attraverso l'IPC, è possibile scambiare anche capability, in gergo questo viene chiamato \textit{cap transfer}, il numnero di capability trasferita è codificato nella struttura dati \texttt{seL4\_MessageInfo\_t} come \texttt{extraCaps}.
+Inoltre seL4 può fare la cosiddetta \textit{unwrap} (scartare) delle capability sull'IPC, se l'n-esima capability nel messaggio si riferisce all'endpoint attraverso il quale il messaggio viene inviato, la capability viene \textit{unwrapped}: il suo badge viene inserito nell'n-esima posizione dell'IPC buffer del destinatario (\texttt{caps\_or\_badges}) e il kernel setta l'n-esimo bit nel campo \texttt{capsUnwrapped} del \texttt{seL4\_MessageInfo\_t}.\\
+Fastpath: avere un IPC veloce è un elemento fondamentale per i sistemi basati su microkernel in quanto tutti i servizi a livello utente ed essendo isolati l'unico modo per comunicare è attraverso l'IPC, dunque è necessario avere quello che si chiama \textit{fastpath}, cioè un cammino nel kernel altamente ottimizzato che garantisce velocità dell'IPC; per potersi definire tale deve soddisfare cinque condizioni:
+\begin{itemize}
+	\item devono essere usate le system call \texttt{seL4\_Call} o \texttt{seL4\_ReplyRecv}
+	\item i dati del messaggio devono entrare nel registro \texttt{seL4\_FastMessageRegisters}
+	\item i processi devono avere spazi di indirizzi validi
+	\item non dovrebbero essere straferite capability 
+	\item nessun altro thread nello scheduler con priorità superiore a quello sbloccato dall'IPC può essere in esecuzione
+\end{itemize}
