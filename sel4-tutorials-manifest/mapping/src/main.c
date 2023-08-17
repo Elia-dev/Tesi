@@ -21,11 +21,9 @@ int main(int argc, char *argv[]) {
     /* map a PDPT at TEST_VADDR */
     error = seL4_X86_PDPT_Map(pdpt, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
 
-    // TODO map a page directory object
     error = seL4_X86_PageDirectory_Map(pd, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
     assert(error == seL4_NoError);
 
-    // TODO map a page table object
     error = seL4_X86_PageTable_Map(pt, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
     assert(error == seL4_NoError);
 
@@ -40,8 +38,6 @@ int main(int argc, char *argv[]) {
     seL4_Word *x = (seL4_Word *) TEST_VADDR;
     printf("Read x: %lu\n", *x);
 
-
-    // TODO remap the page
     error = seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_ReadWrite, seL4_X86_Default_VMAttributes);
 
     /* write to the page we mapped */

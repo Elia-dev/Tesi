@@ -78,6 +78,12 @@ Elia Matteini.
 \newblock URL:
   \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/capabilities/src/main.c}.
 
+\bibitem{threads}
+Elia Matteini.
+\newblock Tutorial threads codice completo, 2023.
+\newblock URL:
+  \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/threads/threads.c}.
+
 \bibitem{untyped}
 Elia Matteini.
 \newblock Tutorial untyped capability codice completo, 2023.

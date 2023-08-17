@@ -22,9 +22,6 @@ int main(int argc, char *argv[]) {
     // list of general seL4 object size_bits
     seL4_Word sizes[] = {seL4_TCBBits, seL4_EndpointBits, seL4_NotificationBits};
 
-    // TODO work out what size object we need to create to be able to create all of the objects
-    // listed above. Remember that sizes are in bits, that is, the exponents of powers of two.
-    //DONE
     seL4_Word untyped_size_bits = seL4_TCBBits + 1;
     seL4_CPtr parent_untyped = 0;
     seL4_CPtr child_untyped = info->empty.start;
@@ -51,7 +48,6 @@ int main(int argc, char *argv[]) {
 
     // use the slot after child_untyped for the new TCB cap:
     seL4_CPtr child_tcb = child_untyped + 1;
-    /* TODO create a TCB in CSlot child_tcb DONE*/
     seL4_Untyped_Retype(child_untyped, seL4_TCBObject, 0, seL4_CapInitThreadCNode, 0, 0, child_tcb, 1);
 
     // try to set the TCB priority
@@ -60,7 +56,6 @@ int main(int argc, char *argv[]) {
 
     // use the slot after child_tcb for the new endpoint cap:
     seL4_CPtr child_ep = child_tcb + 1;
-    /* TODO create an endpoint in CSlot child_ep DONE*/
     seL4_Untyped_Retype(child_untyped, seL4_EndpointObject, 0, seL4_CapInitThreadCNode, 0, 0, child_ep, 1);
 
     // identify the type of child_ep
@@ -69,14 +64,12 @@ int main(int argc, char *argv[]) {
 
     // use the slot after child_ep for the new notification cap:
     seL4_CPtr child_ntfn = child_ep + 1;
-    // TODO create a notification object in CSlot child_ntfn DONE
     seL4_Untyped_Retype(child_untyped, seL4_NotificationObject, 0, seL4_CapInitThreadCNode, 0, 0, child_ntfn, 1);
 
     // try to use child_ntfn
     error = seL4_TCB_BindNotification(child_tcb, child_ntfn);
     ZF_LOGF_IF(error != seL4_NoError, "Failed to bind notification.");
 
-    // TODO revoke the child untyped
     error = seL4_CNode_Revoke(seL4_CapInitThreadCNode, child_untyped, seL4_WordBits);
     assert(error == seL4_NoError);
 

@@ -42,17 +42,13 @@ int main(int c, char* arbv[]) {
 
     seL4_DebugDumpScheduler();
 
-    // TODO fix the parameters in this invocation DONE
     seL4_Error result = seL4_Untyped_Retype(tcb_untyped, seL4_TCBObject, seL4_TCBBits, root_cnode, 0, 0, tcb_cap_slot, 1);
     ZF_LOGF_IF(result, "Failed to retype thread: %d", result);
     seL4_DebugDumpScheduler();
 
-    //TODO fix the parameters in this invocation DONE
     result = seL4_TCB_Configure(tcb_cap_slot, seL4_CapNull, root_cnode, 0, root_vspace, 0, (seL4_Word) thread_ipc_buff_sym, tcb_ipc_frame);
     ZF_LOGF_IF(result, "Failed to configure thread: %d", result);
 
-    // TODO fix the call to set priority using the authority of the current thread
-    // and change the priority to 254 DONE
     result = seL4_TCB_SetPriority(tcb_cap_slot, root_tcb, 254);
     ZF_LOGF_IF(result, "Failed to set the priority for the new TCB object.\n");
     seL4_DebugDumpScheduler();
@@ -60,22 +56,27 @@ int main(int c, char* arbv[]) {
     seL4_UserContext regs = {0};
     int error = seL4_TCB_ReadRegisters(tcb_cap_slot, 0, 0, sizeof(regs)/sizeof(seL4_Word), &regs);
     ZF_LOGF_IFERR(error, "Failed to read the new thread's register set.\n");
-    /*
-    // TODO use valid instruction pointer
+
     sel4utils_set_instruction_pointer(&regs, (seL4_Word)new_thread);
-    // TODO use valid stack pointer
     sel4utils_set_stack_pointer(&regs, tcb_stack_top);
-    // TODO fix parameters to this invocation
-    */
+    error = seL4_TCB_WriteRegisters(tcb_cap_slot, 0, 0, sizeof(regs)/sizeof(seL4_Word), &regs);
+    ZF_LOGF_IFERR(error, "Failed to write the new thread's register set.\n"
+                  "\tDid you write the correct number of registers? See arg4.\n");
+	/*
+    UNUSED seL4_UserContext regs = {0};
+    int error = seL4_TCB_ReadRegisters(tcb_cap_slot, 0, 0, sizeof(regs)/sizeof(seL4_Word), &regs);
+    ZF_LOGF_IFERR(error, "Failed to read the new thread's register set.\n"
+                  "\tDid you write the correct number of registers? See arg4.\n");
+
     sel4utils_arch_init_local_context((void*)new_thread,
                                   (void *)1, (void *)2, (void *)3,
                                   (void *)tcb_stack_top, &regs);
     error = seL4_TCB_WriteRegisters(tcb_cap_slot, 0, 0, sizeof(regs)/sizeof(seL4_Word), &regs);
     ZF_LOGF_IFERR(error, "Failed to write the new thread's register set.\n"
                   "\tDid you write the correct number of registers? See arg4.\n");
+	*/
     seL4_DebugDumpScheduler();
-
-    // TODO resume the new thread
+	
     error = seL4_TCB_Resume(tcb_cap_slot);
     ZF_LOGF_IFERR(error, "Failed to start new thread.\n");
     while(1);
