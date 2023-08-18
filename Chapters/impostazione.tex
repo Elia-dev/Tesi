@@ -504,3 +504,6 @@ Fastpath: avere un IPC veloce è un elemento fondamentale per i sistemi basati s
 	\item non dovrebbero essere straferite capability 
 	\item nessun altro thread nello scheduler con priorità superiore a quello sbloccato dall'IPC può essere in esecuzione
 \end{itemize}
+In questa sezione l'esercizio è un pò diverso, non c'è un unico file main in cui è contenuto tutto il codice ma c'è un \texttt{server.c} e due client: \texttt{client\_1.c} e \texttt{client\_2.c} i quali manderanno dei messaggi al server che farà da echo; tutti i processi hanno accesso ad un unica endpoint capability che fornisce accesso allo stesso endpoint object.\\
+Al primo avvio 
+
