@@ -27,7 +27,7 @@ int main(int c, char *argv[]) {
 
              // TODO use cap transfer to send the badged cap in the reply DONE
              seL4_SetCap(0, free_slot);
-   	     info = seL4_MessageInfo_new(0, 0, 1, 0);
+			 info = seL4_MessageInfo_new(0, 0, 1, 0);
 
              /* reply to the sender and wait for the next message */
              seL4_Reply(info);
@@ -43,12 +43,11 @@ int main(int c, char *argv[]) {
               printf("\n");
               seL4_Send(free_slot, seL4_MessageInfo_new(0, 0, 0, 0));
         } else {
-             // TODO use printf to print out the message sent by the client
-             // followed by a new line
+             // print out the message sent by the client followed by a new line
              for (int i = 0; i < seL4_MessageInfo_get_length(info); i++) {
              	printf("%c", (char) seL4_GetMR(i));
              }
-	     printf("\n");
+			 printf("\n");
 
              // TODO reply to the client and wait for the next message
              info = seL4_ReplyRecv(endpoint, info , &sender);

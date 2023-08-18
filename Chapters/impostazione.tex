@@ -494,7 +494,18 @@ SeL4 usa la struttura dati \texttt{seL4\_MessageInfo\_t} per codificare la descr
 	\item[-] \texttt{capsUnwrapped} marca le capability unwrapped dal kernel
 	\item[-] \texttt{label} dati che verranno trasferiti che non sono statoi modificati dal kernel
 \end{itemize}
-Come già accennato, insieme ai dati, attraverso l'IPC, è possibile scambiare anche capability, in gergo questo viene chiamato \textit{cap transfer}, il numnero di capability trasferita è codificato nella struttura dati \texttt{seL4\_MessageInfo\_t} come \texttt{extraCaps}.
+Come già accennato, insieme ai dati, attraverso l'IPC, è possibile scambiare anche capability, in gergo questo viene chiamato \textit{cap transfer}
+\begin{lstlisting}[language=C++]
+//Invio di una capability via IPC
+seL4_MessageInfo info = seL4_MessageInfo_new(0, 0, 1, 0);
+seL4_SetCap(0, free_slot);
+seL4_Call(endpoint, info);
+
+//Ricezione di una capability
+seL4_SetCapReceivePath(cnode, badged_endpoint, seL4_WordBits);
+seL4_Recv(endpoint, &sender);
+\end{lstlisting}
+Il numnero di capability trasferita è codificato nella struttura dati \texttt{seL4\_MessageInfo\_t} come \texttt{extraCaps}.
 Inoltre seL4 può fare la cosiddetta \textit{unwrap} (scartare) delle capability sull'IPC, se l'n-esima capability nel messaggio si riferisce all'endpoint attraverso il quale il messaggio viene inviato, la capability viene \textit{unwrapped}: il suo badge viene inserito nell'n-esima posizione dell'IPC buffer del destinatario (\texttt{caps\_or\_badges}) e il kernel setta l'n-esimo bit nel campo \texttt{capsUnwrapped} del \texttt{seL4\_MessageInfo\_t}.\\
 Fastpath: avere un IPC veloce è un elemento fondamentale per i sistemi basati su microkernel in quanto tutti i servizi a livello utente ed essendo isolati l'unico modo per comunicare è attraverso l'IPC, dunque è necessario avere quello che si chiama \textit{fastpath}, cioè un cammino nel kernel altamente ottimizzato che garantisce velocità dell'IPC; per potersi definire tale deve soddisfare cinque condizioni:
 \begin{itemize}
@@ -505,5 +516,55 @@ Fastpath: avere un IPC veloce è un elemento fondamentale per i sistemi basati s
 	\item nessun altro thread nello scheduler con priorità superiore a quello sbloccato dall'IPC può essere in esecuzione
 \end{itemize}
 In questa sezione l'esercizio è un pò diverso, non c'è un unico file main in cui è contenuto tutto il codice ma c'è un \texttt{server.c} e due client: \texttt{client\_1.c} e \texttt{client\_2.c} i quali manderanno dei messaggi al server che farà da echo; tutti i processi hanno accesso ad un unica endpoint capability che fornisce accesso allo stesso endpoint object.\\
-Al primo avvio 
+Al primo avvio si ha questo output:
+\textcolor{red}{QUI IMMAGINE PRIMA ESECUZIONE}
+Gli errori sono dovuti al fatto che entrambi i client si mettono in attesa sull'endpoint in attesa di un endpoint con badge tramite cap tranfer che però il server non invierà in quanto il server risponde solo ai messaggi dei client.
+\begin{lstlisting}[language=C++]
+int main(int c, char *argv[]) {
 
+	seL4_Word sender;
+    seL4_MessageInfo_t info = seL4_Recv(endpoint, &sender);
+    while (1) {
+	    seL4_Error error;
+        if (sender == 0) {
+
+             /* No badge! give this sender a badged copy of the endpoint */
+             seL4_Word badge = seL4_GetMR(0);
+             seL4_Error error = seL4_CNode_Mint(cnode, free_slot, seL4_WordBits,
+                                                cnode, endpoint, seL4_WordBits,
+                                                seL4_AllRights, badge);
+             printf("Badged %lu\n", badge);
+
+			 //TODO
+
+             /* reply to the sender and wait for the next message */
+             seL4_Reply(info);
+
+             /* now delete the transferred cap */
+             error = seL4_CNode_SaveCaller(cnode, free_slot, seL4_WordBits);
+             assert(error == 0);
+\end{lstlisting}
+Dunque per risolvere questo problema è necessario impostare il cap transfer in modo che i client ricevano l'endoint badgato:
+\begin{lstlisting}[language=C++]
+seL4_SetCap(0, free_slot);
+info = seL4_MessageInfo_new(0, 0, 1, 0);
+\end{lstlisting}
+Compilando e riavviando il programma sembra vada tutto bene eccetto che il sistema si blocca
+\textcolor{red}{SCREEN DELL'OUTPUT}
+Questo succede perchè al server manca l'implementazione della sua funzione di echo dei messaggi che gli vengono inviati la quale può essere fatta scorrendo e stampando a video il contenuto dei message register 
+\begin{lstlisting}[language=C++]
+for (int i = 0; i < seL4_MessageInfo_get_length(info); i++) {
+printf("%c", (char) seL4_GetMR(i));
+}
+printf("\n");
+\end{lstlisting}
+A questo punto però vedremo stampata a video sempre la stessa parola "\textcolor{red}{PAROLA}" in loop perchè il server non manda un feedback di risposta al client e di conseguenza continua a stampare l'ultima parola ricevuta.
+\begin{lstlisting}[language=C++]
+for (int i = 0; i < seL4_MessageInfo_get_length(info); i++) {
+	printf("%c", (char) seL4_GetMR(i));
+}
+printf("\n");
+
+// reply to the client and wait for the next message
+info = seL4_ReplyRecv(endpoint, info , &sender);
+\end{lstlisting}
