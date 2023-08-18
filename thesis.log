@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  18 AUG 2023 11:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  18 AUG 2023 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -961,7 +961,14 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box69
 )
 (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
+(./Chapters/sel4.aux) (./Chapters/impostazione.aux
+
+LaTeX Warning: Label `fig:TutorialThreads' multiply defined.
+
+
+LaTeX Warning: Label `fig:TutorialThreads' multiply defined.
+
+))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
@@ -994,8 +1001,7 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 93.
 Package backref Info: ** backref set up for natbib ** on input line 93.
 Package hyperref Info: Link coloring ON on input line 93.
- (./thesis.out)
-(./thesis.out)
+ (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -1007,7 +1013,8 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 93.
- (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+
+(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1255,41 +1262,61 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 ) [20] [21] [22]
 [23] [24] [25] [26] [27]
-<img/Threads.png, id=419, 1056.94875pt x 199.74625pt>
+<img/Threads.png, id=427, 1056.94875pt x 199.74625pt>
 File: img/Threads.png Graphic file (type png)
 <use img/Threads.png>
-Package pdftex.def Info: img/Threads.png  used on input line 363.
+Package pdftex.def Info: img/Threads.png  used on input line 373.
 (pdftex.def)             Requested size: 384.1122pt x 72.59131pt.
  [28] [29 <./img/Threads.png>] [30]
-Overfull \hbox (2.48015pt too wide) in paragraph at lines 434--435
+Overfull \hbox (2.48015pt too wide) in paragraph at lines 444--445
 \T1/pplx/m/n/12 (-20) Adesso l'er-ro-re che si pre-sen-ta sa-rà un al-tro \T1/f
 vm/m/n/12 Failed to set the priority
  []
 
 [31]
-Overfull \hbox (26.10156pt too wide) in paragraph at lines 470--472
+Overfull \hbox (26.10156pt too wide) in paragraph at lines 476--478
 \T1/pplx/m/n/12 (-20) Chiaramente il re-su-me va fat-to sul no-stro \T1/fvm/m/n
 /12 tcb_cap_slot\T1/pplx/m/n/12 (-20) e non su \T1/fvm/m/n/12 seL4_CapNull\T1/p
 plx/m/n/12 (-20) ,
  []
 
-[32]
-Overfull \hbox (3.82341pt too wide) in paragraph at lines 497--500
-\T1/pplx/m/n/12 (-20) di ca-pa-bi-li-ty tra-sfe-ri-ta è co-di-fi-ca-to nel-la s
-trut-tu-ra da-ti \T1/fvm/m/n/12 seL4_MessageInfo_t
+[32] [33]
+Overfull \hbox (64.26787pt too wide) in paragraph at lines 514--517
+\T1/pplx/m/n/12 (-20) Il num-ne-ro di ca-pa-bi-li-ty tra-sfe-ri-ta è co-di-fi-c
+a-to nel-la strut-tu-ra da-ti \T1/fvm/m/n/12 seL4_MessageInfo_t
  []
 
-[33]
-Overfull \hbox (46.19958pt too wide) in paragraph at lines 502--503
+
+Overfull \hbox (46.19958pt too wide) in paragraph at lines 519--520
 []\T1/pplx/m/n/12 (-20) i da-ti del mes-sag-gio de-vo-no en-tra-re nel re-gi-st
 ro \T1/fvm/m/n/12 seL4_FastMessageRegisters 
  []
 
-) [34] (./thesis.bbl (./thesis.brf)
+<img/PrimoAvvioIPC.png, id=563, 1101.11375pt x 144.54pt>
+File: img/PrimoAvvioIPC.png Graphic file (type png)
+<use img/PrimoAvvioIPC.png>
+Package pdftex.def Info: img/PrimoAvvioIPC.png  used on input line 527.
+(pdftex.def)             Requested size: 384.1122pt x 50.41992pt.
+[34 <./img/PrimoAvvioIPC.png>]
+<img/DopoBadgeIPC.png, id=573, 405.515pt x 142.5325pt>
+File: img/DopoBadgeIPC.png Graphic file (type png)
+<use img/DopoBadgeIPC.png>
+Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 574.
+(pdftex.def)             Requested size: 384.1122pt x 135.01361pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[35] [36 <./img/DopoBadgeIPC.png>]) [37] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
+ [38
 
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 31--31
 []\T1/pplx/m/n/12 (+20) JavaTpoint.  Hard and soft real-time ope-ra-
  []
@@ -1300,12 +1327,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--31
  javatpoint . com /
  []
 
-[35
-
-
-
-
-]
+[39]
 Underfull \hbox (badness 4120) in paragraph at lines 80--80
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial ca-pa-bi-li-ty co-di-ce co
 m-ple-to, 2023.
@@ -1324,50 +1346,94 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--80
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to cl
+ient_1,
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 86--86
+\T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
+/ Elia-[]dev / Tesi / blob / main /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to cl
+ient_2,
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 92--92
+\T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
+/ Elia-[]dev / Tesi / blob / main /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+[]\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to se
+r-ver,
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 98--98
+\T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
+/ Elia-[]dev / Tesi / blob / main /
+ []
+
+
+Underfull \hbox (badness 7522) in paragraph at lines 104--104
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial th-reads co-di-ce com-ple-
 to, 2023.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 \T1/pplx/m/n/12 (+20) URL: [][]$\T1/fvm/m/n/12 https : / / github . com / Elia-
 []dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 6063) in paragraph at lines 92--92
+Underfull \hbox (badness 6063) in paragraph at lines 110--110
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial un-ty-ped ca-pa-bi-li-ty c
 o-di-ce com-
  []
 
 
-Underfull \hbox (badness 2005) in paragraph at lines 92--92
+Underfull \hbox (badness 2005) in paragraph at lines 110--110
 \T1/pplx/m/n/12 (+20) ple-to, 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / githu
 b . com / Elia-[]dev / Tesi / blob /
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 98--98
+Underfull \hbox (badness 1062) in paragraph at lines 116--116
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial vir-tual me-mo-ry ma-na-ge
 -ment co-di-ce
  []
 
-) [36] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+[40]) [41] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/sel4.aux) (./Chapters/impostazione.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 18AF05B8F8DC1433458AA5CA65372591;472.
+
+Package rerunfilecheck Warning: File `thesis.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `thesis.brf':
+(rerunfilecheck)             Before: 951DE3B5F2ED78327E653E04B0F99335;621
+(rerunfilecheck)             After:  A39E18B60589A3AF4DD359EFE356FE3E;620.
  ) 
 Here is how much of TeX's memory you used:
- 29612 strings out of 476001
- 571073 string characters out of 5793197
- 2213068 words of memory out of 5000000
- 48801 multiletter control sequences out of 15000+600000
+ 29859 strings out of 476001
+ 574949 string characters out of 5793197
+ 2228068 words of memory out of 5000000
+ 48942 multiletter control sequences out of 15000+600000
  611390 words of font info for 395 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,118p,10953b,2583s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,121p,10953b,2587s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/texlive/2
 023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texlive/2023/te
@@ -1376,10 +1442,10 @@ st/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/p
 ublic/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/l
 atxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8
 a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (38 pages, 346859 bytes).
+Output written on thesis.pdf (43 pages, 393335 bytes).
 PDF statistics:
- 795 PDF objects out of 1000 (max. 8388607)
- 721 compressed objects within 8 object streams
- 380 named destinations out of 1000 (max. 500000)
- 105666 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 953 PDF objects out of 1000 (max. 8388607)
+ 869 compressed objects within 9 object streams
+ 484 named destinations out of 1000 (max. 500000)
+ 105676 words of extra memory for PDF output out of 106986 (max. 10000000)
 

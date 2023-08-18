@@ -168,7 +168,7 @@ int main(int argc, char *argv[]) {
 
     size_t initial_cnode_object_size = BIT(info->initThreadCNodeSizeBits);
     printf("Initial CNode is %zu slots in size\n", initial_cnode_object_size);
-    size_t initial_cnode_object_size_bytes = 0;
+    size_t initial_cnode_object_size_bytes = 0; // TODO
     printf("The CNode is %zu bytes in size\n", 	initial_cnode_object_size_bytes);
 \end{lstlisting}
 Chiaramente \texttt{initial\_cnode\_object\_size\_bytes} non può essere 0, il suo valore invece sarà dato dal numero degli slot del CNode moltiplicato per le dimensione in bit di ognuno di essi $\rightarrow$ \texttt{initial\_cnode\_object\_size * (1u << seL4\_SlotBits)}.\\
@@ -178,6 +178,7 @@ seL4_CPtr first_free_slot = info->empty.start;
 seL4_Error error = seL4_CNode_Copy(seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_CapInitThreadCNode, seL4_CapInitThreadTCB, seL4_WordBits, seL4_AllRights);
 ZF_LOGF_IF(error, "Failed to copy cap!");
 %seL4_CPtr last_slot = info->empty.end - 1;
+// TODO
 
 /* set the priority of the root task */
 error = seL4_TCB_SetPriority(last_slot, last_slot, 10);
@@ -189,7 +190,9 @@ seL4_CNode_Copy(seL4_CapInitThreadCNode, last_slot, seL4_WordBits, seL4_CapInitT
 \end{lstlisting}
 Dove \texttt{first\_free\_slot} è lo slot in cui è stata fatta una copia della capability del TCB del thread iniziale qualche riga di codice sopra.\\
 Rieseguendo il programma non viene più mostrato l'errore predente ma c'è comunque un altro errore: "first\_free\_slot is not empty" questo avviene perchè il codice cerca di spostare \texttt{first\_free\_slot} e \texttt{last\_slot} in se stessi, questo non è possibile (perchè è già presente una capability, cioè se stessa) ed è in realtà un escamotage per controllare se un CSlot è vuoto.
-\begin{lstlisting}[language=C++]           
+\begin{lstlisting}[language=C++]
+// TODO 
+         
 // check first_free_slot is empty
 error = seL4_CNode_Move(seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits);
 ZF_LOGF_IF(error != seL4_FailedLookup, "first_free_slot is not empty");
@@ -241,7 +244,8 @@ int main(int argc, char *argv[]) {
     seL4_Word objects[] = {seL4_TCBObject, seL4_EndpointObject, seL4_NotificationObject};
     // list of general seL4 object size_bits
     seL4_Word sizes[] = {seL4_TCBBits, seL4_EndpointBits, seL4_NotificationBits};
-
+    
+    // TODO
     seL4_Word untyped_size_bits = 0; //ERRORE GENERATO QUI
     seL4_CPtr parent_untyped = 0;
     seL4_CPtr child_untyped = info->empty.start;
@@ -262,6 +266,7 @@ ZF_LOGF_IF(error != seL4_NoError, "Failed to retype");
 
 // use the slot after child_untyped for the new TCB cap:
 seL4_CPtr child_tcb = child_untyped + 1;
+// TODO
 
 // try to set the TCB priority
 error = seL4_TCB_SetPriority(child_tcb, seL4_CapInitThreadTCB, 10);
@@ -275,6 +280,7 @@ Con questa linea di codice il problema viene risolto ma l'esecuzione viene stopp
 \begin{lstlisting}[language=C++]
 // use the slot after child_tcb for the new endpoint cap:
 seL4_CPtr child_ep = child_tcb + 1;
+// TODO
 
 // identify the type of child_ep
 uint32_t cap_id = seL4_DebugCapIdentify(child_ep);
@@ -286,6 +292,7 @@ seL4_Untyped_Retype(child_untyped, seL4_EndpointObject, 0, seL4_CapInitThreadCNo
 \end{lstlisting}
 Alla fine il programma tenta di allocare tutto il \texttt{child\_untyped} come endpoint ma fallisce perchè tutto lo spazio è stato consumato dalla allocazioni fatte precedentemente, quindi la soluzione è fare una \texttt{seL4\_CNode\_Revoke} (vista sopra) su di esso in modo che tutto le spazio venga liberato e così facendo il programma termina con successo. \footnote{codice completo \cite{untyped}}
 \begin{lstlisting}[language=C++]
+// revoke the child untyped
 error = seL4_CNode_Revoke(seL4_CapInitThreadCNode, child_untyped, seL4_WordBits);
 
 // allocate the whole child_untyped as endpoints
@@ -327,6 +334,9 @@ int main(int argc, char *argv[]) {
     seL4_CPtr pd = alloc_object(info, seL4_X86_PageDirectoryObject, 0);
     seL4_CPtr pt = alloc_object(info, seL4_X86_PageTableObject, 0);
 
+	// TODO
+	
+	// TODO
 
     /* map a PDPT at TEST_VADDR */
     error = seL4_X86_PDPT_Map(pdpt, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_X86_Default_VMAttributes);
@@ -399,7 +409,7 @@ int main(int c, char* arbv[]) {
     printf("Hello, World!\n");
 
     seL4_DebugDumpScheduler();
-
+	// TODO
     seL4_Error result = seL4_Untyped_Retype(seL4_CapNull, seL4_TCBObject, seL4_TCBBits, seL4_CapNull, 0, 0, seL4_CapNull, 1);
     ZF_LOGF_IF(result, "Failed to retype thread: %d", result);
     seL4_DebugDumpScheduler();
@@ -444,8 +454,11 @@ seL4_UserContext regs = {0};
 int error = seL4_TCB_ReadRegisters(tcb_cap_slot, 0, 0, sizeof(regs)/sizeof(seL4_Word), &regs);
 ZF_LOGF_IFERR(error, "Failed to read the new thread's register set.\n");
 
+// TODO
 sel4utils_set_instruction_pointer(&regs, (seL4_Word)new_thread);
+// TODO
 sel4utils_set_stack_pointer(&regs, tcb_stack_top);
+// TODO
 error = seL4_TCB_WriteRegisters(tcb_cap_slot, 0, 0, sizeof(regs)/sizeof(seL4_Word), &regs);
 ZF_LOGF_IFERR(error, "Failed to write the new thread's register set.\n"
                   "\tDid you write the correct number of registers? See arg4.\n");
@@ -453,14 +466,7 @@ seL4_DebugDumpScheduler();
 \end{lstlisting}
 A questo punto è possibile far partire il thread ma per farlo è necessario fare un piccolo aggiustamento nel codice 
 \begin{lstlisting}[language=C++]
-sel4utils_arch_init_local_context((void*)new_thread,
-                                  (void *)1, (void *)2, (void *)3,
-                                  (void *)tcb_stack_top, &regs);
-error = seL4_TCB_WriteRegisters(tcb_cap_slot, 0, 0, sizeof(regs)/sizeof(seL4_Word), &regs);
-ZF_LOGF_IFERR(error, "Failed to write the new thread's register set.\n"
-                  "\tDid you write the correct number of registers? See arg4.\n");
-seL4_DebugDumpScheduler();
-
+//resume the new thread
 error = seL4_TCB_Resume(seL4_CapNull);
 ZF_LOGF_IFERR(error, "Failed to start new thread.\n");
 while(1);
@@ -517,9 +523,20 @@ Fastpath: avere un IPC veloce è un elemento fondamentale per i sistemi basati s
 \end{itemize}
 In questa sezione l'esercizio è un pò diverso, non c'è un unico file main in cui è contenuto tutto il codice ma c'è un \texttt{server.c} e due client: \texttt{client\_1.c} e \texttt{client\_2.c} i quali manderanno dei messaggi al server che farà da echo; tutti i processi hanno accesso ad un unica endpoint capability che fornisce accesso allo stesso endpoint object.\\
 Al primo avvio si ha questo output:
-\textcolor{red}{QUI IMMAGINE PRIMA ESECUZIONE}
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{img/PrimoAvvioIPC.png}
+  \caption{Prima esecuzione}
+  \label{fig:TutorialThreads}
+\end{figure}
 Gli errori sono dovuti al fatto che entrambi i client si mettono in attesa sull'endpoint in attesa di un endpoint con badge tramite cap tranfer che però il server non invierà in quanto il server risponde solo ai messaggi dei client.
 \begin{lstlisting}[language=C++]
+// cslot containing IPC endpoint capability
+extern seL4_CPtr endpoint;
+// cslot containing a capability to the cnode of the server
+extern seL4_CPtr cnode;
+// empty cslot
+extern seL4_CPtr free_slot;
+
 int main(int c, char *argv[]) {
 
 	seL4_Word sender;
@@ -535,14 +552,17 @@ int main(int c, char *argv[]) {
                                                 seL4_AllRights, badge);
              printf("Badged %lu\n", badge);
 
-			 //TODO
-
+             // TODO
+             
              /* reply to the sender and wait for the next message */
              seL4_Reply(info);
 
              /* now delete the transferred cap */
-             error = seL4_CNode_SaveCaller(cnode, free_slot, seL4_WordBits);
-             assert(error == 0);
+             error = seL4_CNode_Delete(cnode, free_slot, seL4_WordBits);
+             assert(error == seL4_NoError);
+
+             /* wait for the next message */
+             info = seL4_Recv(endpoint, &sender);
 \end{lstlisting}
 Dunque per risolvere questo problema è necessario impostare il cap transfer in modo che i client ricevano l'endoint badgato:
 \begin{lstlisting}[language=C++]
@@ -550,8 +570,13 @@ seL4_SetCap(0, free_slot);
 info = seL4_MessageInfo_new(0, 0, 1, 0);
 \end{lstlisting}
 Compilando e riavviando il programma sembra vada tutto bene eccetto che il sistema si blocca
-\textcolor{red}{SCREEN DELL'OUTPUT}
-Questo succede perchè al server manca l'implementazione della sua funzione di echo dei messaggi che gli vengono inviati la quale può essere fatta scorrendo e stampando a video il contenuto dei message register 
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{img/DopoBadgeIPC.png}
+  \caption{Esecuzione dopo invio badge}
+  \label{fig:TutorialThreads}
+\end{figure}
+Questo succede perchè al server manca l'implementazione della sua funzione di echo dei messaggi che gli vengono inviati la quale può essere fatta scorrendo e stampando a video il contenuto dei message register.\\
+I client mandano rispettivamente le stringhe {"quick", "fox", "over", "lazy"} il \texttt{client\_1} mentre il \texttt{client\_2} {"the", "brown", "jumps", "the", "dog"}.
 \begin{lstlisting}[language=C++]
 for (int i = 0; i < seL4_MessageInfo_get_length(info); i++) {
 printf("%c", (char) seL4_GetMR(i));
@@ -567,4 +592,37 @@ printf("\n");
 
 // reply to the client and wait for the next message
 info = seL4_ReplyRecv(endpoint, info , &sender);
+\end{lstlisting}
+A questo punto l'output sarà la stampa a video prima di tutte le parole inviate dal client 2 seguite da quelle del client 1, possiamo modificare il codice in modo da alternare le stampe dei due client utilizzando \texttt{seL4\_CNode\_SaveCaller} usando \texttt{free\_slot} per salvare le risposte.
+\begin{lstlisting}[language=C++]
+for (int i = 0; i < seL4_MessageInfo_get_length(info); i++) {
+printf("%c", (char) seL4_GetMR(i));
+}
+printf("\n");
+
+error = seL4_CNode_SaveCaller(cnode, free_slot, seL4_WordBits);
+assert(error == 0);
+info = seL4_Recv(endpoint, &sender);
+for (int i = 0; i < seL4_MessageInfo_get_length(info); i++) {
+   printf("%c", (char) seL4_GetMR(i));
+}
+printf("\n");
+seL4_Send(free_slot, seL4_MessageInfo_new(0, 0, 0, 0));
+
+// reply to the client and wait for the next message
+info = seL4_ReplyRecv(endpoint, info, &sender);
+\end{lstlisting}
+A questo punto l'output finale sarà il seguente:\footnote{codice completo server \cite{IPCserver}}\footnote{codice completo client\_1 \cite{IPCclient1}}\footnote{codice completo client\_2\cite{IPCclient2}}
+\begin{lstlisting}[language=bash]
+Client 2: received badged endpoint
+the
+Client 1: received badged endpoint
+quick
+fox
+brown
+jumps
+over
+lazy
+the
+dog
 \end{lstlisting}

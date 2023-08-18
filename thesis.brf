@@ -7,4 +7,7 @@
 \backcite {MemoriaVirtuale}{{25}{3.4.3}{subsection.3.4.3}}
 \backcite {untyped}{{25}{2}{lstnumber.-22.1}}
 \backcite {mapping}{{28}{3}{lstnumber.-28.1}}
-\backcite {threads}{{32}{4}{lstnumber.-37.13}}
+\backcite {threads}{{32}{4}{lstnumber.-37.6}}
+\backcite {IPCserver}{{37}{5}{lstnumber.-44.16}}
+\backcite {IPCclient1}{{37}{6}{lstnumber.-44.16}}
+\backcite {IPCclient2}{{37}{7}{lstnumber.-44.16}}

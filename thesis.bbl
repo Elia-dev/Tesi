@@ -78,6 +78,24 @@ Elia Matteini.
 \newblock URL:
   \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/capabilities/src/main.c}.
 
+\bibitem{IPCclient1}
+Elia Matteini.
+\newblock Tutorial {IPC} codice completo client\_1, 2023.
+\newblock URL:
+  \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/ipc/client_1.c}.
+
+\bibitem{IPCclient2}
+Elia Matteini.
+\newblock Tutorial {IPC} codice completo client\_2, 2023.
+\newblock URL:
+  \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/ipc/client_2.c}.
+
+\bibitem{IPCserver}
+Elia Matteini.
+\newblock Tutorial {IPC} codice completo server, 2023.
+\newblock URL:
+  \url{https://github.com/Elia-dev/Tesi/blob/main/sel4-tutorials-manifest/ipc/server.c}.
+
 \bibitem{threads}
 Elia Matteini.
 \newblock Tutorial threads codice completo, 2023.

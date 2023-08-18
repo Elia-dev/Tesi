@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     printf("Initial CNode is %zu slots in size\n", initial_cnode_object_size);
 
 
-    size_t initial_cnode_object_size_bytes = initial_cnode_object_size * (1u << seL4_SlotBits);
+    size_t initial_cnode_object_size_bytes = initial_cnode_object_size * (1u << seL4_SlotBits); //TODO
     printf("The CNode is %zu bytes in size\n", initial_cnode_object_size_bytes);
 
     seL4_CPtr first_free_slot = info->empty.start;
@@ -25,6 +25,7 @@ int main(int argc, char *argv[]) {
     ZF_LOGF_IF(error, "Failed to copy cap!");
     seL4_CPtr last_slot = info->empty.end - 1;
     
+	// copy of the initial TCB capability to the last slot in the CSpace
     error = seL4_CNode_Copy(seL4_CapInitThreadCNode, last_slot, seL4_WordBits,
                                        seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits,
                                        seL4_AllRights);
@@ -33,7 +34,8 @@ int main(int argc, char *argv[]) {
     /* set the priority of the root task */
     error = seL4_TCB_SetPriority(last_slot, last_slot, 10);
     ZF_LOGF_IF(error, "Failed to set priority");
-
+	
+	// delete the created TCB capabilities
     seL4_CNode_Revoke(seL4_CapInitThreadCNode, seL4_CapInitThreadTCB, seL4_WordBits);
        
     // check first_free_slot is empty
@@ -47,7 +49,7 @@ int main(int argc, char *argv[]) {
     ZF_LOGF_IF(error != seL4_FailedLookup, "last_slot is not empty");
 
     printf("Suspending current thread\n");
-    seL4_TCB_Suspend(seL4_CapInitThreadTCB);
+    seL4_TCB_Suspend(seL4_CapInitThreadTCB); // suspend the current thread
     ZF_LOGF("Failed to suspend current thread\n");
 
     return 0;
