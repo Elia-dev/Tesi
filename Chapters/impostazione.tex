@@ -3,8 +3,8 @@ Come primo approccio per arrivare alla scrittura di questa tesi ho innanzitutto 
 SeL4 è un sistema open-source dunque lo step successivo è stato quello di scaricare seL4 e sperimentare con mano le funzionalità, ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc. che verranno trattati in questo capitolo.
 
 \section{Prerequisiti}
-Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da TS sarebbe ottimale lavorare in ambiente Linux, non avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il set-up del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà: lo spazio, purtroppo lo spazio nel portatile non era tantissimo, la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il microkernel, cominciava ad occupare una quantità non trascurabile di GB, dunque ho dovuto cercare un'alternativa; Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul microkernel lavorando sull'SSD esterno collegato via USB.\\
-Per lavorare su seL4 è necessario avere installato sul sistema dei programmi che simulino un'architettura su cui farlo girare, per fare ciò è necessario installare delle dipendenze (prerequisiti) cioè compilatori, emulatori software vari e librerie affinché sia possibile utilizzare seL4.\\
+Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da TS sarebbe ottimale lavorare in ambiente Linux. Nnon avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il set-up del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà. Purtroppo lo spazio nel portatile non era tantissimo e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il microkernel, cominciava ad occupare una quantità non trascurabile di GB. Dunque ho dovuto cercare un'alternativa. Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul microkernel lavorando sull'SSD esterno collegato via USB.\\
+Per lavorare su seL4 è necessario avere installato sul sistema dei programmi che simulino un'architettura su cui farlo girare. Per fare ciò è necessario installare delle dipendenze (prerequisiti) cioè compilatori, emulatori software vari e librerie affinché sia possibile utilizzare seL4.\\
 Prima di tutto ho installato Google repo, così da poter clonare i repository git:
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -77,7 +77,7 @@ stack install cabal-install
 Con questa serie di comandi bash il sistema operativo Linux, per la precisione Ubuntu 22.04.2 LTS, ha tutti i prerequisiti necessari per procedere alla configurazione.
 
 \section{Configurazione}
-Lo step successivo è stato quello di recuperare, attraverso repo, la collezione di repository necessari per la verifica di seL4; in particolare contiene il sorgente del kernel, il theorem prover Isabelle/HOL e HOL4 e lo strumento di verifica binaria.
+Lo step successivo è stato quello di recuperare, attraverso repo, la collezione di repository necessari per la verifica di seL4 contenente in particolare, il sorgente del kernel, i theorem prover Isabelle/HOL e HOL4 e lo strumento di verifica binaria.
 \begin{lstlisting}[language=bash]
 mkdir verification
 cd verification
@@ -93,7 +93,7 @@ A questo punto  si avrà quindi una cartella con questa struttura:
 .2 l4v/.
 .2 seL4/.
 }
-Il che indica che l'importazione delle repository è andata a buon fine, quindi possiamo procedere alla configurazione di Isabelle posizionandosi nella cartella \texttt{l4v}:
+Il che indica che l'importazione delle repository è andata a buon fine, quindi possiamo procedere alla configurazione di Isabelle posizionandoci nella cartella \texttt{l4v}:
 \begin{lstlisting}[language=bash]
 mkdir -p ~/.isabelle/etc
 cp -i misc/etc/settings ~/.isabelle/etc/settings
@@ -103,10 +103,10 @@ cp -i misc/etc/settings ~/.isabelle/etc/settings
 \end{lstlisting}
 Questa serie di comandi bash daranno come risultato:
 \begin{itemize}
-	\item la creazione di una cartella per le impostazioni utente di Isabelle.
-	\item installazione delle impostazione Isabelle per L4.verified \cite{l4v} il quale è una repository che contiene formalismi per la verifica di seL4.
-	\item download di Scala, Java JDK, PolyML ed altri dimostratori (prover) esterni.
-	\item compilazione del Prover IDE (PIDE) jEdit di Isabelle
+	\item la creazione di una cartella per le impostazioni utente di Isabelle;
+	\item installazione delle impostazione Isabelle per L4.verified \cite{l4v} il quale è un repository che contiene formalismi per la verifica di seL4;
+	\item download di Scala, Java JDK, PolyML ed altri dimostratori (prover) esterni;
+	\item compilazione del Prover IDE (PIDE) jEdit di Isabelle.
 \end{itemize} 
 
 \section{Avvio di SeL4}
@@ -135,7 +135,7 @@ Il che indica che seL4 può essere utilizzato in questo ambiente simulato.
 \end{figure}
 
 \section{Programmazione con le API livello kernel di seL4}
-Una volta che mi sono procurato tutti i prerequisiti necessari e appurato che seL4 può girare senza problemi ho iniziato a prendere familiarità con il sistema seguendo dei tutorial forniti dalla seL4 Foundation che sono programmi semicompleti creati appositamente per sperimentare e far comprendere le funzionalità del sistema, in particolare con le API di seL4. \cite{sel4API}\\
+Una volta che mi sono procurato tutti i prerequisiti necessari e appurato che seL4 può girare senza problemi ho iniziato a prendere familiarità con il sistema seguendo dei tutorial forniti dalla seL4 Foundation \cite{seL4Tutorial}. Tali tutorial contengono programmi semicompleti creati appositamente per sperimentare e far comprendere le funzionalità del sistema, in particolare con le API di seL4 \cite{sel4API}.\\
 Come ormai già visto più volte sopra ho recuperato l'ambiente per eseguire i tutorial attraverso l'uso di \texttt{repo}:
 \begin{lstlisting}[language=bash]
 mkdir sel4-tutorials-manifest
@@ -143,19 +143,17 @@ cd sel4-tutorials-manifest
 repo init -u https://github.com/seL4/sel4-tutorials-manifest
 repo sync
 \end{lstlisting}
-Ogni tutorial ha una sua repository da importare nell'ambiente di lavoro nella quale, tra gli altri file e cartelle, c'è (solitamente) un main.c che sarà quello su cui andare a fare le modifiche per completare il tutorial.
+Ogni tutorial ha un suo repository da importare nell'ambiente di lavoro nel quale, tra gli altri file e cartelle, c'è (solitamente) un main.c che sarà quello su cui andare a fare le modifiche per completare il tutorial.
 
 \subsection{Capability}
-Prima di tutti ho fatto un approfondimento sulle capability:\\
-Come già detto nel capitolo precedente una capability è un token unico che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso. In seL4 ci sono 3 tipi di capability:
+Prima di tutti ho fatto un approfondimento sulle capability. Come già detto nel capitolo precedente, una capability è un token unico che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso. In seL4 ci sono 3 tipi di capability:
 \begin{enumerate}
-	\item capability che controllano l'accesso ad entità del kernel come i thread control block (TCB)
-	\item capability che controllano l'accesso a risorse astratte tipo gli interrupt 
-	\item untyped capability che sono responsabili per la gestione della memoria
+	\item capability che controllano l'accesso ad entità del kernel come i thread control block (TCB);
+	\item capability che controllano l'accesso a risorse astratte tipo gli interrupt;
+	\item untyped capability che sono responsabili della gestione della memoria.
 \end{enumerate}
-Tutte le capability delle risorse del kernel sono date dal processo root all'inizializzazione del sistema, un pò come il processo \texttt{init} nei sistemi unix che è padre di tutti i processi. Quando parliamo di capability ci sono 3 termini fondamentali CNode, CSlot e CSpace:
-il primo di questi è l'abbreviazione di capability-node ed è un oggetto che contiene delle capability, possiamo pensarlo come un vettore (array) di capability, questi elementi dell'array sono chiamati CSlot (capability-slot) ed ogni CSlot può avere due stati: \texttt{empty} o \texttt{full}, ciò equivale che il CNode ha, rispettivamente, una capability nulla oppure una capability ad una risorsa del kernel, per convenzione il primo CSlot quindi quello situato alla posizione 0 del vettore è nullo. Invece un CSpace (capability-space) è il range completo di capability accessibili da un thread che può essere composto da uno o più CNode.
-Per fare riferimento ad una capability ed eseguire operazioni su di essa è necessario fare un \texttt{adress} (indirizzamento) della capability, per farlo ci sono due modi per in seL4: tramite \textit{invocazione} o con \textit{indirizzamento diretto}.\\
+Tutte le capability delle risorse del kernel sono date dal processo root all'inizializzazione del sistema, un pò come il processo \texttt{init} nei sistemi unix che è padre di tutti i processi. Quando parliamo di capability ci sono 3 termini fondamentali: CNode, CSlot e CSpace. Il primo di questi è l'abbreviazione di \textit{Capability-Node} ed è un oggetto che contiene delle capability, possiamo pensarlo come un vettore (array) di capability. Ogni elemento dell'array è chiamato CSlot (\textit{Capability-Slot}) il quale può avere due stati: \texttt{empty} o \texttt{full}. Ciò equivale, rispettivamente, che il CNode ha una capability nulla oppure una capability ad una risorsa del kernel. Per convenzione il primo CSlot, cioè quello situato alla posizione 0 del vettore, è nullo. Invece un CSpace (\textit{Capability-Space}) è il range completo di capability accessibili da un thread, che può essere composto da uno o più CNode.
+Per fare riferimento ad una capability ed eseguire operazioni su di essa è necessario fare un \texttt{adress} (indirizzamento) della capability. Per farlo ci sono due modi per in seL4: tramite \textit{invocazione} o con \textit{indirizzamento diretto}.\\
 Invocazione: ogni thread ha uno speciale CNode installato nel suo TCB noto come \texttt{CSpace root}, questo può essere nullo, ad esempio quando il thread non è autorizzato a invocare nessuna capability, o può avere una capability ad un certo CNode. Quando si vuole fare un addressing di una capability attraverso invocazione un CSlot viene indirizzato implicitamente invocando il CSpace root del thread che sta facendo l'invocazione.\\
 Indirizzamento diretto: questo metodo permette di specificare il CNode piuttosto che utilizzare implicitamente il CSpace root, questo tipo di addressing  è usato principalmente per costruire e manipolare i CSpace, potenzialmente il CSpace di un altro thread.\\
 L'esercizio proposto in questa sezione è un programma in linguaggio C con una serie di errori da risolvere, il primo tra questi è un errore nel settaggio del numero di byte del CNode:
