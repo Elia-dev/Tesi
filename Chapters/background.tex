@@ -1,4 +1,4 @@
-\chapter{Introduzione}
+\chapter{Background}
 In questa introduzione sarà presente una prima parte che andrà a dare le conoscenze di base minime per comprendere cosa sia un sistema operativo e una piccola classificazione di essi, dopodiché seguiranno la descrizione di alcuni concetti che sono fondamentali per comprendere il resto dell'elaborato.
 
 \section{Cos'è un sistema operativo}
@@ -43,6 +43,15 @@ In Figura~\ref{fig:MonolithicVSmicrokernel} si possono vedere in maniera schemat
 \section{Scheduling}
 Solitamente con il solo termine scheduling si intende quello a breve termine della CPU, cioè la funzionalità che determina quale tra i processi (thread) in attesa della CPU la otterranno. Ci sono vari metodi che si differenziano per modalità e prestazioni. Gli algoritmi che traducono questi metodi si chiamano politiche di scheduling.
 Una particolare politica di scheduling rilevante per questo testo è Round Robin o scheduling circolare: consiste nel determinare un quanto di tempo (time slice) nella quale i processi ottengono la CPU. Una volta esaurito questo tempo il processo viene interrotto e inserito in fondo alla coda dei pronti. In questo modo tutti i processi ottengono la CPU per un tempo massimo stabilito; inoltre è possibile stabilire il tempo di attesa prima dell'esecuzione di ciascun processo in base al numero di processi che lo precedono.
+
+\section{Memoria virtuale}
+Un altro concetto fondamentale quando si parla di sistemi operativi è la gestione della memoria. Il SO deve garantire che ogni programma abbia a disposizione la giusta quantità di memoria necessaria per l'esecuzione, ed inoltre ognuno di essi deve accedere solo alla memoria a lui riservata. Un meccanismo adottato che accomuna quanto appena detto è quello di memoria virtuale.
+
+La memoria virtuale è un meccanismo che permette di simulare uno spazio di memoria centrale (memoria primaria) maggiore di quello fisicamente presente o disponibile, dando l'illusione all'utente di un enorme quantitativo di memoria. Questa tecnica porta con sé diversi vantaggi: uno tra questi la sicurezza dovuta all'isolamento della memoria; la possibilità di condivisione di alcune pagine di memoria tra più processi (es: le pagine contenenti le librerie possono essere usate in contemporanea da più processi senza conflitti) e infine l'ultimo ma allo stesso tempo il principale vantaggio: avere a disposizione molta più memoria centrale di quella che in realtà è disponibile. 
+
+Giustamente viene da chiedersi com'è possibile tutto ciò e il meccanismo alla base è quello di utilizzare una memoria ausiliaria, solitamente la memoria di massa, per allocare una certa parte di memoria che non è stata utilizzata recentemente. Nel momento in cui viene richiesto nuovamente la porzione di dati salvati nella memoria ausiliaria (oppure si libera spazio nella memoria centrale) i dati relativi vengono prelevati e copiati nuovamente in memoria centrale, questo processo prende il nome di \textit{swapping}. 
+
+In presenza di memoria virtuale quindi non parleremo semplicemente di indirizzi di memoria ma avremo una differenziazione tra indirizzi logici e indirizzi fisici. I programmi lavoreranno solo con indirizzi logici (quindi viene anche facilitata la programmazione) e poi a livello di CPU avverrà un processo di traduzione negli indirizzi fisici.
 
 \section{Hypervisor}
 Un \textit{hypervisor}, chiamato anche virtual machine monitor (VMM), è un tipo di sotware/firmware che permette di creare ed eseguire macchine virtuali. Un computer sul quale un hypervisor esegue una o più macchine virtuali prende il nome di \textit{host machine}, mentre le singole macchina virtuali prendono il nome di \textit{guest machine}. Su ognuna è possibile eseguire un sistema operativo (anche diverso) che eseguirà la maggior parte delle istruzioni direttamente sulle risorse hardware virtualizzate rese disponibili dall'hypervisor.
