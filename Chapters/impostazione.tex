@@ -1,5 +1,4 @@
 \chapter{Impostazione di seL4}
-Come primo approccio per arrivare alla scrittura di questa tesi ho innanzitutto fatto una ricerca sulla letteratura che si trova disponibile riguardo a seL4, nonostante sia poca e principalmente fornita da Trustworthy (TS) stesso è comunque sufficiente per avere una conoscenza abbastanza approfondita del microkernel.\\
 SeL4 è un sistema open-source dunque lo step successivo è stato quello di scaricare seL4 e sperimentare con mano le funzionalità, ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc. che verranno trattati in questo capitolo.
 
 \section{Prerequisiti}
@@ -49,7 +48,7 @@ pip3 install --user setuptools
 pip3 install --user sel4-deps
 \end{lstlisting}
 
-Altro componente fondamentale è CAmkES (\textit{component architecture for microkernel-based embedded systems}), un \textit{framework} per realizzare velocemente sistemi multiserver affidabili basati su \textit{microkernel}
+Altro componente fondamentale è CAmkES (\textit{component architecture for \textit{microkernel}-based embedded systems}), un \textit{framework} per realizzare velocemente sistemi multiserver affidabili basati su \textit{microkernel}
 \begin{lstlisting}[language=bash]
 pip3 install --user camkes-deps
 curl -sSL https://get.haskellstack.org/ | sh
@@ -163,7 +162,7 @@ Prima di tutti ho fatto un approfondimento sulle capability. Come già detto nel
 	\item capability che controllano l'accesso ad entità del kernel come i thread control block (TCB);
 	\item capability che controllano l'accesso a risorse astratte tipo gli interrupt;
 	\item untyped capability che sono responsabili della gestione della memoria.
-\end{enumerate}ù
+\end{enumerate}
 
 Tutte le capability delle risorse del kernel sono date dal processo \textit{root} all'inizializzazione del sistema, un po' come il processo \texttt{init} nei sistemi unix che è padre di tutti i processi. Quando parliamo di capability ci sono 3 termini fondamentali: CNode, CSlot e CSpace. Il primo di questi è l'abbreviazione di \textit{Capability-Node} ed è un oggetto che contiene delle capability, possiamo pensarlo come un vettore (\textit{array}) di capability. Ogni elemento dell'array è chiamato CSlot (\textit{Capability-Slot}) il quale può avere due stati: \texttt{empty} o \texttt{full}. Ciò equivale, rispettivamente, che il CNode ha una capability nulla oppure una capability ad una risorsa del \textit{kernel}. Per convenzione il primo CSlot, cioè quello situato alla posizione 0 del vettore, è nullo. Invece un CSpace (\textit{Capability-Space}) è il range completo di capability accessibili da un \textit{thread}, che può essere composto da uno o più CNode.
 

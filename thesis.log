@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  7 SEP 2023 20:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  9 SEP 2023 20:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -968,8 +968,9 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count343
 \l__pdf_internal_box=\box71
 )
-(./thesis.aux (./titlePage.aux) (./Chapters/background.aux)
-(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
+(./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+(./Chapters/background.aux) (./Chapters/sel4.aux) (./Chapters/impostazione.aux)
+)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
@@ -1003,8 +1004,7 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 94.
 Package backref Info: ** backref set up for natbib ** on input line 94.
 Package hyperref Info: Link coloring ON on input line 94.
- (./thesis.out)
-(./thesis.out)
+ (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -1016,7 +1016,8 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 94.
- (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+
+(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1155,7 +1156,7 @@ LaTeX Font Info:    Trying to load font information for TS1+pplx on input line
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )) [2]
 Package tocbasic Info: character protrusion at toc deactivated on input line 11
-0.
+1.
  (./thesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
@@ -1177,89 +1178,100 @@ Package microtype Info: Character `029' is missing
 
 
 ]
+\openout2 = `Chapters/introduzione.aux'.
+
+ (./Chapters/Introduzione.tex
+Capitolo 1.
+) [5
+
+
+
+]
 \openout2 = `Chapters/background.aux'.
 
  (./Chapters/background.tex
-Capitolo 1.
-[5
+Capitolo 2.
+[6
 
 
 
-] [6]
-<img/MonolithicVSmicrokernel.png, id=103, 1264.725pt x 301.125pt>
+
+
+] [7] [8]
+<img/MonolithicVSmicrokernel.png, id=113, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
-Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 37
+Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 43
 .
 (pdftex.def)             Requested size: 384.1122pt x 91.45473pt.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [7 <./img/MonolithicVSmicrokernel.png>] [8]) [9]
+ [9 <./img/MonolithicVSmicrokernel.png>] [10]) [11]
 \openout2 = `Chapters/sel4.aux'.
 
- (./Chapters/seL4.tex
-Capitolo 2.
-[10
+
+(./Chapters/seL4.tex
+Capitolo 3.
+[12
 
 
 
 
 
 ]
-<img/seL4Hypervisor.png, id=124, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=135, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
-Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 6.
+Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
 (pdftex.def)             Requested size: 384.1122pt x 162.87616pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12 <./img/seL4Hypervisor.png>] [13] [14]) [15] [16]
+ [13 <./img/seL4Hypervisor.png>] [14] [15] [16]) [17]
 \openout2 = `Chapters/impostazione.aux'.
 
 
 (./Chapters/impostazione.tex
-Capitolo 3.
-[17
+Capitolo 4.
+[18
 
 
 
 
 
-] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+] [19] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 33
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 34
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 33.
+(Font)              scaled to size 10.20007pt on input line 34.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 33.
- [18] [19]
-<img/PrimaSimulazione.png, id=221, 477.28313pt x 109.1578pt>
+(Font)              scaled to size 8.50006pt on input line 34.
+ [20] [21]
+
+Package caption Warning: \label without proper reference on input line 146.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:Prima simulazione' on page 22 undefined on input 
+line 143.
+
+<img/PrimaSimulazione.png, id=232, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
-Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 133.
+Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 145.
 (pdftex.def)             Requested size: 384.1122pt x 87.84769pt.
- [20]
-
-Package natbib Warning: Citation `seL4Tutorial' on page 21 undefined on input l
-ine 138.
-
-[21 <./img/PrimaSimulazione.png>]
+[22] [23 <./img/PrimaSimulazione.png>]
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -1268,173 +1280,154 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-) [22] [23] [24]
-[25] [26] [27] [28] [29]
-<img/Threads.png, id=441, 1056.94875pt x 199.74625pt>
+) [24] [25] [26]
+[27] [28] [29] [30] [31]
+<img/Threads.png, id=454, 1056.94875pt x 199.74625pt>
 File: img/Threads.png Graphic file (type png)
 <use img/Threads.png>
-Package pdftex.def Info: img/Threads.png  used on input line 400.
+Package pdftex.def Info: img/Threads.png  used on input line 417.
 (pdftex.def)             Requested size: 384.1122pt x 72.59131pt.
- [30] [31 <./img/Threads.png>]
-Overfull \hbox (14.94815pt too wide) in paragraph at lines 473--475
-[]\T1/pplx/m/n/12 (-20) Adesso l'er-ro-re che si pre-sen-ta sa-rà un al-tro \T1
-/fvm/m/n/12 Failed to set the priority
+ [32] [33 <./img/Threads.png>] [34] [35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
+[]\T1/pplx/m/n/12 (+20) i da-ti del mes-sag-gio de-vo-no en-tra-re nel re-gi-st
+ro
  []
 
-[32] [33] [34]
-Overfull \hbox (16.43034pt too wide) in paragraph at lines 536--537
-\T1/pplx/m/n/12 (-20) op-pu-re \T1/fvm/m/n/12 seL4_CNode_Mutate\T1/pplx/m/n/12 
-(-20) , una vol-ta che è sta-to mes-so il bad-ge sull'\T1/pplx/m/it/12 (-20) en
-dpoint
- []
-
-
-Overfull \hbox (69.17659pt too wide) in paragraph at lines 558--560
-[]\T1/pplx/m/n/12 (-20) Il nu-me-ro di ca-pa-bi-li-ty tra-sfe-ri-te è co-di-fi-
-ca-to nel-la strut-tu-ra da-ti \T1/fvm/m/n/12 seL4_MessageInfo_t
- []
-
-[35]
-Overfull \hbox (46.19958pt too wide) in paragraph at lines 564--565
-[]\T1/pplx/m/n/12 (-20) i da-ti del mes-sag-gio de-vo-no en-tra-re nel re-gi-st
-ro \T1/fvm/m/n/12 seL4_FastMessageRegisters 
- []
-
-<img/PrimoAvvioIPC2.png, id=577, 406.51875pt x 108.405pt>
+<img/PrimoAvvioIPC2.png, id=590, 406.51875pt x 108.405pt>
 File: img/PrimoAvvioIPC2.png Graphic file (type png)
 <use img/PrimoAvvioIPC2.png>
-Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 573.
+Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 595.
 (pdftex.def)             Requested size: 284.56117pt x 75.88297pt.
-[36 <./img/PrimoAvvioIPC2.png>]
-<img/DopoBadgeIPC.png, id=585, 405.515pt x 142.5325pt>
+[38 <./img/PrimoAvvioIPC2.png>]
+<img/DopoBadgeIPC.png, id=597, 405.515pt x 142.5325pt>
 File: img/DopoBadgeIPC.png Graphic file (type png)
 <use img/DopoBadgeIPC.png>
-Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 623.
+Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 645.
 (pdftex.def)             Requested size: 283.85855pt x 99.77205pt.
- [37] [38 <./img/DopoBadgeIPC.png>]) [39]
+ [39] [40 <./img/DopoBadgeIPC.png>]) [41]
 (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
- [40
+ [42
 
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []\T1/pplx/m/n/12 (+20) JavaTpoint.  Hard and soft real-time ope-ra-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 \T1/pplx/m/n/12 (+20) ting sy-stem.  URL: [][]$\T1/fvm/m/n/12 https : / / www .
  javatpoint . com /
  []
 
-[41]
-Underfull \hbox (badness 4120) in paragraph at lines 80--80
+[43]
+Underfull \hbox (badness 4120) in paragraph at lines 90--90
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial ca-pa-bi-li-ty co-di-ce co
 m-ple-to, 2023.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
 \T1/pplx/m/n/12 (+20) URL: [][]$\T1/fvm/m/n/12 https : / / github . com / Elia-
 []dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--80
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
 \T1/fvm/m/n/12 sel4-[]tutorials-[]manifest / capabilities / src / main . c$[][]
 \T1/pplx/m/n/12 (+20) .  (Ci-ted
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to cl
 ient_1,
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 86--86
+Underfull \hbox (badness 5388) in paragraph at lines 96--96
 \T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
 / Elia-[]dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--92
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to cl
 ient_2,
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 92--92
+Underfull \hbox (badness 5388) in paragraph at lines 102--102
 \T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
 / Elia-[]dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to se
 r-ver,
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 98--98
+Underfull \hbox (badness 5388) in paragraph at lines 108--108
 \T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
 / Elia-[]dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 104--104
+Underfull \hbox (badness 7522) in paragraph at lines 114--114
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial th-reads co-di-ce com-ple-
 to, 2023.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
 \T1/pplx/m/n/12 (+20) URL: [][]$\T1/fvm/m/n/12 https : / / github . com / Elia-
 []dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 6063) in paragraph at lines 110--110
+Underfull \hbox (badness 6063) in paragraph at lines 120--120
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial un-ty-ped ca-pa-bi-li-ty c
 o-di-ce com-
  []
 
 
-Underfull \hbox (badness 2005) in paragraph at lines 110--110
+Underfull \hbox (badness 2005) in paragraph at lines 120--120
 \T1/pplx/m/n/12 (+20) ple-to, 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / githu
 b . com / Elia-[]dev / Tesi / blob /
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 116--116
+Underfull \hbox (badness 1062) in paragraph at lines 126--126
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial vir-tual me-mo-ry ma-na-ge
 -ment co-di-ce
  []
 
-[42])
+[44]) [45] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+(./Chapters/background.aux) (./Chapters/sel4.aux) (./Chapters/impostazione.aux)
+)
 
-Package natbib Warning: There were undefined citations.
+LaTeX Warning: There were undefined references.
 
-[43] (./thesis.aux (./titlePage.aux) (./Chapters/background.aux)
-(./Chapters/sel4.aux) (./Chapters/impostazione.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 105F95C775FD8F931328253FE27E2236;694.
+(rerunfilecheck)             Checksum: CC2CD501443793F3C5EBE04F723F0CFD;692.
  ) 
 Here is how much of TeX's memory you used:
- 29904 strings out of 476001
- 575637 string characters out of 5793197
+ 30020 strings out of 476001
+ 577613 string characters out of 5793197
  2226068 words of memory out of 5000000
- 48983 multiletter control sequences out of 15000+600000
- 609219 words of font info for 396 fonts, out of 8000000 for 9000
+ 49023 multiletter control sequences out of 15000+600000
+ 612575 words of font info for 442 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,121p,10953b,2668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,119p,10983b,2668s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texliv
 e/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2023
@@ -1443,10 +1436,10 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 <c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (45 pages, 383366 bytes).
+Output written on thesis.pdf (47 pages, 389705 bytes).
 PDF statistics:
- 968 PDF objects out of 1000 (max. 8388607)
- 882 compressed objects within 9 object streams
- 486 named destinations out of 1000 (max. 500000)
- 97492 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 987 PDF objects out of 1000 (max. 8388607)
+ 899 compressed objects within 9 object streams
+ 491 named destinations out of 1000 (max. 500000)
+ 97500 words of extra memory for PDF output out of 106986 (max. 10000000)
 

@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{seL4Tutorial}
+SeL4 Foundation.
+\newblock Tutorials.
+\newblock URL: \url{https://docs.sel4.systems/Tutorials/}.
+
 \bibitem{sel4API}
 Sel4 foundation.
 \newblock Api reference, 2023.
@@ -46,6 +51,11 @@ Wikipedia{,} l'enciclopedia libera.
 \newblock Kernel, 2023.
 \newblock Ultima modifica 7 giu 2023.
 \newblock URL: \url{https://it.wikipedia.org/wiki/Kernel}.
+
+\bibitem{L4}
+Wikipedia{,} l'enciclopedia libera.
+\newblock L4 microkernel family, 2023.
+\newblock Ultima modifica 29 maggio 2023.
 
 \bibitem{MemoriaVirtuale}
 Wikipedia{,} l'enciclopedia libera.

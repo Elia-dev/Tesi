@@ -11,7 +11,7 @@ All'interno si un di SO possiamo isolare una specifica parte di codice che è qu
 \newpage
 
 \section{Architettura software di un sistema operativo}
-Esistono vari modelli strutturali per i sistemi operativi: monolitici, modulari, a livelli, microkernel ed ibridi. Ad oggi i più diffusi sono gli ibridi, che combinano i vari modelli tra di loro, ma che in gran parte si basano su sistemi monolitici. Quest'ultimi consistono di un unico file binario statico al cui interno sono definite tutte le funzionalità del \textit{kernel} e che viene eseguito in un unico spazio di indirizzi. Tutto ciò comporta dei vantaggi: 
+Esistono vari modelli strutturali per i sistemi operativi: monolitici, modulari, a livelli, \textit{microkernel} ed ibridi. Ad oggi i più diffusi sono gli ibridi, che combinano i vari modelli tra di loro, ma che in gran parte si basano su sistemi monolitici. Quest'ultimi consistono di un unico file binario statico al cui interno sono definite tutte le funzionalità del \textit{kernel} e che viene eseguito in un unico spazio di indirizzi. Tutto ciò comporta dei vantaggi: 
 \begin{itemize}
 	\item[-] efficienza: motivo principale per cui la maggior parte dei sistemi operativi ancora oggi si basano su \textit{kernel} in gran parte monolitici, lavorando nello stesso spazio di indirizzi e gestendo tutto attraverso chiamate a procedura il SO risulterà molto reattivo e performante;
 	\item[-] semplicità: in quanto non ha una vera e  propria strutturazione, bensì il codice è tutto in un unico file binario, risulta chiaramente più semplice da progettare anche se poi l'implementazione risulta difficile.
@@ -23,9 +23,9 @@ D'altra parte ha anche degli svantaggi:
 	\item[-] sicurezza: maggiore è il numero di righe di codice maggiore sarà il numero di possibili \textit{bug}; essendo tutto il codice eseguito nello stesso spazio di indirizzi un \textit{bug} rischia di far bloccare l'intero sistema anche se il problema è molto piccolo e isolato a una minima funzione del kernel.
 \end{itemize}
 
-All'estremo opposto troviamo i microkernel che sono composti da un \textit{kernel} ridotto al minimo indispensabile, che comprende la gestione della memoria, dei processi e della CPU, le comunicazioni tra processi (IPC) e l'hardware di basso livello; tutto il resto deve essere gestito da server (\textit{daemon}) che operano sopra al kernel, quindi in spazi di indirizzi separati.
+All'estremo opposto troviamo i \textit{microkernel} che sono composti da un \textit{kernel} ridotto al minimo indispensabile, che comprende la gestione della memoria, dei processi e della CPU, le comunicazioni tra processi (IPC) e l'hardware di basso livello; tutto il resto deve essere gestito da server (\textit{daemon}) che operano sopra al kernel, quindi in spazi di indirizzi separati.
 
-I microkernel sono spesso usati in sistemi \textit{embedded}, in applicazioni \textit{mission critical} di automazione robotica o di medicina, a causa del fatto che i componenti del sistema risiedono in aree di memoria separate, private e protette \cite{kernelWikipedia}.
+I \textit{microkernel} sono spesso usati in sistemi \textit{embedded}, in applicazioni \textit{mission critical} di automazione robotica o di medicina, a causa del fatto che i componenti del sistema risiedono in aree di memoria separate, private e protette \cite{kernelWikipedia}.
 
 Anche questo modello ha dei vantaggi:
 \begin{itemize}
