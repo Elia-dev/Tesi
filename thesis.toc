@@ -9,19 +9,19 @@
 \contentsline {section}{\numberline {2.4}{Memoria virtuale}}{10}{section.2.4}%
 \contentsline {section}{\numberline {2.5}{Hypervisor}}{11}{section.2.5}%
 \contentsline {chapter}{\numberline {3}{SeL4}}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}{Capability}}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.1}{Capability}}{13}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}{Proprietà delle capability}}{15}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}{Hard Real-Time Systems}}{15}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}{Mixed-criticality systems}}{16}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}{Sicurezza e performance}}{17}{section.3.3}%
-\contentsline {chapter}{\numberline {4}{Impostazione di seL4}}{19}{chapter.4}%
+\contentsline {chapter}{\numberline {4}{Sperimentazione di seL4}}{19}{chapter.4}%
 \contentsline {section}{\numberline {4.1}{Prerequisiti}}{19}{section.4.1}%
 \contentsline {section}{\numberline {4.2}{Configurazione}}{21}{section.4.2}%
 \contentsline {section}{\numberline {4.3}{Avvio di SeL4}}{22}{section.4.3}%
 \contentsline {section}{\numberline {4.4}{Programmazione con le API livello kernel di seL4}}{23}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}{Capability}}{23}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}{Gestione delle memoria}}{26}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}{Virtual memory management}}{30}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.3}{Virtual memory management}}{29}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}{Thread}}{32}{subsection.4.4.4}%
 \contentsline {subsection}{\numberline {4.4.5}{IPC}}{36}{subsection.4.4.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

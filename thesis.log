@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  9 SEP 2023 20:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  12 SEP 2023 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1182,23 +1182,28 @@ Package microtype Info: Character `029' is missing
 
  (./Chapters/Introduzione.tex
 Capitolo 1.
-) [5
+[5
 
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
+ []
+
+) [6]
 \openout2 = `Chapters/background.aux'.
 
  (./Chapters/background.tex
 Capitolo 2.
-[6
+[7
 
 
 
 
 
-] [7] [8]
-<img/MonolithicVSmicrokernel.png, id=113, 1264.725pt x 301.125pt>
+] [8]
+<img/MonolithicVSmicrokernel.png, id=115, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 43
@@ -1210,8 +1215,7 @@ Package microtype Info: Character `029' is missing
  [9 <./img/MonolithicVSmicrokernel.png>] [10]) [11]
 \openout2 = `Chapters/sel4.aux'.
 
-
-(./Chapters/seL4.tex
+ (./Chapters/seL4.tex
 Capitolo 3.
 [12
 
@@ -1220,58 +1224,62 @@ Capitolo 3.
 
 
 ]
-<img/seL4Hypervisor.png, id=135, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=137, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
-Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 5.
+Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 6.
 (pdftex.def)             Requested size: 384.1122pt x 162.87616pt.
- [13 <./img/seL4Hypervisor.png>] [14] [15] [16]) [17]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13] [14 <./img/seL4Hypervisor.png>] [15] [16]) [17] [18]
 \openout2 = `Chapters/impostazione.aux'.
 
 
 (./Chapters/impostazione.tex
 Capitolo 4.
-[18
-
-
-
-
-
-] [19] (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 34
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 33
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 34.
+(Font)              scaled to size 10.20007pt on input line 33.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 34.
- [20] [21]
+(Font)              scaled to size 8.50006pt on input line 33.
+ [19
 
-Package caption Warning: \label without proper reference on input line 146.
+
+
+
+
+] [20] [21]
+
+Package caption Warning: \label without proper reference on input line 145.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:Prima simulazione' on page 22 undefined on input 
-line 143.
+line 142.
 
-<img/PrimaSimulazione.png, id=232, 477.28313pt x 109.1578pt>
+<img/PrimaSimulazione.png, id=234, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
-Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 145.
+Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 144.
 (pdftex.def)             Requested size: 384.1122pt x 87.84769pt.
-[22] [23 <./img/PrimaSimulazione.png>]
+[22 <./img/PrimaSimulazione.png>] [23]
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -1282,29 +1290,33 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 ) [24] [25] [26]
 [27] [28] [29] [30] [31]
-<img/Threads.png, id=454, 1056.94875pt x 199.74625pt>
+<img/Threads.png, id=457, 1056.94875pt x 199.74625pt>
 File: img/Threads.png Graphic file (type png)
 <use img/Threads.png>
-Package pdftex.def Info: img/Threads.png  used on input line 417.
+Package pdftex.def Info: img/Threads.png  used on input line 416.
 (pdftex.def)             Requested size: 384.1122pt x 72.59131pt.
- [32] [33 <./img/Threads.png>] [34] [35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32] [33 <./img/Threads.png>] [34] [35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
 []\T1/pplx/m/n/12 (+20) i da-ti del mes-sag-gio de-vo-no en-tra-re nel re-gi-st
 ro
  []
 
-<img/PrimoAvvioIPC2.png, id=590, 406.51875pt x 108.405pt>
+<img/PrimoAvvioIPC2.png, id=591, 406.51875pt x 108.405pt>
 File: img/PrimoAvvioIPC2.png Graphic file (type png)
 <use img/PrimoAvvioIPC2.png>
-Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 595.
+Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 594.
 (pdftex.def)             Requested size: 284.56117pt x 75.88297pt.
 [38 <./img/PrimoAvvioIPC2.png>]
-<img/DopoBadgeIPC.png, id=597, 405.515pt x 142.5325pt>
+<img/DopoBadgeIPC.png, id=615, 405.515pt x 142.5325pt>
 File: img/DopoBadgeIPC.png Graphic file (type png)
 <use img/DopoBadgeIPC.png>
-Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 645.
+Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 644.
 (pdftex.def)             Requested size: 283.85855pt x 99.77205pt.
- [39] [40 <./img/DopoBadgeIPC.png>]) [41]
+ [39 <./img/DopoBadgeIPC.png>] [40]) [41]
 (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
@@ -1418,16 +1430,16 @@ LaTeX Warning: There were undefined references.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: CC2CD501443793F3C5EBE04F723F0CFD;692.
+(rerunfilecheck)             Checksum: 951FE363259004F45B3CC367D3161EB0;739.
  ) 
 Here is how much of TeX's memory you used:
  30020 strings out of 476001
  577613 string characters out of 5793197
- 2226068 words of memory out of 5000000
+ 2195068 words of memory out of 5000000
  49023 multiletter control sequences out of 15000+600000
  612575 words of font info for 442 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,119p,10983b,2668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,118p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texliv
 e/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2023
@@ -1436,10 +1448,10 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 <c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (47 pages, 389705 bytes).
+Output written on thesis.pdf (47 pages, 393669 bytes).
 PDF statistics:
- 987 PDF objects out of 1000 (max. 8388607)
- 899 compressed objects within 9 object streams
+ 990 PDF objects out of 1000 (max. 8388607)
+ 901 compressed objects within 10 object streams
  491 named destinations out of 1000 (max. 500000)
  97500 words of extra memory for PDF output out of 106986 (max. 10000000)
 
