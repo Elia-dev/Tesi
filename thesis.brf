@@ -1,13 +1,13 @@
 \backcite {sel4-whitepaper}{{5}{I}{chapter.1}}
 \backcite {kernelWikipedia}{{9}{2.2}{section.2.2}}
-\backcite {sel4-whitepaper}{{13}{3}{chapter.3}}
-\backcite {skybridge}{{18}{3.3}{section.3.3}}
-\backcite {CertiKOS}{{18}{3.3}{section.3.3}}
+\backcite {sel4-whitepaper}{{13}{3.1}{section.3.1}}
+\backcite {skybridge}{{18}{3.4}{section.3.4}}
+\backcite {CertiKOS}{{18}{3.4}{section.3.4}}
 \backcite {l4v}{{21}{4.2}{lstnumber.-7.5}}
 \backcite {seL4Tutorial}{{23}{4.4}{section.4.4}}
 \backcite {sel4API}{{23}{4.4}{section.4.4}}
 \backcite {capability}{{26}{4.4.1}{lstnumber.-16.1}}
-\backcite {untyped}{{29}{4.4.2}{lstnumber.-23.10}}
+\backcite {untyped}{{30}{4.4.2}{lstnumber.-23.10}}
 \backcite {mapping}{{32}{4.4.3}{lstnumber.-29.1}}
 \backcite {threads}{{36}{4.4.4}{lstnumber.-38.11}}
 \backcite {IPCserver}{{41}{4.4.5}{lstnumber.-45.11}}

@@ -1,8 +1,8 @@
 \chapter{Sperimentazione di seL4}
-SeL4 è un sistema open-source dunque lo step successivo è stato quello di scaricare seL4 e sperimentare con mano le funzionalità, ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc. che verranno trattati in questo capitolo.
+In quest'ultimo capitolo affronteremo il nocciolo della tesi, cioè la sperimentazione di \textit{seL4}.Seguiranno tutti gli step che sono stati messi in pratica durante questa fase dello studio del sistema: dall'installazione di un sistema operativo in cui poter simulare \textit{seL4} fino a sperimentare con mano le varie funzionalità. Ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc.
 
 \section{Prerequisiti}
-Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da TS sarebbe ottimale lavorare in ambiente Linux. Non avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà. Purtroppo lo spazio nel portatile non era tantissimo e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità non trascurabile di GB. Dunque ho dovuto cercare un'alternativa. Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul \textit{microkernel} lavorando sull'SSD esterno collegato via USB.
+Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da \textit{Trustworthy System} (TS) sarebbe ottimale lavorare in ambiente Linux. Non avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà. Purtroppo lo spazio nel portatile non era tantissimo e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità non trascurabile di GB. Dunque ho dovuto cercare un'alternativa. Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul \textit{microkernel} lavorando sull'SSD esterno collegato via USB.
 
 Per lavorare su seL4 è necessario avere installato sul sistema dei programmi che simulino un'architettura su cui farlo eseguire. Per fare ciò è necessario installare delle dipendenze (prerequisiti) cioè compilatori, emulatori software vari e librerie affinché sia possibile utilizzare seL4.\\
 Prima di tutto ho installato Google repo, così da poter clonare i repository git:
@@ -157,18 +157,18 @@ repo sync
 Ogni tutorial ha un suo \textit{repository} da importare nell'ambiente di lavoro nel quale, tra gli altri file e cartelle, c'è (solitamente) un \texttt{main.c} che sarà quello su cui andare a fare le modifiche per completare il tutorial.
 
 \subsection{Capability}
-Prima di tutti ho fatto un approfondimento sulle capability. Come già detto nel capitolo precedente, una capability è un \textit{token} unico che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso. In seL4 ci sono 3 tipi di capability:
+Prima di tutti ho fatto un approfondimento sulle \textit{capability}. Come già detto nel capitolo precedente, una \textit{capability} è un \textit{token} unico che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso. In seL4 ci sono 3 tipi di \textit{capability}:
 \begin{enumerate}
-	\item capability che controllano l'accesso ad entità del kernel come i thread control block (TCB);
-	\item capability che controllano l'accesso a risorse astratte tipo gli interrupt;
-	\item untyped capability che sono responsabili della gestione della memoria.
+	\item \textit{capability} che controllano l'accesso ad entità del \textit{kernel} come i \textit{thread control block} (TCB);
+	\item \textit{capability} che controllano l'accesso a risorse astratte tipo gli \textit{interrupt};
+	\item \textit{untyped capability} che sono responsabili della gestione della memoria.
 \end{enumerate}
 
-Tutte le capability delle risorse del kernel sono date dal processo \textit{root} all'inizializzazione del sistema, un po' come il processo \texttt{init} nei sistemi unix che è padre di tutti i processi. Quando parliamo di capability ci sono 3 termini fondamentali: CNode, CSlot e CSpace. Il primo di questi è l'abbreviazione di \textit{Capability-Node} ed è un oggetto che contiene delle capability, possiamo pensarlo come un vettore (\textit{array}) di capability. Ogni elemento dell'array è chiamato CSlot (\textit{Capability-Slot}) il quale può avere due stati: \texttt{empty} o \texttt{full}. Ciò equivale, rispettivamente, che il CNode ha una capability nulla oppure una capability ad una risorsa del \textit{kernel}. Per convenzione il primo CSlot, cioè quello situato alla posizione 0 del vettore, è nullo. Invece un CSpace (\textit{Capability-Space}) è il range completo di capability accessibili da un \textit{thread}, che può essere composto da uno o più CNode.
+Tutte le \textit{capability} delle risorse del kernel sono date dal processo \textit{root} all'inizializzazione del sistema, un po' come il processo \texttt{init} nei sistemi unix che è padre di tutti i processi. Quando parliamo di \textit{capability} ci sono 3 termini fondamentali: CNode, CSlot e CSpace. Il primo di questi è l'abbreviazione di \textit{Capability-Node} ed è un oggetto che contiene delle \textit{capability}, possiamo pensarlo come un vettore (\textit{array}) di \textit{capability}. Ogni elemento dell'\textit{array} è chiamato CSlot (\textit{Capability-Slot}) il quale può avere due stati: \texttt{empty} o \texttt{full}. Ciò equivale, rispettivamente, che il CNode ha una \textit{capability} nulla oppure una \textit{capability} ad una risorsa del \textit{kernel}. Per convenzione il primo CSlot, cioè quello situato alla posizione 0 del vettore, è nullo. Invece un CSpace (\textit{Capability-Space}) è il range completo di \textit{capability} accessibili da un \textit{thread}, che può essere composto da uno o più CNode.
 
-Per fare riferimento ad una capability ed eseguire operazioni su di essa è necessario fare un \texttt{address} (indirizzamento) della capability. Per farlo ci sono due modi in seL4: tramite \textit{invocazione} o con \textit{indirizzamento diretto}.
+Per fare riferimento ad una \textit{capability} ed eseguire operazioni su di essa è necessario fare un \texttt{address} (indirizzamento) della \textit{capability}. Per farlo ci sono due modi in seL4: tramite \textit{invocazione} o con \textit{indirizzamento diretto}.
 
-Per quanto riguarda l'invocazione, ogni \textit{thread} ha uno speciale CNode installato nel suo TCB noto come \texttt{CSpace root}. Questo può essere nullo, ad esempio quando il thread non è autorizzato a invocare nessuna capability, o può avere una capability ad un noto CNode. Quando si vuole fare un \textit{addressing} di una capability attraverso invocazione, un CSlot viene indirizzato implicitamente invocando il CSpace \textit{root} del \textit{thread} che sta facendo l'invocazione.
+Per quanto riguarda l'invocazione, ogni \textit{thread} ha uno speciale CNode installato nel suo TCB noto come \texttt{CSpace root}. Questo può essere nullo, ad esempio quando il thread non è autorizzato a invocare nessuna \textit{capability}, o può avere una \textit{capability} ad un noto CNode. Quando si vuole fare un \textit{addressing} di una \textit{capability} attraverso invocazione, un CSlot viene indirizzato implicitamente invocando il CSpace \textit{root} del \textit{thread} che sta facendo l'invocazione.
 
 Per quanto riguarda il metodo dell'indirizzamento diretto invece permette di specificare il CNode piuttosto che utilizzare implicitamente il CSpace \textit{root}. Questo tipo di \textit{addressing}  è usato principalmente per costruire e manipolare i CSpace, potenzialmente il CSpace di un altro \textit{thread}.
 
@@ -201,12 +201,12 @@ error = seL4_TCB_SetPriority(last_slot, last_slot, 10);
 ZF_LOGF_IF(error, "Failed to set priority");
 \end{lstlisting}
 
-Dunque per risolvere il problema è necessario fare un'altra copia della capability del TCB dentro l'ultimo slot del CNode: per fare ciò utilizziamo \texttt{seL4\_CNode\_Copy} che prende come parametri \texttt{destination root, slot, depth, source root, slot, depth, rights}, dove \texttt{depth} indica quanto bisogna attraversare il CNode per arrivare al CSlot e \texttt{rights} sono invece i diritti ereditati dalla nuova capability; \texttt{first\_free\_slot} è lo slot in cui è stata fatta una copia della capability del TCB del \textit{thread} iniziale qualche riga di codice sopra.
+Dunque per risolvere il problema è necessario fare un'altra copia della \textit{capability} del TCB dentro l'ultimo slot del CNode: per fare ciò utilizziamo \texttt{seL4\_CNode\_Copy} che prende come parametri \texttt{destination root, slot, depth, source root, slot, depth, rights}, dove \texttt{depth} indica quanto bisogna attraversare il CNode per arrivare al CSlot e \texttt{rights} sono invece i diritti ereditati dalla nuova \textit{capability}; \texttt{first\_free\_slot} è lo slot in cui è stata fatta una copia della \textit{capability} del TCB del \textit{thread} iniziale qualche riga di codice sopra.
 \begin{lstlisting}[language=C++]
 seL4_CNode_Copy(seL4_CapInitThreadCNode, last_slot, seL4_WordBits, seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_AllRights);
 \end{lstlisting}
 
-Rieseguendo il programma non viene più mostrato l'errore predente ma c'è comunque un altro errore \texttt{first\_free\_slot is not empty}. Questo avviene perchè il codice cerca di spostare \texttt{first\_free\_slot} e \texttt{last\_slot} in se stesso, ciò non è possibile (perché è già presente una capability, cioè se stessa) ed è in realtà un escamotage per controllare se un CSlot è vuoto.
+Rieseguendo il programma non viene più mostrato l'errore predente ma c'è comunque un altro errore \texttt{first\_free\_slot is not empty}. Questo avviene perchè il codice cerca di spostare \texttt{first\_free\_slot} e \texttt{last\_slot} in se stesso, ciò non è possibile (perché è già presente una \textit{capability}, cioè se stessa) ed è in realtà un escamotage per controllare se un CSlot è vuoto.
 \begin{lstlisting}[language=C++]
 // TODO 
          
@@ -219,7 +219,7 @@ error = seL4_CNode_Move(seL4_CapInitThreadCNode, last_slot, seL4_WordBits, seL4_
 ZF_LOGF_IF(error != seL4_FailedLookup, "last_slot is not empty");
 \end{lstlisting}
 
-Quindi per risolvere il problema è necessario eliminare le due capability. Questo può essere fatto in due modi: eliminando le due copie delle capability usando \texttt{seL4\_CNode\_Delete} oppure con \texttt{seL4\_CNode\_Revoke} sulla capability originale da cui sono state fatte le copie, quest'ultima API elimina tutte le capability figlie di essa. Per fare più velocemente utilizzeremo il secondo metodo che richiede come parametri il CNode e la posizione dentro di esso in cui andare a recuperare la capability (\texttt{CNode, index, depth}):
+Quindi per risolvere il problema è necessario eliminare le due \textit{capability}. Questo può essere fatto in due modi: eliminando le due copie delle \textit{capability} usando \texttt{seL4\_CNode\_Delete} oppure con \texttt{seL4\_CNode\_Revoke} sulla \textit{capability} originale da cui sono state fatte le copie, quest'ultima API elimina tutte le \textit{capability} figlie di essa. Per fare più velocemente utilizzeremo il secondo metodo che richiede come parametri il CNode e la posizione dentro di esso in cui andare a recuperare la \textit{capability} (\texttt{CNode, index, depth}):
 \begin{lstlisting}[language=C++]
 seL4_CNode_Revoke(seL4_CapInitThreadCNode, seL4_CapInitThreadTCB, seL4_WordBits);
 \end{lstlisting}
@@ -231,13 +231,13 @@ seL4_TCB_Suspend(seL4_CapInitThreadTCB);
 Il codice completo del tutorial è riportato in \cite{capability}.
 
 \subsection{Gestione delle memoria}
-Nella sezione precedente sono stati elencati i tipi di capability presenti in seL4, al terzo posto nell'elenco troviamo le \texttt{untyped capability}, queste sono il modo con il quale è possibile gestire la memoria fisica nel \textit{microkernel} seL4.
+Nella sezione precedente sono stati elencati i tipi di \textit{capability} presenti in seL4, al terzo posto nell'elenco troviamo le \texttt{untyped capability}, queste sono il modo con il quale è possibile gestire la memoria fisica nel \textit{microkernel} seL4.
 
-Ad accezione di una piccola parte di memoria del \textit{kernel} tutta la restante è gestita a livello utente. Le capability a tutta la memoria fisica disponibile vengono passate al processo \textit{root} come capability alla \textit{untyped memory}, che non è altro che un blocco contiguo di memoria fisica con una dimensione ben specifica. Per riassumere, in seL4 avremo quindi le \textit{untyped capability} che sono capability alla \textit{untyped memory}. Inoltre le \textit{untyped capability} possono essere riscritte in oggetti del \textit{kernel} insieme alla capability oppure in ulteriori \textit{untyped capability} più piccole.
+Ad accezione di una piccola parte di memoria del \textit{kernel} tutta la restante è gestita a livello utente. Le \textit{capability} a tutta la memoria fisica disponibile vengono passate al processo \textit{root} come \textit{capability} alla \textit{untyped memory}, che non è altro che un blocco contiguo di memoria fisica con una dimensione ben specifica. Per riassumere, in seL4 avremo quindi le \textit{untyped capability} che sono \textit{capability} alla \textit{untyped memory}. Inoltre le \textit{untyped capability} possono essere riscritte in oggetti del \textit{kernel} insieme alla \textit{capability} oppure in ulteriori \textit{untyped capability} più piccole.
 
-Le untyped capability hanno anche un flag booleano \textit{device} che indica se la memoria è scrivibile dal \textit{kernel} oppure no: può essere in un'area non accessibile dal \textit{kernel} o riservata ad altri dispositivi.
+Le \textit{untyped capability} hanno anche un flag booleano \textit{device} che indica se la memoria è scrivibile dal \textit{kernel} oppure no: può essere in un'area non accessibile dal \textit{kernel} o riservata ad altri dispositivi.
 
-In seL4 esiste un unico modo per invocare una \textit{untyped capability} cioè attraverso l'utilizzo dell'API \texttt{seL4\_Untyped\_Retype} che serve per creare una nuova \textit{capability} da una \textit{untyped capability}. Nello specifico, questo \textit{retype} darà accesso a un sottoinsieme della memoria della capability di origine che può essere una \textit{untyped capability} più piccola o può puntare ad un nuovo oggetto con un tipo specifico.
+In seL4 esiste un unico modo per invocare una \textit{untyped capability} cioè attraverso l'utilizzo dell'API \texttt{seL4\_Untyped\_Retype} che serve per creare una nuova \textit{capability} da una \textit{untyped capability}. Nello specifico, questo \textit{retype} darà accesso a un sottoinsieme della memoria della \textit{capability} di origine che può essere una \textit{untyped capability} più piccola o può puntare ad un nuovo oggetto con un tipo specifico.
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(parent_untyped, // the untyped capability to retype
                     seL4_UntypedObject, // type
@@ -249,7 +249,7 @@ seL4_Untyped_Retype(parent_untyped, // the untyped capability to retype
                     1); // num_caps
 \end{lstlisting}
 
-Le \textit{untyped capability} sono ritipate in maniera incrementale seguendo una politica \textit{greedy} a partire dall'\textit{untyped} invocato. Ogni \textit{untyped capability} mantiene un singolo \textit{watermark}, con gli indirizzi prima di esso non disponibili e quelli successivi liberi. La memoria non può essere liberata fino a che tutti i figli non vengono revocati, dove i figli non sono altro che le nuove capability che vengono create da una \textit{untyped capability}.
+Le \textit{untyped capability} sono ritipate in maniera incrementale seguendo una politica \textit{greedy} a partire dall'\textit{untyped} invocato. Ogni \textit{untyped capability} mantiene un singolo \textit{watermark}, con gli indirizzi prima di esso non disponibili e quelli successivi liberi. La memoria non può essere liberata fino a che tutti i figli non vengono revocati, dove i figli non sono altro che le nuove \textit{capability} che vengono create da una \textit{untyped capability}.
 
 Come per la sezione sopra anche qui c'è un \textit{repository} da scaricare con all'interno un file\texttt{ main.c}, che una volta compilato e avviato, stampa a video una lista di tutte le \textit{untyped capability} fornite dal processo \textit{root} all'avvio e segnala un errore \texttt{Untyped Retype: Requested UntypedItem size too small}. Ciò succede perché il programma sta tentando di creare una \textit{untyped} di dimensione 0.
 \begin{lstlisting}[language=C++]
@@ -302,7 +302,7 @@ error = seL4_TCB_SetPriority(child_tcb, seL4_CapInitThreadTCB, 10);
 ZF_LOGF_IF(error != seL4_NoError, "Failed to set priority");
 \end{lstlisting}
 
-L'errore viene generato perché \texttt{child\_tcb} è un CSlot vuoto. Per risolvere è sufficiente assegnare al CSlot una capability creando un \textit{TCB object} da \texttt{child\_untyped}.
+L'errore viene generato perché \texttt{child\_tcb} è un CSlot vuoto. Per risolvere è sufficiente assegnare al CSlot una \textit{capability} creando un \textit{TCB object} da \texttt{child\_untyped}.
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(child_untyped, seL4_TCBObject, 0, seL4_CapInitThreadCNode, 0, 0, child_tcb, 1);
 \end{lstlisting}
@@ -318,7 +318,7 @@ uint32_t cap_id = seL4_DebugCapIdentify(child_ep);
 ZF_LOGF_IF(cap_id == 0, "Endpoint cap is null cap");
 \end{lstlisting}
 
-Tale errore è molto simile al precedente: si sta cercando di identificare un \textit{endpoint} nullo. Quindi per risolvere il problema è necessario creare un \textit{endpoint object} sempre da \texttt{child\_untyped} e mettere la capability nel CSlot \texttt{child\_ep}
+Tale errore è molto simile al precedente: si sta cercando di identificare un \textit{endpoint} nullo. Quindi per risolvere il problema è necessario creare un \textit{endpoint object} sempre da \texttt{child\_untyped} e mettere la \textit{capability} nel CSlot \texttt{child\_ep}
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(child_untyped, seL4_EndpointObject, 0, seL4_CapInitThreadCNode, 0, 0, child_ep, 1);
 \end{lstlisting}
@@ -404,12 +404,13 @@ Adesso il codice procede mappando la pagina però successivamente (come si può 
 seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_ReadWrite, seL4_X86_Default_VMAttributes);
 \end{lstlisting}
 
-Il \textit{mapping} delle pagine può anche essere disfatto utilizzando \texttt{unmap} sulla pagina o su qualsiasi struttura intermedia di paginazione; alternativamente può essere fatto eliminando la capability finale di qualsiasi struttura di paginazione.\\
+Il \textit{mapping} delle pagine può anche essere disfatto utilizzando \texttt{unmap} sulla pagina o su qualsiasi struttura intermedia di paginazione; alternativamente può essere fatto eliminando la \textit{capability} finale di qualsiasi struttura di paginazione.\\
 Il codice completo del tutorial è riportato in \cite{mapping}.
 
 \subsection{Thread}
-SeL4 per rappresentare l'esecuzione di un processo e gestire i tempi di esecuzione fornisce i \textit{thread}. Essi sono realizzati attraverso \textit{thread control block object} (TCBs) e ce ne sono uno per ogni \textit{thread} del kernel.\\
-Come sappiamo in un SO è lo \textit{scheduler} a decidere quale processo e per quanto tempo può utilizzare la CPU. In seL4, come avevamo già visto nel capitolo precedente, la politica di \textit{scheduling} è un integrazione di \textit{round-robin} e \textit{scheduling a priorità}: lo \textit{scheduler} sceglie i \textit{thread} con maggiore priorità che sono pronti e se ce ne sono con la stessa priorità questi saranno scelti in ordine FIFO seconda la politica \textit{round-robin}. La priorità è determinata da un range che va da 0 (\texttt{seL4\_MinPrio}) a 255 (\texttt{seL4\_MaxPrio}). Oltre alla priorità un TCBs contiene anche un \textit{maximum control priority} (MCP) che serve per controllare che un processo non modifichi la priorità di un altro processo (o di se stesso) impostandola più alta della sua. Quindi un processo che vuole modificare una priorità deve fornire la sua capability (di \textit{thread}) in modo da determinare se è autorizzato a impostare quella priorità.
+SeL4 per rappresentare l'esecuzione di un processo e gestire i tempi di esecuzione fornisce i \textit{thread}. Essi sono realizzati attraverso \textit{thread control block object} (TCBs) e ce ne sono uno per ogni \textit{thread} del kernel.
+
+Come sappiamo in un SO è lo \textit{scheduler} a decidere quale processo e per quanto tempo può utilizzare la CPU. In seL4, come avevamo già visto nel capitolo precedente, la politica di \textit{scheduling} è un integrazione di \textit{round-robin} e \textit{scheduling a priorità}: lo \textit{scheduler} sceglie i \textit{thread} con maggiore priorità che sono pronti e se ce ne sono con la stessa priorità questi saranno scelti in ordine FIFO seconda la politica \textit{round-robin}. La priorità è determinata da un range che va da 0 (\texttt{seL4\_MinPrio}) a 255 (\texttt{seL4\_MaxPrio}). Oltre alla priorità un TCBs contiene anche un \textit{maximum control priority} (MCP) che serve per controllare che un processo non modifichi la priorità di un altro processo (o di se stesso) impostandola più alta della sua. Quindi un processo che vuole modificare una priorità deve fornire la sua \textit{capability} (di \textit{thread}) in modo da determinare se è autorizzato a impostare quella priorità.
 
 L'esercizio per questa sezione, se fatto partire senza nessuna modifica, inizialmente mostrerà a video una tabella di tutti i TCB (questo è ottenuto tramite una chiamata di sistema di debug \texttt{seL4\_DebugDumpScheduler()}) e successivamente lancia un errore \texttt{Failed to retype thread: 2} come in Figura~\ref{fig:TutorialThreads}.\\
 \begin{figure}[h]
@@ -542,7 +543,7 @@ ZF_LOGF_IFERR(error, "Failed to write the new thread's register set.\n"
 Il codice completo del tutorial è riportato in \cite{threads}.
 
 \subsection{IPC}
-\textit{InterProcess Communication} è il meccanismo che utilizza il \textit{microkernel} per sincronizzare lo scambio di  piccole quantità di dati e capability tra i processi. In seL4 l'IPC è facilitato dal fatto che gli oggetti del \textit{kernel} sono di piccole dimensioni, noti come \textit{endpoint} e fungono da porte per la comunicazione; quindi per mandare e ricevere messaggi IPC bisogna farlo attraverso invocazioni sugli \textit{endpoint}.
+\textit{InterProcess Communication} è il meccanismo che utilizza il \textit{microkernel} per sincronizzare lo scambio di  piccole quantità di dati e \textit{capability} tra i processi. In seL4 l'IPC è facilitato dal fatto che gli oggetti del \textit{kernel} sono di piccole dimensioni, noti come \textit{endpoint} e fungono da porte per la comunicazione; quindi per mandare e ricevere messaggi IPC bisogna farlo attraverso invocazioni sugli \textit{endpoint}.
 
 I \textit{thread} possono mandare messaggi sugli \textit{endpoint} con la \textit{system call} \texttt{seL4\_Send} che è bloccante, mentre possono usare \texttt{seL4\_Recv} per ricevere messaggi.
 
@@ -550,19 +551,19 @@ I \textit{thread} possono mandare messaggi sugli \textit{endpoint} con la \texti
 
 La \textit{system call} \texttt{seL4\_Reply} invoca la \textit{reply capability} la quale manderà un IPC che farà risvegliare il processo bloccato. \texttt{seL4\_ReplyRecv} fa lo stesso ma invia la risposta e blocca l'\textit{endpoint} fornito in una chiamata di sistema combinata.
 
-Ogni \textit{thread} ha un \textit{buffer} che contiene il \textit{payload} del messaggio IPC composto da dati e capability. Il mittente del messaggio specifica la lunghezza e il \textit{kernel} copia questa quantità tra il mittente e il destinatario dell'\textit{IPC buffer}. Quest'ultimo contiene un'area limitata di registri di messaggio (\textit{message registers} abbreviato MR) che sono utilizzati per trasmettere dati sull'IPC. Ogni registro ha dimensione una parola (\textit{word}) (dimensione relativa alla macchina) e la lunghezza massima di un messaggio è contenuta nella costante \texttt{seL4\_MsgMaxLength}. Per caricare un messaggio dentro il \textit{buffer} è possibile utilizzare \texttt{seL4\_SetMR} mentre per estrarlo \texttt{seL4\_GetMR}; la quantità di parole che possono entrare in un registro è disponibile nelle costante \texttt{seL4\_FastMessageRegisters}.
+Ogni \textit{thread} ha un \textit{buffer} che contiene il \textit{payload} del messaggio IPC composto da dati e \textit{capability}. Il mittente del messaggio specifica la lunghezza e il \textit{kernel} copia questa quantità tra il mittente e il destinatario dell'\textit{IPC buffer}. Quest'ultimo contiene un'area limitata di registri di messaggio (\textit{message registers} abbreviato MR) che sono utilizzati per trasmettere dati sull'IPC. Ogni registro ha dimensione una parola (\textit{word}) (dimensione relativa alla macchina) e la lunghezza massima di un messaggio è contenuta nella costante \texttt{seL4\_MsgMaxLength}. Per caricare un messaggio dentro il \textit{buffer} è possibile utilizzare \texttt{seL4\_SetMR} mentre per estrarlo \texttt{seL4\_GetMR}; la quantità di parole che possono entrare in un registro è disponibile nelle costante \texttt{seL4\_FastMessageRegisters}.
 
 Insieme al messaggio il \textit{kernel} consegna il \textit{badge} dell'\textit{endpoint capability} sul quale il mittente ha fatto l'invocazione per mandare il messaggio. È possibile assegnare un \textit{badge} all'\textit{endpoint} utilizzando \texttt{seL4\_CNode\_Mint} oppure \texttt{seL4\_CNode\_Mutate}, una volta che è stato messo il \textit{badge} sull'\textit{endpoint} questo viene trasferito a tutti i destinatari che ricevono un messaggio su quell'\textit{endpoint}.
 
 SeL4, per codificare la descrizione di un messaggio IPC, usa la struttura dati \texttt{seL4\_MessageInfo\_t} il quale ha la dimensione di una parola ed è composta dai seguenti campi:
 \begin{itemize}
 	\item[-] \texttt{length} la quantità di dati nel messaggio;
-	\item[-] \texttt{extraCaps} numero di capability nel messaggio;
-	\item[-] \texttt{capsUnwrapped} marca le capability unwrapped dal kernel;
-	\item[-] \texttt{label} dati che verranno trasferiti che non sono statoi modificati dal kernel.
+	\item[-] \texttt{extraCaps} numero di \textit{capability} nel messaggio;
+	\item[-] \texttt{capsUnwrapped} marca le \textit{capability unwrapped} dal \textit{kernel};
+	\item[-] \texttt{label} dati che verranno trasferiti che non sono statoi modificati dal \textit{kernel}.
 \end{itemize}
 
-Come già accennato, insieme ai dati, attraverso l'IPC, è possibile scambiare anche capability. In gergo questo viene chiamato \textit{cap transfer}:
+Come già accennato, insieme ai dati, attraverso l'IPC, è possibile scambiare anche \textit{capability}. In gergo questo viene chiamato \textit{cap transfer}:
 \begin{lstlisting}[language=C++]
 //Invio di una capability via IPC
 seL4_MessageInfo info = seL4_MessageInfo_new(0, 0, 1, 0);
@@ -574,8 +575,8 @@ seL4_SetCapReceivePath(cnode, badged_endpoint, seL4_WordBits);
 seL4_Recv(endpoint, &sender);
 \end{lstlisting}
 
-Il numero di capability trasferite è codificato nella struttura dati \texttt{seL4\_MessageInfo\_t} come \texttt{extraCaps}.
-Inoltre seL4 può fare la cosiddetta \textit{unwrap} (scartare) delle capability sull'IPC: se l'n-esima capability nel messaggio si riferisce all'\textit{endpoint} attraverso il quale il messaggio viene inviato, la capability viene \textit{unwrapped}: il suo badge viene inserito nell'n-esima posizione dell'IPC buffer del destinatario (\texttt{caps\_or\_badges}) e il \textit{kernel} imposta l'n-esimo bit nel campo \texttt{capsUnwrapped} del \texttt{seL4\_MessageInfo\_t}.
+Il numero di \textit{capability} trasferite è codificato nella struttura dati \texttt{seL4\_MessageInfo\_t} come \texttt{extraCaps}.
+Inoltre seL4 può fare la cosiddetta \textit{unwrap} (scartare) delle \textit{capability} sull'IPC: se l'n-esima \textit{capability} nel messaggio si riferisce all'\textit{endpoint} attraverso il quale il messaggio viene inviato, la \textit{capability} viene \textit{unwrapped}: il suo badge viene inserito nell'n-esima posizione dell'IPC buffer del destinatario (\texttt{caps\_or\_badges}) e il \textit{kernel} imposta l'n-esimo bit nel campo \texttt{capsUnwrapped} del \texttt{seL4\_MessageInfo\_t}.
 
 L'unico modo che hanno i processi per comunicare, nei sistemi basati su \textit{microkernel}, è attraverso l'utilizzo dell'IPC. Essendo tutti i servizi a livello utente si può intuire che di questa funzionalità ne verrà fatto un utilizzo massiccio. Quindi è necessario che sia ottimizzato al meglio e che magari ci siano scorciatoie per renderlo ancora più efficiente in quanto da esso dipendono le prestazioni dell'intero sistema.
 
@@ -584,7 +585,7 @@ Per soddisfare questa esigenza è stato introdotto il \textit{fastpath}, cioè u
 	\item devono essere usate le \textit{system call} \texttt{seL4\_Call} o \texttt{seL4\_ReplyRecv};
 	\item i dati del messaggio devono entrare nel registro \texttt{seL4\_FastMessageRegisters};
 	\item i processi devono avere spazi di indirizzi validi;
-	\item non dovrebbero essere trasferite capability;
+	\item non dovrebbero essere trasferite \textit{capability};
 	\item nessun altro \textit{thread} nello \textit{scheduler} con priorità superiore a quello sbloccato dall'IPC può essere in esecuzione.
 \end{itemize}
 
