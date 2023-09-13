@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  12 SEP 2023 23:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  13 SEP 2023 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -969,8 +969,8 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box71
 )
 (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/background.aux) (./Chapters/sel4.aux) (./Chapters/impostazione.aux)
-)
+(./Chapters/background.aux) (./Chapters/sel4.aux)
+(./Chapters/sperimentazione.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
@@ -1174,19 +1174,16 @@ Package microtype Info: Character `029' is missing
 ] [2
 
 
-] [3] [4
-
-
-]
+] [3]
 \openout2 = `Chapters/introduzione.aux'.
 
  (./Chapters/Introduzione.tex
-Capitolo 1.
-[5
+Capitolo I.
+[4
 
 
 
-]
+] [5]
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
@@ -1234,10 +1231,10 @@ Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 6.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13] [14 <./img/seL4Hypervisor.png>] [15] [16]) [17] [18]
-\openout2 = `Chapters/impostazione.aux'.
+\openout2 = `Chapters/sperimentazione.aux'.
 
 
-(./Chapters/impostazione.tex
+(./Chapters/sperimentazione.tex
 Capitolo 4.
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1422,19 +1419,19 @@ Underfull \hbox (badness 1062) in paragraph at lines 126--126
  []
 
 [44]) [45] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/background.aux) (./Chapters/sel4.aux) (./Chapters/impostazione.aux)
-)
+(./Chapters/background.aux) (./Chapters/sel4.aux)
+(./Chapters/sperimentazione.aux))
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 951FE363259004F45B3CC367D3161EB0;739.
+(rerunfilecheck)             Checksum: 998BCE8227F03AE654708A3EA96AD715;739.
  ) 
 Here is how much of TeX's memory you used:
  30020 strings out of 476001
- 577613 string characters out of 5793197
+ 577697 string characters out of 5793197
  2195068 words of memory out of 5000000
  49023 multiletter control sequences out of 15000+600000
  612575 words of font info for 442 fonts, out of 8000000 for 9000
@@ -1448,7 +1445,7 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
 <c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (47 pages, 393669 bytes).
+Output written on thesis.pdf (47 pages, 393809 bytes).
 PDF statistics:
  990 PDF objects out of 1000 (max. 8388607)
  901 compressed objects within 10 object streams

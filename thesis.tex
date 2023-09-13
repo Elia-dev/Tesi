@@ -116,11 +116,12 @@ parts,dottedtoc]{classicthesis}
 \null\vspace{\stretch {1}}
 \emph{"Inserire citazione" \break --- Inserire autore citazione} \vspace{\stretch{2}}\null
 \end{flushright}
-\cleardoublepage
+\renewcommand{\thechapter}{I}
 \include{Chapters/introduzione}
+\renewcommand{\thechapter}{\arabic{chapter}}
 \include{Chapters/background}
 \include{Chapters/sel4}
-\include{Chapters/impostazione}
+\include{Chapters/sperimentazione}
 \nocite{*}
 \bibliography{bibliografia}
 \bibliographystyle{plainurl}
