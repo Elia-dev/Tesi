@@ -56,6 +56,7 @@ Wikipedia{,} l'enciclopedia libera.
 Wikipedia{,} l'enciclopedia libera.
 \newblock L4 microkernel family, 2023.
 \newblock Ultima modifica 29 maggio 2023.
+\newblock URL: \url{https://en.wikipedia.org/wiki/L4_microkernel_family}.
 
 \bibitem{MemoriaVirtuale}
 Wikipedia{,} l'enciclopedia libera.
@@ -136,8 +137,9 @@ Ninja-build.
 \newblock Ultima modifica 30 agosto 2022.
 \newblock URL: \url{https://ninja-build.org/manual.html}.
 
-\bibitem{Slide}
-Rosario Pugliese.
-\newblock Chiedere al prof come citare le sue slide.
+\bibitem{sistemiOperativi}
+A.~Silberschatz, P.B. Galvin, and G.~Gagne.
+\newblock {\em Sistemi Operativi - Concetti ed esempi}.
+\newblock Pearson, 10 edition, 2019.
 
 \end{thebibliography}

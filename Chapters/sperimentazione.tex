@@ -1,11 +1,12 @@
 \chapter{Sperimentazione di seL4}
-In quest'ultimo capitolo affronteremo il nocciolo della tesi, cioè la sperimentazione di \textit{seL4}.Seguiranno tutti gli step che sono stati messi in pratica durante questa fase dello studio del sistema: dall'installazione di un sistema operativo in cui poter simulare \textit{seL4} fino a sperimentare con mano le varie funzionalità. Ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto fatto finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC ecc.
+In quest'ultimo capitolo viene affrontato il punto chiave della tesi, cioè la sperimentazione di \textit{seL4}. Seguiranno tutti gli \textit{step} che sono stati messi in pratica durante questa fase dello studio del sistema: dall'installazione di un sistema operativo in cui poter simulare \textit{seL4}, fino allo sperimentare con mano le varie funzionalità. Ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto realizzato finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC, ecc.
 
 \section{Prerequisiti}
-Come prima cosa ho installato sul mio portatile VirtualBox in quanto come consigliato dalle guide fornite da \textit{Trustworthy System} (TS) sarebbe ottimale lavorare in ambiente Linux. Non avendo una partizione del portatile con Linux ho inizialmente pensato di utilizzare una macchina virtuale così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4 però ho incontrato una prima difficoltà. Purtroppo lo spazio nel portatile non era tantissimo e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità non trascurabile di GB. Dunque ho dovuto cercare un'alternativa. Per sopperire al problema mi sono procurato un SSD su cui sono andato a copiare la partizione creata in VirtualBox continuando la sperimentazione sul \textit{microkernel} lavorando sull'SSD esterno collegato via USB.
+Come prima cosa ho installato sul mio portatile \textit{VirtualBox} in quanto, come consigliato dalle guide fornite da \textit{Trustworthy System} (TS), sarebbe ottimale lavorare in ambiente Linux. Non avendo una partizione del portatile con Linux, ho inizialmente pensato di utilizzare una macchina virtuale, così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui lavorare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4, ho però ho incontrato una prima difficoltà: lo spazio nel portatile non era purtroppo tantissimo e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità non trascurabile di GB. Ho di conseguenza dovuto cercare un'alternativa. Per sopperire al problema, mi sono procurato un SSD su cui sono andato a copiare la partizione creata in \textit{VirtualBox}, continuando la sperimentazione sul \textit{microkernel} lavorando sull'SSD esterno collegato via USB.
 
-Per lavorare su seL4 è necessario avere installato sul sistema dei programmi che simulino un'architettura su cui farlo eseguire. Per fare ciò è necessario installare delle dipendenze (prerequisiti) cioè compilatori, emulatori software vari e librerie affinché sia possibile utilizzare seL4.\\
-Prima di tutto ho installato Google repo, così da poter clonare i repository git:
+Per operare su seL4, è necessario avere installati sul sistema programmi che simulino un'architettura su cui farlo eseguire. Per fare ciò è fondamentale installare delle dipendenze (prerequisiti) cioè compilatori, emulatori software vari e librerie, affinché sia possibile utilizzare seL4.
+
+Prima di tutto ho installato Google repo, così da poter clonare i \textit{repository git}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -34,7 +35,7 @@ Prima di tutto ho installato Google repo, così da poter clonare i repository gi
 sudo apt-get install repo
 \end{lstlisting}
 
-build-essential, cmake, ninja, curl, python e QEMU abbreviazione di \textit{Quick EMUlator}, un emulatore \textit{open-source} che permette di emulare un'architettura informatica e quindi diversi sistemi operativi; in questo caso è fondamentale perchè permette l'esecuzione di seL4:
+\textit{build-essential}, \textit{cmake}, \textit{ninja}, \textit{curl}, \textit{python} e QEMU (abbreviazione di \textit{Quick EMUlator}), emulatore \textit{open-source}, che permette di simulare un'architettura informatica e quindi diversi sistemi operativi; in questo caso, requisito fondamentale perché permette l'esecuzione di seL4:
 \begin{lstlisting}[language=bash]
 sudo apt-get install build-essential
 sudo apt-get install cmake ccache ninja-build cmake-curses-gui
@@ -48,7 +49,7 @@ pip3 install --user setuptools
 pip3 install --user sel4-deps
 \end{lstlisting}
 
-Altro componente fondamentale è CAmkES (\textit{component architecture for \textit{microkernel}-based embedded systems}), un \textit{framework} per realizzare velocemente sistemi multiserver affidabili basati su \textit{microkernel}
+Altro componente essenziale è CAmkES (\textit{component architecture for \textit{microkernel}-based embedded systems}), un \textit{framework} per realizzare velocemente sistemi \textit{multiserver} affidabili, basati su \textit{microkernel}.
 \begin{lstlisting}[language=bash]
 pip3 install --user camkes-deps
 curl -sSL https://get.haskellstack.org/ | sh
@@ -58,7 +59,7 @@ sudo apt-get install libssl-dev libclang-dev libcunit1-dev libsqlite3-dev
 sudo apt-get install qemu-kvm
 \end{lstlisting}
 
-Dopodiché sono passato alle dipendenze per l'installazione di Isabelle (\textit{theorem prover}) che serve per la verifica automatica di sistemi software e hardware:
+Dopodiché, sono passato alle dipendenze per l'installazione di Isabelle (\textit{theorem prover},) che serve per la verifica automatica di sistemi \textit{software} e \textit{hardware}
 \begin{lstlisting}[language=bash]
 sudo apt-get install \
     python3 python3-pip python3-dev \
@@ -82,7 +83,7 @@ stack install cabal-install
 Con questa serie di comandi \textit{bash} il sistema operativo Linux, per la precisione Ubuntu 22.04.2 LTS, ha tutti i prerequisiti necessari per procedere alla configurazione.
 
 \section{Configurazione}
-Lo step successivo è stato quello di recuperare, attraverso \texttt{repo}, la collezione di \textit{repository} necessari per la verifica di seL4 contenente in particolare, il sorgente del kernel, i \textit{theorem prover} Isabelle/HOL e HOL4 e lo strumento di verifica binaria.
+Lo \textit{step} successivo è stato quello di recuperare, attraverso \texttt{repo}, la collezione di \textit{repository} necessari per la verifica di seL4 contenente, in particolare il sorgente del \textit{kernel}, i \textit{theorem prover} Isabelle/HOL e HOL4 e lo strumento di verifica binaria.
 \begin{lstlisting}[language=bash]
 mkdir verification
 cd verification
@@ -90,7 +91,7 @@ repo init -u https://git@github.com/seL4/verification-manifest.git
 repo sync
 \end{lstlisting}
 
-A questo punto  si avrà quindi una cartella con questa struttura:
+A questo punto si avrà quindi una cartella con questa struttura:
 \dirtree{%
 .1 verification.
 .2 HOL4/.
@@ -99,7 +100,7 @@ A questo punto  si avrà quindi una cartella con questa struttura:
 .2 l4v/.
 .2 seL4/.
 }
-Il che indica che l'importazione delle \textit{repository} è andata a buon fine, quindi possiamo procedere alla configurazione di Isabelle posizionandoci nella cartella \texttt{l4v}:
+Il che indica che l'importazione delle \textit{repository} è andata a buon fine e che quindi si procederà alla configurazione di Isabelle posizionandoci nella cartella \texttt{l4v}:
 \begin{lstlisting}[language=bash]
 mkdir -p ~/.isabelle/etc
 cp -i misc/etc/settings ~/.isabelle/etc/settings
@@ -108,16 +109,16 @@ cp -i misc/etc/settings ~/.isabelle/etc/settings
 ./isabelle/bin/isabelle build -bv HOL
 \end{lstlisting}
 
-Questa serie di comandi bash daranno come risultato:
+Questa serie di comandi \textit{bash} daranno come risultato:
 \begin{itemize}
 	\item la creazione di una cartella per le impostazioni utente di Isabelle;
-	\item l'installazione delle impostazione Isabelle per L4.verified \cite{l4v} il quale è un repository che contiene formalismi per la verifica di seL4;
-	\item il download di Scala, Java JDK, PolyML ed altri dimostratori (\textit{prover}) esterni;
+	\item l'installazione delle impostazione Isabelle per L4.verified \cite{l4v}, il quale è un \textit{repository} che contiene formalismi per la verifica di seL4;
+	\item il \textit{download} di Scala, Java JDK, PolyML ed altri dimostratori (\textit{prover}) esterni;
 	\item la compilazione del Prover IDE (PIDE) jEdit di Isabelle.
 \end{itemize} 
 
 \section{Avvio di SeL4}
-Terminata la prima fase di installazione dei prerequisiti e di configurazione mi sono procurato ciò che servirà poi per eseguire i test delle varie funzionalità di seL4:
+Terminata la prima fase di installazione dei prerequisiti e di configurazione, \textcolor{red}{si andrà a procurarsi} ciò che servirà poi per eseguire i \textit{test} delle varie funzionalità di seL4:
 \begin{lstlisting}[language=bash]
 mkdir seL4test
 cd seL4test
@@ -125,9 +126,9 @@ repo init -u https://github.com/seL4/sel4test-manifest.git
 repo sync
 \end{lstlisting}
 
-Con questi comandi si va a creare una directory \texttt{seL4test} al cui interno ci saranno tutte le direttive e le librerie necessarie per eseguire i vari test e scaricare anche il kernel stesso, attraverso il comando \texttt{repo}.
+Con questi comandi si va a creare una \textit{directory} \texttt{seL4test} al cui interno ci saranno tutte le direttive e le librerie necessarie per eseguire i vari \textit{test} e scaricare anche il \textit{kernel} stesso, attraverso il comando \texttt{repo}.
 
-Successivamente è stato necessario creare una cartella \texttt{build-x86} di configurazione per QEMU in modo da indicargli il \textit{target} su cui eseguire le simulazioni:
+Successivamente è stato necessario creare una cartella \texttt{build-x86} di configurazione per QEMU, in modo da indicargli il \textit{target} su cui eseguire le simulazioni:
 \begin{lstlisting}[language=bash]
 mkdir build-x86
 cd build-x86
@@ -135,42 +136,43 @@ cd build-x86
 ninja
 \end{lstlisting}
 
-Il comando \texttt{ninja}, che si vedrà spesso a seguire, è un \textit{assembler} che permette di fare il \textit{build} di sistemi anche complessi molto velocemente.
+Il comando \texttt{ninja}, che si vedrà spesso in seguito, è un \textit{assembler} che permette di fare il \textit{build} di sistemi anche complessi molto velocemente.
 
-A questo punto è possibile eseguire il comando \texttt{./simulate} che farà partire la simulazione e dopo una lunga serie di test (IPC, chiamate di sistema, thread...) che appariranno nel terminale, concluderà, se tutto è andato a buon fine, con:\\
+A questo punto è possibile eseguire il comando \texttt{./simulate}, che farà partire la simulazione e dopo una lunga serie di \textit{test} (IPC, chiamate di sistema, \textit{thread}...) che appariranno nel terminale, concluderà, se tutto è andato a buon fine, con:\\
 \texttt{All is well in the universe}\\
-Il che indica che seL4 può essere utilizzato in questo ambiente simulato come mostrato in Figura~\ref{fig:Prima simulazione}.
+Il che indica che seL4 può essere utilizzato in questo ambiente simulato come mostrato in Figura~\ref{fig:PrimaSimulazione}.
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{img/PrimaSimulazione.png}
-  \label{fig:Prima simulazione}
+  \caption{Primo avvio di seL4}
+  \label{fig:PrimaSimulazione}
 \end{figure}
 
 \section{Programmazione con le API livello kernel di seL4}
-Una volta procurati tutti i prerequisiti necessari e appurato che seL4 può essere eseguito senza problemi possiamo iniziare a prendere familiarità con il sistema seguendo dei tutorial forniti dalla \textit{seL4 Foundation} \cite{seL4Tutorial}. Tali tutorial contengono programmi semicompleti creati appositamente per sperimentare e far comprendere le funzionalità del sistema, in particolare con le API di seL4 \cite{sel4API}.\\
-Come ormai già visto più volte sopra ho recuperato l'ambiente per eseguire i tutorial attraverso l'uso di \texttt{repo}:
+Una volta procurati tutti i prerequisiti necessari e appurato che seL4 può essere eseguito senza problemi, è finalmente possibile iniziare a prendere familiarità con il sistema, seguendo \textit{tutorial} forniti dalla \textit{seL4 Foundation} \cite{seL4Tutorial}. Tali \textit{tutorial} contengono programmi semicompleti, creati appositamente per sperimentare e far comprendere le funzionalità del sistema, in particolare con le API di seL4 \cite{sel4API}.\\
+Come ormai già visto più volte sopra \textcolor{red}{si recupererà} l'ambiente per eseguire i \textit{tutorial}, attraverso l'uso di \texttt{repo}:
 \begin{lstlisting}[language=bash]
 mkdir sel4-tutorials-manifest
 cd sel4-tutorials-manifest
 repo init -u https://github.com/seL4/sel4-tutorials-manifest
 repo sync
 \end{lstlisting}
-Ogni tutorial ha un suo \textit{repository} da importare nell'ambiente di lavoro nel quale, tra gli altri file e cartelle, c'è (solitamente) un \texttt{main.c} che sarà quello su cui andare a fare le modifiche per completare il tutorial.
+Ogni tutorial ha un suo \textit{repository} da importare nell'ambiente di lavoro nel quale, tra gli altri \textit{file} e cartelle, c'è (solitamente) un \texttt{main.c}, che sarà quello su cui andare a fare le modifiche per completare il tutorial.
 
 \subsection{Capability}
-Prima di tutti ho fatto un approfondimento sulle \textit{capability}. Come già detto nel capitolo precedente, una \textit{capability} è un \textit{token} unico che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso. In seL4 ci sono 3 tipi di \textit{capability}:
+Come già detto nel capitolo precedente, una \textit{capability} è un \textit{token} unico che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso; in seL4 ci sono 3 tipi di \textit{capability}:
 \begin{enumerate}
-	\item \textit{capability} che controllano l'accesso ad entità del \textit{kernel} come i \textit{thread control block} (TCB);
+	\item \textit{capability} che controllano l'accesso ad entità del \textit{kernel}, come i \textit{thread control block} (TCB);
 	\item \textit{capability} che controllano l'accesso a risorse astratte tipo gli \textit{interrupt};
 	\item \textit{untyped capability} che sono responsabili della gestione della memoria.
 \end{enumerate}
 
-Tutte le \textit{capability} delle risorse del kernel sono date dal processo \textit{root} all'inizializzazione del sistema, un po' come il processo \texttt{init} nei sistemi unix che è padre di tutti i processi. Quando parliamo di \textit{capability} ci sono 3 termini fondamentali: CNode, CSlot e CSpace. Il primo di questi è l'abbreviazione di \textit{Capability-Node} ed è un oggetto che contiene delle \textit{capability}, possiamo pensarlo come un vettore (\textit{array}) di \textit{capability}. Ogni elemento dell'\textit{array} è chiamato CSlot (\textit{Capability-Slot}) il quale può avere due stati: \texttt{empty} o \texttt{full}. Ciò equivale, rispettivamente, che il CNode ha una \textit{capability} nulla oppure una \textit{capability} ad una risorsa del \textit{kernel}. Per convenzione il primo CSlot, cioè quello situato alla posizione 0 del vettore, è nullo. Invece un CSpace (\textit{Capability-Space}) è il range completo di \textit{capability} accessibili da un \textit{thread}, che può essere composto da uno o più CNode.
+Tutte le \textit{capability} delle risorse del \textit{kernel} sono date dal processo \textit{root} all'inizializzazione del sistema, un po' come il processo \texttt{init} nei sistemi unix, che è padre di tutti i processi. Quando parliamo di \textit{capability} ci sono 3 termini fondamentali: CNode, CSlot e CSpace. Il primo di questi è l'abbreviazione di \textit{Capability-Node} ed è un oggetto che contiene delle \textit{capability}: si può pensarlo come un vettore (\textit{array}) di \textit{capability}. Ogni elemento dell'\textit{array} è chiamato CSlot (\textit{Capability-Slot}), il quale può avere due stati: \texttt{empty} o \texttt{full}. Ciò significa, rispettivamente, che il CNode ha una \textit{capability} nulla oppure una \textit{capability} ad una risorsa del \textit{kernel}. Per convenzione il primo CSlot, cioè quello situato alla posizione 0 del vettore, è nullo. Invece un CSpace (\textit{Capability-Space}) è il \textit{range} completo di \textit{capability} accessibili da un \textit{thread}, che può essere composto da uno o più CNode.
 
 Per fare riferimento ad una \textit{capability} ed eseguire operazioni su di essa è necessario fare un \texttt{address} (indirizzamento) della \textit{capability}. Per farlo ci sono due modi in seL4: tramite \textit{invocazione} o con \textit{indirizzamento diretto}.
 
-Per quanto riguarda l'invocazione, ogni \textit{thread} ha uno speciale CNode installato nel suo TCB noto come \texttt{CSpace root}. Questo può essere nullo, ad esempio quando il thread non è autorizzato a invocare nessuna \textit{capability}, o può avere una \textit{capability} ad un noto CNode. Quando si vuole fare un \textit{addressing} di una \textit{capability} attraverso invocazione, un CSlot viene indirizzato implicitamente invocando il CSpace \textit{root} del \textit{thread} che sta facendo l'invocazione.
+Per quanto riguarda l'invocazione, ogni \textit{thread} ha uno speciale CNode installato nel suo TCB noto come \texttt{CSpace root}. Questo può essere nullo, ad esempio quando il \textit{thread} non è autorizzato a invocare nessuna \textit{capability}, o può avere una \textit{capability} ad un noto CNode. Quando si vuole fare un \textit{addressing} di una \textit{capability} attraverso invocazione, un CSlot viene indirizzato implicitamente invocando il CSpace \textit{root} del \textit{thread} che sta facendo l'invocazione.
 
-Per quanto riguarda il metodo dell'indirizzamento diretto invece permette di specificare il CNode piuttosto che utilizzare implicitamente il CSpace \textit{root}. Questo tipo di \textit{addressing}  è usato principalmente per costruire e manipolare i CSpace, potenzialmente il CSpace di un altro \textit{thread}.
+Per quanto riguarda il metodo dell'indirizzamento diretto, questo invece permette di specificare il CNode, piuttosto che utilizzare implicitamente il CSpace \textit{root}. Questo tipo di \textit{addressing}  è usato principalmente per costruire e manipolare i CSpace, potenzialmente il CSpace di un altro \textit{thread}.
 
 L'esercizio proposto in questa sezione è un programma in linguaggio C con una serie di errori da risolvere, il primo tra questi è nel settaggio del numero di \textit{byte} del CNode:
 \begin{lstlisting}[language=C++]
@@ -186,9 +188,9 @@ int main(int argc, char *argv[]) {
     printf("The CNode is %zu bytes in size\n", 	initial_cnode_object_size_bytes);
 \end{lstlisting}
 
-Chiaramente \texttt{initial\_cnode\_object\_size\_bytes} non può essere 0, il suo valore invece sarà dato dal numero degli slot del CNode moltiplicato per le dimensione in bit di ognuno di essi:\texttt{initial\_cnode\_object\_size * (1u << seL4\_SlotBits)}.
+Chiaramente \texttt{initial\_cnode\_object\_size\_bytes} non può essere 0, il suo valore invece sarà dato dal numero degli slot del CNode moltiplicato per le dimensione in \textit{bit} di ognuno di essi:\texttt{initial\_cnode\_object\_size * (1u << seL4\_SlotBits)}.
 
-Eseguendo nuovamente il codice questo darà l'errore \texttt{Attempted to invoke a null cap}. Ciò accade perché il codice cerca di impostare la priorità del TCB del \textit{thread} invocando l'ultimo CSlot del CSpace che però è vuoto.
+Eseguendo nuovamente il codice, questo darà l'errore \texttt{Attempted to invoke a null cap}. Ciò accade perché il codice cerca di impostare la priorità del TCB del \textit{thread}, invocando l'ultimo CSlot del CSpace che però è vuoto.
 \begin{lstlisting}[language=C++]
 seL4_CPtr first_free_slot = info->empty.start;
 seL4_Error error = seL4_CNode_Copy(seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_CapInitThreadCNode, seL4_CapInitThreadTCB, seL4_WordBits, seL4_AllRights);
@@ -201,12 +203,12 @@ error = seL4_TCB_SetPriority(last_slot, last_slot, 10);
 ZF_LOGF_IF(error, "Failed to set priority");
 \end{lstlisting}
 
-Dunque per risolvere il problema è necessario fare un'altra copia della \textit{capability} del TCB dentro l'ultimo slot del CNode: per fare ciò utilizziamo \texttt{seL4\_CNode\_Copy} che prende come parametri \texttt{destination root, slot, depth, source root, slot, depth, rights}, dove \texttt{depth} indica quanto bisogna attraversare il CNode per arrivare al CSlot e \texttt{rights} sono invece i diritti ereditati dalla nuova \textit{capability}; \texttt{first\_free\_slot} è lo slot in cui è stata fatta una copia della \textit{capability} del TCB del \textit{thread} iniziale qualche riga di codice sopra.
+Dunque per risolvere il problema è necessario fare un'altra copia della \textit{capability} del TCB all'interno dell'ultimo slot del CNode: per fare ciò, viene utilizzato \texttt{seL4\_CNode\_Copy}, che prende come parametri \texttt{destination root, slot, depth, source root, slot, depth, rights}, dove \texttt{depth} indica quanto bisogna attraversare il CNode per arrivare al CSlot e \texttt{rights} sono invece i diritti ereditati dalla nuova \textit{capability}; \texttt{first\_free\_slot} è lo \textit{slot} in cui è stata fatta una copia della \textit{capability} del TCB del \textit{thread} iniziale qualche riga di codice sopra.
 \begin{lstlisting}[language=C++]
 seL4_CNode_Copy(seL4_CapInitThreadCNode, last_slot, seL4_WordBits, seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_AllRights);
 \end{lstlisting}
 
-Rieseguendo il programma non viene più mostrato l'errore predente ma c'è comunque un altro errore \texttt{first\_free\_slot is not empty}. Questo avviene perchè il codice cerca di spostare \texttt{first\_free\_slot} e \texttt{last\_slot} in se stesso, ciò non è possibile (perché è già presente una \textit{capability}, cioè se stessa) ed è in realtà un escamotage per controllare se un CSlot è vuoto.
+Rieseguendo il programma non viene più mostrato l'errore precedente ma è comunque presente un altro errore \texttt{first\_free\_slot is not empty}. Questo avviene perché il codice cerca di spostare \texttt{first\_free\_slot} e \texttt{last\_slot} in se stesso; ciò non è possibile (perché è già presente una \textit{capability}, cioè se stessa) ed è in realtà un \textit{escamotage} per controllare se un CSlot è vuoto.
 \begin{lstlisting}[language=C++]
 // TODO 
          
@@ -219,7 +221,7 @@ error = seL4_CNode_Move(seL4_CapInitThreadCNode, last_slot, seL4_WordBits, seL4_
 ZF_LOGF_IF(error != seL4_FailedLookup, "last_slot is not empty");
 \end{lstlisting}
 
-Quindi per risolvere il problema è necessario eliminare le due \textit{capability}. Questo può essere fatto in due modi: eliminando le due copie delle \textit{capability} usando \texttt{seL4\_CNode\_Delete} oppure con \texttt{seL4\_CNode\_Revoke} sulla \textit{capability} originale da cui sono state fatte le copie, quest'ultima API elimina tutte le \textit{capability} figlie di essa. Per fare più velocemente utilizzeremo il secondo metodo che richiede come parametri il CNode e la posizione dentro di esso in cui andare a recuperare la \textit{capability} (\texttt{CNode, index, depth}):
+Quindi per risolvere il problema bisogna eliminare le due \textit{capability}. Questo può essere fatto in due modi: eliminando le due copie delle \textit{capability} usando \texttt{seL4\_CNode\_Delete}, oppure con \texttt{seL4\_CNode\_Revoke} sulla \textit{capability} originale da cui sono state fatte le copie; quest'ultima API elimina tutte le \textit{capability} figlie di essa. Per fare più velocemente si utilizzerà il secondo metodo, che richiede come parametri il CNode e la posizione dentro di esso in cui andare a recuperare la \textit{capability} (\texttt{CNode, index, depth}):
 \begin{lstlisting}[language=C++]
 seL4_CNode_Revoke(seL4_CapInitThreadCNode, seL4_CapInitThreadTCB, seL4_WordBits);
 \end{lstlisting}
@@ -230,14 +232,14 @@ seL4_TCB_Suspend(seL4_CapInitThreadTCB);
 \end{lstlisting}
 Il codice completo del tutorial è riportato in \cite{capability}.
 
-\subsection{Gestione delle memoria}
-Nella sezione precedente sono stati elencati i tipi di \textit{capability} presenti in seL4, al terzo posto nell'elenco troviamo le \texttt{untyped capability}, queste sono il modo con il quale è possibile gestire la memoria fisica nel \textit{microkernel} seL4.
+\subsection{Gestione della memoria}
+Nella sezione precedente sono stati elencati i tipi di \textit{capability} presenti in seL4, al terzo posto nell'elenco si trovano le \textit{untyped capability}, il modo con il quale è possibile gestire la memoria fisica nel \textit{microkernel} seL4.
 
-Ad accezione di una piccola parte di memoria del \textit{kernel} tutta la restante è gestita a livello utente. Le \textit{capability} a tutta la memoria fisica disponibile vengono passate al processo \textit{root} come \textit{capability} alla \textit{untyped memory}, che non è altro che un blocco contiguo di memoria fisica con una dimensione ben specifica. Per riassumere, in seL4 avremo quindi le \textit{untyped capability} che sono \textit{capability} alla \textit{untyped memory}. Inoltre le \textit{untyped capability} possono essere riscritte in oggetti del \textit{kernel} insieme alla \textit{capability} oppure in ulteriori \textit{untyped capability} più piccole.
+Ad eccezione di una piccola parte di memoria del \textit{kernel}, tutta la restante è gestita a livello utente. Le \textit{capability} a tutta la memoria fisica disponibile vengono passate al processo \textit{root} come \textit{capability} alla \textit{untyped memory}, che altro non è che un blocco contiguo di memoria fisica con una dimensione ben specifica. Per riassumere, in seL4 si avranno quindi le \textit{untyped capability} che sono \textit{capability} alla \textit{untyped memory}. Inoltre le \textit{untyped capability} possono essere riscritte in oggetti del \textit{kernel} insieme alla \textit{capability}, oppure in ulteriori \textit{untyped capability} più piccole.
 
-Le \textit{untyped capability} hanno anche un flag booleano \textit{device} che indica se la memoria è scrivibile dal \textit{kernel} oppure no: può essere in un'area non accessibile dal \textit{kernel} o riservata ad altri dispositivi.
+Le \textit{untyped capability} hanno anche un \textit{flag} booleano \textit{device}, che indica se la memoria è scrivibile dal \textit{kernel} oppure no: può essere in un'area non accessibile dal \textit{kernel} o riservata ad altri dispositivi.
 
-In seL4 esiste un unico modo per invocare una \textit{untyped capability} cioè attraverso l'utilizzo dell'API \texttt{seL4\_Untyped\_Retype} che serve per creare una nuova \textit{capability} da una \textit{untyped capability}. Nello specifico, questo \textit{retype} darà accesso a un sottoinsieme della memoria della \textit{capability} di origine che può essere una \textit{untyped capability} più piccola o può puntare ad un nuovo oggetto con un tipo specifico.
+In seL4 esiste un unico modo per invocare una \textit{untyped capability}, cioè attraverso l'utilizzo dell'API \texttt{seL4\_Untyped\_Retype}, che serve per creare una nuova \textit{capability} da una \textit{untyped capability}. Nello specifico, questo \textit{retype} darà accesso a un sottoinsieme della memoria della \textit{capability} di origine che può essere una \textit{untyped capability} più piccola o può puntare ad un nuovo oggetto con un tipo specifico.
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(parent_untyped, // the untyped capability to retype
                     seL4_UntypedObject, // type
@@ -251,7 +253,7 @@ seL4_Untyped_Retype(parent_untyped, // the untyped capability to retype
 
 Le \textit{untyped capability} sono ritipate in maniera incrementale seguendo una politica \textit{greedy} a partire dall'\textit{untyped} invocato. Ogni \textit{untyped capability} mantiene un singolo \textit{watermark}, con gli indirizzi prima di esso non disponibili e quelli successivi liberi. La memoria non può essere liberata fino a che tutti i figli non vengono revocati, dove i figli non sono altro che le nuove \textit{capability} che vengono create da una \textit{untyped capability}.
 
-Come per la sezione sopra anche qui c'è un \textit{repository} da scaricare con all'interno un file\texttt{ main.c}, che una volta compilato e avviato, stampa a video una lista di tutte le \textit{untyped capability} fornite dal processo \textit{root} all'avvio e segnala un errore \texttt{Untyped Retype: Requested UntypedItem size too small}. Ciò succede perché il programma sta tentando di creare una \textit{untyped} di dimensione 0.
+Come per la sezione sopra anche qui è presente un \textit{repository} da scaricare con all'interno un file\texttt{ main.c}, che una volta compilato e avviato, stampa a video una lista di tutte le \textit{untyped capability} fornite dal processo \textit{root} all'avvio e segnala un errore \texttt{Untyped Retype: Requested UntypedItem size too small}. Ciò succede perché il programma sta tentando di creare una \textit{untyped} di dimensione 0.
 \begin{lstlisting}[language=C++]
 int main(int argc, char *argv[]) {
     /* parse the location of the seL4_BootInfo data structure from
@@ -285,7 +287,7 @@ int main(int argc, char *argv[]) {
     }
 \end{lstlisting}
 
-Per risolvere questo problema è necessario assegnare una dimensione consona alla variabile \texttt{untyped\_size\_bits}. Dato che poi dobbiamo creare uno spazio per tutti gli elementi di \texttt{objects[]} e considerato che la somma di \texttt{seL4\_EndpointBits} e \texttt{seL4\_NotificationBits} è inferiore a \texttt{seL4\_TCBBits} possiamo attribuire alla variabile il valore \texttt{seL4\_TCBBits + 1}. Il +1 fa raddoppiare il numero di \textit{byte} visto che lo spazio assegnato sarà $ 2^{seL4\_TCBBits + 1} $ bit, i quali sono sufficienti per contenere tutti e tre gli elementi.
+Per risolvere questo problema è necessario assegnare una dimensione consona alla variabile \texttt{untyped\_size\_bits}. Dato che si deve creare uno spazio per tutti gli elementi di \texttt{objects[]} e considerato che la somma di \texttt{seL4\_EndpointBits} e \texttt{seL4\_NotificationBits} è inferiore a \texttt{seL4\_TCBBits}, si può attribuire alla variabile il valore \texttt{seL4\_TCBBits + 1}. Il +1 fa raddoppiare il numero di \textit{byte}, visto che lo spazio assegnato sarà $ 2^{seL4\_TCBBits + 1} $ \textit{bit}, i quali sono sufficienti per contenere tutti e tre gli elementi.
 
 Eseguendo di nuovo il programma questo procederà fino a che non segnalerà un ulteriore errore \texttt{Failed to set priority}.
 \begin{lstlisting}[language=C++]
@@ -302,12 +304,12 @@ error = seL4_TCB_SetPriority(child_tcb, seL4_CapInitThreadTCB, 10);
 ZF_LOGF_IF(error != seL4_NoError, "Failed to set priority");
 \end{lstlisting}
 
-L'errore viene generato perché \texttt{child\_tcb} è un CSlot vuoto. Per risolvere è sufficiente assegnare al CSlot una \textit{capability} creando un \textit{TCB object} da \texttt{child\_untyped}.
+L'errore viene generato perché \texttt{child\_tcb} è un CSlot vuoto. Per risolvere è sufficiente assegnare al CSlot una \textit{capability}, creando un \textit{TCB object} da \texttt{child\_untyped}.
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(child_untyped, seL4_TCBObject, 0, seL4_CapInitThreadCNode, 0, 0, child_tcb, 1);
 \end{lstlisting}
 
-Con questa linea di codice il problema è risolto ma l'esecuzione viene bloccata da un altro errore \texttt{Endpoint cap is null cap}.
+Con questa linea di codice il problema è sì risolto, ma l'esecuzione viene bloccata da un altro errore \texttt{Endpoint cap is null cap}.
 \begin{lstlisting}[language=C++]
 // use the slot after child_tcb for the new endpoint cap:
 seL4_CPtr child_ep = child_tcb + 1;
@@ -318,12 +320,12 @@ uint32_t cap_id = seL4_DebugCapIdentify(child_ep);
 ZF_LOGF_IF(cap_id == 0, "Endpoint cap is null cap");
 \end{lstlisting}
 
-Tale errore è molto simile al precedente: si sta cercando di identificare un \textit{endpoint} nullo. Quindi per risolvere il problema è necessario creare un \textit{endpoint object} sempre da \texttt{child\_untyped} e mettere la \textit{capability} nel CSlot \texttt{child\_ep}
+Tale errore è molto simile al precedente: si sta cercando di identificare un \textit{endpoint} nullo. Quindi per risolvere il problema è necessario creare un \textit{endpoint object} sempre da \texttt{child\_untyped} e mettere la \textit{capability} nel CSlot \texttt{child\_ep}.
 \begin{lstlisting}[language=C++]
 seL4_Untyped_Retype(child_untyped, seL4_EndpointObject, 0, seL4_CapInitThreadCNode, 0, 0, child_ep, 1);
 \end{lstlisting}
 
-Alla fine il programma tenta di allocare tutto il \texttt{child\_untyped} come \textit{endpoint} ma fallisce perché tutto lo spazio è stato consumato dalle allocazioni fatte precedentemente. La soluzione al problema è fare una \texttt{seL4\_CNode\_Revoke} (vista sopra) su di esso in modo che tutto le spazio venga liberato e così facendo il programma termina con successo. 
+Alla fine il programma tenta di allocare tutto il \texttt{child\_untyped} come \textit{endpoint}, ma fallisce perché tutto lo spazio è stato consumato dalle allocazioni fatte precedentemente. La soluzione al problema è eseguire una \texttt{seL4\_CNode\_Revoke} (vista sopra) su di esso, in modo che tutto le spazio venga liberato e così facendo il programma termina con successo. 
 \begin{lstlisting}[language=C++]
 // revoke the child untyped
 error = seL4_CNode_Revoke(seL4_CapInitThreadCNode, child_untyped, seL4_WordBits);

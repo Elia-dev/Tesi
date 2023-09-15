@@ -5,7 +5,7 @@ A level-1 auxiliary file: titlePage.aux
 A level-1 auxiliary file: Chapters/introduzione.aux
 A level-1 auxiliary file: Chapters/background.aux
 A level-1 auxiliary file: Chapters/sel4.aux
-A level-1 auxiliary file: Chapters/impostazione.aux
+A level-1 auxiliary file: Chapters/sperimentazione.aux
 The style file: plainurl.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -13,47 +13,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia.bib
-Warning--string name "https://en.wikipedia.org/wiki/l4_microkernel_family" is undefined
---line 43 of file bibliografia.bib
 You've used 24 entries,
             2943 wiz_defined-function locations,
-            747 strings with 8164 characters,
-and the built_in function-call counts, 8314 in all, are:
-= -- 830
-> -- 255
+            750 strings with 8274 characters,
+and the built_in function-call counts, 8478 in all, are:
+= -- 853
+> -- 266
 < -- 0
-+ -- 98
-- -- 72
-* -- 253
-:= -- 1134
-add.period$ -- 80
++ -- 102
+- -- 76
+* -- 270
+:= -- 1161
+add.period$ -- 82
 call.type$ -- 24
-change.case$ -- 108
+change.case$ -- 110
 chr.to.int$ -- 0
 cite$ -- 24
-duplicate$ -- 209
-empty$ -- 966
-format.name$ -- 72
-if$ -- 2316
+duplicate$ -- 216
+empty$ -- 974
+format.name$ -- 76
+if$ -- 2355
 int.to.chr$ -- 0
 int.to.str$ -- 24
-missing$ -- 1
-newline$ -- 131
+missing$ -- 3
+newline$ -- 133
 num.names$ -- 48
-pop$ -- 338
+pop$ -- 339
 preamble$ -- 1
-purify$ -- 84
+purify$ -- 86
 quote$ -- 0
-skip$ -- 674
+skip$ -- 679
 stack$ -- 0
 substring$ -- 122
 swap$ -- 24
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 94
 warning$ -- 0
 while$ -- 48
 width$ -- 26
-write$ -- 256
-(There was 1 warning)
+write$ -- 262

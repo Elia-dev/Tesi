@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  13 SEP 2023 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  15 SEP 2023 22:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1192,7 +1192,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--14
 \openout2 = `Chapters/background.aux'.
 
  (./Chapters/background.tex
-Capitolo 2.
+Capitolo 1.
 [7
 
 
@@ -1213,7 +1213,7 @@ Package microtype Info: Character `029' is missing
 \openout2 = `Chapters/sel4.aux'.
 
  (./Chapters/seL4.tex
-Capitolo 3.
+Capitolo 2.
 [12
 
 
@@ -1235,7 +1235,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 (./Chapters/sperimentazione.tex
-Capitolo 4.
+Capitolo 3.
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -1248,36 +1248,34 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 33
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 34
 .
 
 (c:/texlive/2023/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 33.
+(Font)              scaled to size 10.20007pt on input line 34.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 33.
- [20] [21]
+(Font)              scaled to size 8.50006pt on input line 34.
 
-Package caption Warning: \label without proper reference on input line 145.
-See the caption package documentation for explanation.
+Underfull \hbox (badness 1292) in paragraph at lines 52--53
+[]\T1/pplx/m/n/12 (+20) Altro com-po-nen-te es-sen-zia-le è CA-m-kES (\T1/pplx/
+m/it/12 (+20) com-po-nent ar-chi-tec-tu-re
+ []
 
-
-LaTeX Warning: Reference `fig:Prima simulazione' on page 22 undefined on input 
-line 142.
-
+[20] [21]
 <img/PrimaSimulazione.png, id=236, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
-Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 144.
+Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 145.
 (pdftex.def)             Requested size: 384.1122pt x 87.84769pt.
-[22]
-Underfull \hbox (badness 1205) in paragraph at lines 164--165
+ [22]
+Underfull \hbox (badness 1205) in paragraph at lines 166--167
 []\T1/pplx/m/it/12 (+20) untyped ca-pa-bi-li-ty \T1/pplx/m/n/12 (+20) che so-no
  re-spon-sa-bi-li del-la ge-stio-ne del-la
  []
@@ -1293,27 +1291,27 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 ) [24] [25] [26]
 [27] [28] [29] [30] [31]
-<img/Threads.png, id=457, 1056.94875pt x 199.74625pt>
+<img/Threads.png, id=456, 1056.94875pt x 199.74625pt>
 File: img/Threads.png Graphic file (type png)
 <use img/Threads.png>
-Package pdftex.def Info: img/Threads.png  used on input line 417.
+Package pdftex.def Info: img/Threads.png  used on input line 419.
 (pdftex.def)             Requested size: 384.1122pt x 72.59131pt.
  [32] [33 <./img/Threads.png>] [34] [35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
 []\T1/pplx/m/n/12 (+20) i da-ti del mes-sag-gio de-vo-no en-tra-re nel re-gi-st
 ro
  []
 
-<img/PrimoAvvioIPC2.png, id=593, 406.51875pt x 108.405pt>
+<img/PrimoAvvioIPC2.png, id=592, 406.51875pt x 108.405pt>
 File: img/PrimoAvvioIPC2.png Graphic file (type png)
 <use img/PrimoAvvioIPC2.png>
-Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 595.
+Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 597.
 (pdftex.def)             Requested size: 284.56117pt x 75.88297pt.
 [38 <./img/PrimoAvvioIPC2.png>]
-<img/DopoBadgeIPC.png, id=605, 405.515pt x 142.5325pt>
+<img/DopoBadgeIPC.png, id=604, 405.515pt x 142.5325pt>
 File: img/DopoBadgeIPC.png Graphic file (type png)
 <use img/DopoBadgeIPC.png>
-Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 645.
+Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 647.
 (pdftex.def)             Requested size: 283.85855pt x 99.77205pt.
  [39] [40 <./img/DopoBadgeIPC.png>]) [41]
 (./thesis.bbl (./thesis.brf)
@@ -1337,120 +1335,105 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--36
  []
 
 [43]
-Underfull \hbox (badness 4120) in paragraph at lines 90--90
+Underfull \hbox (badness 4120) in paragraph at lines 91--91
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial ca-pa-bi-li-ty co-di-ce co
 m-ple-to, 2023.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
 \T1/pplx/m/n/12 (+20) URL: [][]$\T1/fvm/m/n/12 https : / / github . com / Elia-
 []dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
-\T1/fvm/m/n/12 sel4-[]tutorials-[]manifest / capabilities / src / main . c$[][]
-\T1/pplx/m/n/12 (+20) .  (Ci-ted
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--96
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to cl
 ient_1,
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 96--96
+Underfull \hbox (badness 5388) in paragraph at lines 97--97
 \T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
 / Elia-[]dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to cl
 ient_2,
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 102--102
+Underfull \hbox (badness 5388) in paragraph at lines 103--103
 \T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
 / Elia-[]dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial IPC co-di-ce com-ple-to se
 r-ver,
  []
 
 
-Underfull \hbox (badness 5388) in paragraph at lines 108--108
+Underfull \hbox (badness 5388) in paragraph at lines 109--109
 \T1/pplx/m/n/12 (+20) 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / github . com 
 / Elia-[]dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 7522) in paragraph at lines 114--114
+Underfull \hbox (badness 7522) in paragraph at lines 115--115
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial th-reads co-di-ce com-ple-
 to, 2023.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 \T1/pplx/m/n/12 (+20) URL: [][]$\T1/fvm/m/n/12 https : / / github . com / Elia-
 []dev / Tesi / blob / main /
  []
 
 
-Underfull \hbox (badness 6063) in paragraph at lines 120--120
+Underfull \hbox (badness 2478) in paragraph at lines 121--121
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial un-ty-ped ca-pa-bi-li-ty c
-o-di-ce com-
- []
-
-
-Underfull \hbox (badness 2005) in paragraph at lines 120--120
-\T1/pplx/m/n/12 (+20) ple-to, 2023.  URL: [][]$\T1/fvm/m/n/12 https : / / githu
-b . com / Elia-[]dev / Tesi / blob /
- []
-
-
-Underfull \hbox (badness 1062) in paragraph at lines 126--126
-[]\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial vir-tual me-mo-ry ma-na-ge
--ment co-di-ce
+o-di-ce com-ple-
  []
 
 [44]) [45] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/background.aux) (./Chapters/sel4.aux)
 (./Chapters/sperimentazione.aux))
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 4D17DF4035CD02B0D71068EA6CE5F535;743.
+
+
+Package rerunfilecheck Warning: File `thesis.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `thesis.brf':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  13FF3FFC172C3DA51B75E696D84482F0;743.
  ) 
 Here is how much of TeX's memory you used:
- 30034 strings out of 476001
- 577835 string characters out of 5793197
+ 30028 strings out of 476001
+ 577873 string characters out of 5793197
  2197068 words of memory out of 5000000
- 49024 multiletter control sequences out of 15000+600000
- 613205 words of font info for 451 fonts, out of 8000000 for 9000
+ 49012 multiletter control sequences out of 15000+600000
+ 614878 words of font info for 456 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,119p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,121p,10983b,2676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texliv
 e/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2023
 /texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2023/texmf-dist/font
 s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
-ino/uplb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb>
-<c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on thesis.pdf (47 pages, 395933 bytes).
+ino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
+>
+Output written on thesis.pdf (47 pages, 386833 bytes).
 PDF statistics:
- 995 PDF objects out of 1000 (max. 8388607)
- 906 compressed objects within 10 object streams
+ 976 PDF objects out of 1000 (max. 8388607)
+ 890 compressed objects within 9 object streams
  492 named destinations out of 1000 (max. 500000)
- 97508 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 99556 words of extra memory for PDF output out of 106986 (max. 10000000)
 
