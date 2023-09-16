@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  15 SEP 2023 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  16 SEP 2023 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1305,13 +1305,13 @@ ro
 <img/PrimoAvvioIPC2.png, id=594, 406.51875pt x 108.405pt>
 File: img/PrimoAvvioIPC2.png Graphic file (type png)
 <use img/PrimoAvvioIPC2.png>
-Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 597.
+Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 596.
 (pdftex.def)             Requested size: 284.56117pt x 75.88297pt.
 [38 <./img/PrimoAvvioIPC2.png>]
-<img/DopoBadgeIPC.png, id=606, 405.515pt x 142.5325pt>
+<img/DopoBadgeIPC.png, id=601, 405.515pt x 142.5325pt>
 File: img/DopoBadgeIPC.png Graphic file (type png)
 <use img/DopoBadgeIPC.png>
-Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 647.
+Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 646.
 (pdftex.def)             Requested size: 283.85855pt x 99.77205pt.
  [39] [40 <./img/DopoBadgeIPC.png>]) [41]
 \openout2 = `Chapters/conclusioni.aux'.
@@ -1438,11 +1438,11 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 13FF3FFC172C3DA51B75E696D84482F0;743.
  ) 
 Here is how much of TeX's memory you used:
- 30094 strings out of 476001
- 579450 string characters out of 5793197
- 2197068 words of memory out of 5000000
+ 30090 strings out of 476001
+ 579415 string characters out of 5793197
+ 2227068 words of memory out of 5000000
  49058 multiletter control sequences out of 15000+600000
- 615990 words of font info for 462 fonts, out of 8000000 for 9000
+ 615780 words of font info for 459 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,121p,10983b,2676s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/
@@ -1453,7 +1453,7 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on thesis.pdf (49 pages, 390540 bytes).
+Output written on thesis.pdf (49 pages, 391123 bytes).
 PDF statistics:
  1009 PDF objects out of 1200 (max. 8388607)
  920 compressed objects within 10 object streams
