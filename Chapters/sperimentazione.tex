@@ -2,7 +2,7 @@
 In quest'ultimo capitolo viene affrontato il \textit{focus} della tesi, cioè la sperimentazione di \textit{seL4}. Seguiranno tutti gli \textit{step} che sono stati messi in pratica durante questa fase dello studio del sistema: dall'installazione di un sistema operativo in cui poter simulare \textit{seL4}, fino allo sperimentare con mano le varie funzionalità. Ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto realizzato finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC, ecc.
 
 \section{Prerequisiti}
-Come prima cosa ho installato \textit{VirtualBox} sul mio portatile in quanto, come consigliato dalle linee guida fornite da \textit{Trustworthy System} (TS), essendo ottimale per lavorare in ambiente Linux. Non avendo una partizione del portatile con Linux, ho inizialmente pensato di utilizzare una macchina virtuale, così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui operare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4, ho però ho incontrato una prima difficoltà: lo spazio nel portatile non era purtroppo adeguato e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità di memoria non trascurabile di GB. Ho di conseguenza dovuto cercare un'alternativa. Per sopperire al problema, mi sono procurato un SSD su cui sono andato a copiare la partizione creata in \textit{VirtualBox}, continuando la sperimentazione sul \textit{microkernel} sull'SSD esterno collegato via USB.
+Come prima cosa ho installato \textit{VirtualBox} (macchina virtuale) sul mio portatile in quanto, come consigliato dalle linee guida fornite da \textit{Trustworthy System} (TS), è ottimale lavorare in ambiente Linux. Inizialmente ho pensato di utilizzare una macchina virtuale con Linux, così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui operare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4, ho però ho incontrato una prima difficoltà: lo spazio nel portatile non era purtroppo adeguato e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità di memoria non trascurabile di GB. Ho di conseguenza dovuto cercare un'alternativa. Per sopperire al problema, mi sono procurato un SSD su cui sono andato a copiare la partizione creata in \textit{VirtualBox}, continuando la sperimentazione sull'SSD esterno collegato via USB.
 
 Per operare su seL4, è necessario avere installati sul sistema programmi che simulino un'architettura su cui farlo eseguire. Per fare ciò è fondamentale installare delle dipendenze (prerequisiti) cioè compilatori, emulatori \textit{software} vari e librerie.
 
@@ -147,7 +147,7 @@ Il che indica che seL4 può essere utilizzato in questo ambiente simulato, come 
   \label{fig:PrimaSimulazione}
 \end{figure}
 
-\section{Programmazione con le API livello kernel di seL4}
+\section{Programmazione con le API livello \textit{kernel} di seL4}
 Una volta procurati tutti i prerequisiti necessari e appurato che seL4 può essere eseguito senza problemi, è finalmente possibile iniziare a prendere familiarità con il sistema, seguendo \textit{tutorial} forniti dalla \textit{seL4 Foundation} \cite{seL4Tutorial}. Tali \textit{tutorial} contengono programmi semicompleti, creati appositamente per sperimentare e far comprendere le funzionalità del sistema, in particolare con le API di seL4 \cite{sel4API}.\\
 Come ormai già visto più volte sopra, si otterrà l'ambiente idoneo per eseguire i \textit{tutorial}, attraverso l'uso di \texttt{repo}:
 \begin{lstlisting}[language=bash]
@@ -158,7 +158,7 @@ repo sync
 \end{lstlisting}
 Ogni \textit{tutorial} ha un suo \textit{repository} da importare nell'ambiente di lavoro nel quale, tra gli altri \textit{file} e cartelle, c'è (solitamente) un \texttt{main.c}, che sarà quello su cui andare ad apportare le modifiche per completare il \textit{tutorial} stesso.
 
-\subsection{Capability}
+\subsection{\textit{Capability}}
 Come già detto nel capitolo precedente, una \textit{capability} è un \textit{token} unico, che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso; in seL4 ci sono 3 tipi di \textit{capability}:
 \begin{enumerate}
 	\item \textit{capability} che controllano l'accesso ad entità del \textit{kernel}, come i \textit{thread control block} (TCB);
@@ -188,12 +188,14 @@ int main(int argc, char *argv[]) {
     printf("The CNode is %zu bytes in size\n", 	initial_cnode_object_size_bytes);
 \end{lstlisting}
 
-Chiaramente \texttt{initial\_cnode\_object\_size\_bytes} non può essere 0, il suo valore altre sì dato sarà dato dal numero degli \textit{slot} del CNode moltiplicato per le dimensioni in \textit{bit} di ognuno di essi: \texttt{initial\_cnode\_object\_size * (1u << seL4\_SlotBits)}.
+Chiaramente \texttt{initial\_cnode\_object\_size\_bytes} non può essere 0, il suo valore altresì dato sarà dato dal numero degli \textit{slot} del CNode moltiplicato per le dimensioni in \textit{bit} di ognuno di essi: \texttt{initial\_cnode\_object\_size * (1u << seL4\_SlotBits)}.
 
 Eseguendo nuovamente il codice, questo darà l'errore \texttt{Attempted to invoke a null cap}. Ciò accade perché il codice cerca di impostare la priorità del TCB del \textit{thread}, invocando l'ultimo CSlot del CSpace, che però è vuoto:
 \begin{lstlisting}[language=C++]
 seL4_CPtr first_free_slot = info->empty.start;
-seL4_Error error = seL4_CNode_Copy(seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_CapInitThreadCNode, seL4_CapInitThreadTCB, seL4_WordBits, seL4_AllRights);
+seL4_Error error = seL4_CNode_Copy(seL4_CapInitThreadCNode, 
+           first_free_slot, seL4_WordBits, seL4_CapInitThreadCNode,
+           seL4_CapInitThreadTCB, seL4_WordBits, seL4_AllRights);
 ZF_LOGF_IF(error, "Failed to copy cap!");
 %seL4_CPtr last_slot = info->empty.end - 1;
 // TODO
@@ -213,11 +215,14 @@ Rieseguendo il programma non viene più mostrato l'errore precedente, ma è comu
 // TODO 
          
 // check first_free_slot is empty
-error = seL4_CNode_Move(seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits, seL4_CapInitThreadCNode, first_free_slot, seL4_WordBits);
+error = seL4_CNode_Move(seL4_CapInitThreadCNode, first_free_slot,
+                        seL4_WordBits, seL4_CapInitThreadCNode, 
+                        first_free_slot, seL4_WordBits);
 ZF_LOGF_IF(error != seL4_FailedLookup, "first_free_slot is not empty");
 
 // check last_slot is empty
-error = seL4_CNode_Move(seL4_CapInitThreadCNode, last_slot, seL4_WordBits, seL4_CapInitThreadCNode, last_slot, seL4_WordBits);
+error = seL4_CNode_Move(seL4_CapInitThreadCNode, last_slot, seL4_WordBits,
+                        seL4_CapInitThreadCNode, last_slot, seL4_WordBits);
 ZF_LOGF_IF(error != seL4_FailedLookup, "last_slot is not empty");
 \end{lstlisting}
 
@@ -251,7 +256,7 @@ seL4_Untyped_Retype(parent_untyped, // the untyped capability to retype
                     1); // num_caps
 \end{lstlisting}
 
-Le \textit{untyped capability} sono riscritte in maniera incrementale seguendo una politica \textit{greedy}, a partire dall'\textit{untyped} invocato. Ogni \textit{untyped capability} mantiene un singolo \textit{watermark}, con gli indirizzi prima di esso non disponibili e quelli successivi liberi. La memoria non può essere liberata fino a che tutti i figli non vengono revocati, \textcolor{red}{là dove} i figli non sono altro che le nuove \textit{capability}, che vengono create da una \textit{untyped capability}.
+Le \textit{untyped capability} sono riscritte in maniera incrementale seguendo una politica \textit{greedy}, a partire dall'\textit{untyped} invocato. Ogni \textit{untyped capability} mantiene un singolo \textit{watermark}, con gli indirizzi prima di esso non disponibili e quelli successivi liberi. La memoria non può essere liberata fino a che tutti i figli non vengono revocati, laddove i figli non sono altro che le nuove \textit{capability}, che vengono create da una \textit{untyped capability}.
 
 Come per la sezione precedente anche qui è presente un \textit{repository} da scaricare con all'interno un file\texttt{ main.c}, che una volta compilato e avviato, stampa a video una lista di tutte le \textit{untyped capability} fornite dal processo \textit{root} all'avvio e segnala un errore \texttt{Untyped Retype: Requested UntypedItem size too small}. Ciò succede perché il programma sta tentando di creare una \textit{untyped} di dimensione 0:
 \begin{lstlisting}[language=C++]
@@ -262,16 +267,22 @@ int main(int argc, char *argv[]) {
 
 
     printf("    CSlot   \tPaddr           \tSize\tType\n");
-    for (seL4_CPtr slot = info->untyped.start; slot != info->untyped.end; slot++) {
-        seL4_UntypedDesc *desc = &info->untypedList[slot - info->untyped.start];
-        printf("%8p\t%16p\t2^%d\t%s\n", (void *) slot, (void *) desc->paddr, desc->sizeBits, desc->isDevice ? "device untyped" : "untyped");
+    for (seL4_CPtr slot = info->untyped.start; slot != info->untyped.end;
+    slot++) {
+        seL4_UntypedDesc *desc = 
+                 &info->untypedList[slot - info->untyped.start];
+        printf("%8p\t%16p\t2^%d\t%s\n", (void *) slot, 
+              (void *) desc->paddr, desc->sizeBits, 
+              desc->isDevice ? "device untyped" : "untyped");
     }
     seL4_Error error;
 
     // list of general seL4 objects
-    seL4_Word objects[] = {seL4_TCBObject, seL4_EndpointObject, seL4_NotificationObject};
+    seL4_Word objects[] = {seL4_TCBObject, seL4_EndpointObject,
+                           seL4_NotificationObject};
     // list of general seL4 object size_bits
-    seL4_Word sizes[] = {seL4_TCBBits, seL4_EndpointBits, seL4_NotificationBits};
+    seL4_Word sizes[] = {seL4_TCBBits, seL4_EndpointBits,
+                         seL4_NotificationBits};
     
     // TODO
     seL4_Word untyped_size_bits = 0; //ERRORE GENERATO QUI
@@ -280,7 +291,9 @@ int main(int argc, char *argv[]) {
 
     // First, find an untyped big enough to fit all of our objects
     for (int i = 0; i < (info->untyped.end - info->untyped.start); i++) {
-        if (info->untypedList[i].sizeBits >= untyped_size_bits && !info->untypedList[i].isDevice) {
+        if (info->untypedList[i].sizeBits >= 
+                   untyped_size_bits && !info->untypedList[i].isDevice) {
+                   
             parent_untyped = info->untyped.start + i;
             break;
         }
@@ -340,7 +353,7 @@ printf("Success\n");
 \end{lstlisting}
 Il codice completo del \textit{tutorial} è riportato in \cite{untyped}.
 
-\subsection{Virtual memory management}
+\subsection{\textit{Virtual memory management}}
 SeL4 non fornisce strumenti per la gestione della memoria virtuale al di là delle primitive per la gestione dell'\textit{hardware}; quindi e il servizio di \textit{mapping} della memoria e lo \textit{swapping} devono essere gestiti a livello utente, che ha tutta la libertà di procedere in base alle esigenze del sistema. SeL4 mette dunque a disposizione degli oggetti appositi chiamati \textit{VSpace} (\textit{virtual address space}), simili ai CSpace, che sono composti da oggetti forniti dal \textit{kernel}, che variano in base all'architettura \textit{hardware} (x86\_64, RISC-V, ARM).
 
 Per mappare le pagine sono necessari degli \textit{intermediate hardware virtual memory objects}: in pratica si deve creare una struttura intermedia, che varia in base all'architettura. Ad esempio nei sistemi x86\_64 per mappare una pagina sono necessari questi 3 oggetti: \texttt{seL4\_PDPT, seL4\_PageDirector,} e \texttt{seL4\_PageTable}. 
@@ -409,7 +422,7 @@ seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_ReadWrite, s
 Il \textit{mapping} delle pagine può anche essere disfatto utilizzando \texttt{unmap} sulla pagina o su qualsiasi struttura intermedia di paginazione; in alternativa può essere eseguito eliminando la \textit{capability} finale di qualsiasi struttura di paginazione.\\
 Il codice completo del \textit{tutorial} è riportato in \cite{mapping}.
 
-\subsection{Thread}
+\subsection{\textit{Thread}}
 SeL4, per rappresentare l'esecuzione di un processo e gestirne i tempi di esecuzione, fornisce i \textit{thread}. Essi sono realizzati attraverso \textit{thread control block object} (TCBs), uno per ogni \textit{thread} del kernel.
 
 Come noto, in un SO è lo \textit{scheduler} a decidere quale processo e per quanto tempo può utilizzare la CPU. In seL4, come già visto nel capitolo precedente, la politica di \textit{scheduling} è un'integrazione di \textit{round-robin} e \textit{scheduling a priorità}: lo \textit{scheduler} sceglie i \textit{thread} con maggiore priorità che sono pronti e se ce ne sono con la stessa priorità, questi saranno scelti in ordine FIFO, seconda la politica \textit{round-robin}. La priorità è determinata da un \textit{range} che va da 0 (\texttt{seL4\_MinPrio}) a 255 (\texttt{seL4\_MaxPrio}). Oltre alla priorità, un TCBs contiene anche un \textit{maximum control priority} (MCP), che serve per controllare che un processo non modifichi la priorità di un altro processo (o di se stesso), impostandola più alta della sua. Quindi un processo che vuole modificare una priorità deve fornire la sua \textit{capability} (di \textit{thread}), in modo da determinare se è autorizzato a impostare quella priorità.
@@ -555,7 +568,7 @@ Ogni \textit{thread} ha un \textit{buffer} che contiene il \textit{payload} del 
 
 Insieme al messaggio, il \textit{kernel} consegna il \textit{badge} dell'\textit{endpoint capability}, sul quale il mittente ha fatto l'invocazione per mandare il messaggio. È possibile assegnare un \textit{badge} all'\textit{endpoint}, utilizzando \texttt{seL4\_CNode\_Mint} oppure \texttt{seL4\_CNode\_Mutate}; una volta che è stato messo il \textit{badge} sull'\textit{endpoint}, questo viene trasferito a tutti i destinatari che ricevono un messaggio su quell'\textit{endpoint}.
 
-SeL4, per codificare la descrizione di un messaggio IPC, usa la struttura dati \texttt{seL4\_MessageInfo\_t}, \textcolo{red}{il quale} ha la dimensione di una parola ed è composta dai seguenti campi: 
+SeL4, per codificare la descrizione di un messaggio IPC, usa la struttura dati \texttt{seL4\_MessageInfo\_t},la quale ha la dimensione di una parola ed è composta dai seguenti campi: 
 \begin{itemize}
 	\item[-] \texttt{length} la quantità di dati nel messaggio;
 	\item[-] \texttt{extraCaps} numero di \textit{capability} nel messaggio;
@@ -615,9 +628,9 @@ int main(int c, char *argv[]) {
 
              /* No badge! give this sender a badged copy of the endpoint */
              seL4_Word badge = seL4_GetMR(0);
-             seL4_Error error = seL4_CNode_Mint(cnode, free_slot, seL4_WordBits,
-                                                cnode, endpoint, seL4_WordBits,
-                                                seL4_AllRights, badge);
+             seL4_Error error = seL4_CNode_Mint(cnode, free_slot,
+                              seL4_WordBits, cnode, endpoint,
+                              seL4_WordBits, seL4_AllRights, badge);
              printf("Badged %lu\n", badge);
 
              // TODO
@@ -647,7 +660,7 @@ Compilando e riavviando il programma sembra che non ci siano problemi tranne per
 \end{figure}
 
 Ciò succede perché al \textit{server} manca l'implementazione della sua funzione di \textit{echo} dei messaggi che gli vengono inviati; tale funzione può essere fatta scorrendo e stampando a video il contenuto dei \textit{message register}.\\
-I \texttt{client\_1} manda le stringhe {"quick", "fox", "over" e "lazy"} , mentre il \texttt{client\_2} le stringhe {"the", "brown", "jumps", "the" e "dog"}:
+I \texttt{client\_1} manda le stringhe {"quick", "fox", "over" e "lazy"}, mentre il \texttt{client\_2} le stringhe {"the", "brown", "jumps", "the" e "dog"}:
 \begin{lstlisting}[language=C++]
 for (int i = 0; i < seL4_MessageInfo_get_length(info); i++) {
 printf("%c", (char) seL4_GetMR(i));

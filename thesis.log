@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  16 SEP 2023 15:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  17 SEP 2023 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,7 +970,7 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 )
 (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/background.aux) (./Chapters/sel4.aux)
-(./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux))
+(./Chapters/sperimentazione.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
@@ -1004,8 +1004,7 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 94.
 Package backref Info: ** backref set up for natbib ** on input line 94.
 Package hyperref Info: Link coloring ON on input line 94.
- (./thesis.out)
-(./thesis.out)
+ (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -1017,7 +1016,8 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 94.
- (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+
+(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1193,14 +1193,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  (./Chapters/background.tex
 Capitolo 1.
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 1.
+
 [7
 
 
 
 
 
-] [8]
-<img/MonolithicVSmicrokernel.png, id=119, 1264.725pt x 301.125pt>
+]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 13.
+
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 30.
+
+[8]
+<img/MonolithicVSmicrokernel.png, id=117, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
 Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 43
@@ -1209,7 +1222,27 @@ Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 43
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [9 <./img/MonolithicVSmicrokernel.png>] [10]) [11]
+
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 47.
+
+[9 <./img/MonolithicVSmicrokernel.png>]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 60.
+
+[10]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 63.
+
+)
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 123.
+
+[11]
 \openout2 = `Chapters/sel4.aux'.
 
  (./Chapters/seL4.tex
@@ -1221,7 +1254,7 @@ Capitolo 2.
 
 
 ]
-<img/seL4Hypervisor.png, id=141, 1136.245pt x 481.8pt>
+<img/seL4Hypervisor.png, id=140, 1136.245pt x 481.8pt>
 File: img/seL4Hypervisor.png Graphic file (type png)
 <use img/seL4Hypervisor.png>
 Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 9.
@@ -1230,11 +1263,24 @@ Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 9.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14 <./img/seL4Hypervisor.png>] [15] [16] [17]) [18]
+[13]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 15.
+
+[14 <./img/seL4Hypervisor.png>]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 31.
+
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 34.
+
+[15] [16] [17]) [18]
 \openout2 = `Chapters/sperimentazione.aux'.
 
-
-(./Chapters/sperimentazione.tex
+ (./Chapters/sperimentazione.tex
 Capitolo 3.
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1269,16 +1315,25 @@ m/it/12 (+20) com-po-nent ar-chi-tec-tu-re
  []
 
 [20] [21]
-<img/PrimaSimulazione.png, id=238, 477.28313pt x 109.1578pt>
+<img/PrimaSimulazione.png, id=237, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
 Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 145.
 (pdftex.def)             Requested size: 384.1122pt x 87.84769pt.
  [22]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 150.
+
+
 Underfull \hbox (badness 1205) in paragraph at lines 166--167
 []\T1/pplx/m/it/12 (+20) untyped ca-pa-bi-li-ty \T1/pplx/m/n/12 (+20) che so-no
  re-spon-sa-bi-li del-la ge-stio-ne del-la
  []
+
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 170.
 
 [23 <./img/PrimaSimulazione.png>]
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1289,47 +1344,96 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-) [24] [25] [26]
-[27] [28] [29] [30] [31]
-<img/Threads.png, id=458, 1056.94875pt x 199.74625pt>
+) [24]
+Underfull \hbox (badness 1147) in paragraph at lines 191--192
+\T1/pplx/m/n/12 (+20) il suo va-lo-re al-tre sì da-to sa-rà da-to dal nu-me-ro 
+de-gli \T1/pplx/m/it/12 (+20) slot \T1/pplx/m/n/12 (+20) del
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 191--192
+\T1/pplx/m/n/12 (+20) CNo-de mol-ti-pli-ca-to per le di-men-sio-ni in \T1/pplx/
+m/it/12 (+20) bit \T1/pplx/m/n/12 (+20) di ognu-no di es-si:
+ []
+
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 217.
+
+[25] [26]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 278.
+
+[27] [28]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 353.
+
+[29] [30]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 413.
+
+[31]
+<img/Threads.png, id=470, 1056.94875pt x 199.74625pt>
 File: img/Threads.png Graphic file (type png)
 <use img/Threads.png>
-Package pdftex.def Info: img/Threads.png  used on input line 419.
+Package pdftex.def Info: img/Threads.png  used on input line 432.
 (pdftex.def)             Requested size: 384.1122pt x 72.59131pt.
- [32] [33 <./img/Threads.png>] [34] [35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 588--589
+ [32]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 469.
+
+[33 <./img/Threads.png>]
+Underfull \hbox (badness 2285) in paragraph at lines 478--479
+[]\T1/pplx/m/n/12 (+20) Come si può evin-ce-re, al me-to-do vie-ne pas-sa-to un
+ og-get-to
+ []
+
+[34]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 543.
+
+[35] [36]
+
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 595.
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
 []\T1/pplx/m/n/12 (+20) i da-ti del mes-sag-gio de-vo-no en-tra-re nel re-gi-st
 ro
  []
 
-<img/PrimoAvvioIPC2.png, id=594, 406.51875pt x 108.405pt>
+<img/PrimoAvvioIPC2.png, id=606, 406.51875pt x 108.405pt>
 File: img/PrimoAvvioIPC2.png Graphic file (type png)
 <use img/PrimoAvvioIPC2.png>
-Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 596.
+Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 607.
 (pdftex.def)             Requested size: 284.56117pt x 75.88297pt.
 [38 <./img/PrimoAvvioIPC2.png>]
-<img/DopoBadgeIPC.png, id=601, 405.515pt x 142.5325pt>
+<img/DopoBadgeIPC.png, id=618, 405.515pt x 142.5325pt>
 File: img/DopoBadgeIPC.png Graphic file (type png)
 <use img/DopoBadgeIPC.png>
-Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 646.
+Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 657.
 (pdftex.def)             Requested size: 283.85855pt x 99.77205pt.
- [39] [40 <./img/DopoBadgeIPC.png>]) [41]
-\openout2 = `Chapters/conclusioni.aux'.
 
 
-(./Chapters/conclusioni.tex
-Capitolo 4.
-[42
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 664.
 
+[39 <./img/DopoBadgeIPC.png>] [40])
 
+LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
+(Font)              using `T1/pplx/m/it' instead on input line 125.
 
-
-
-]) [43] (./thesis.bbl (./thesis.brf)
+[41] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
- [44
+ [42
 
 
 
@@ -1345,7 +1449,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--36
  javatpoint . com /
  []
 
-[45]
+[43]
 Underfull \hbox (badness 4120) in paragraph at lines 91--91
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial ca-pa-bi-li-ty co-di-ce co
 m-ple-to, 2023.
@@ -1429,22 +1533,22 @@ Underfull \hbox (badness 1062) in paragraph at lines 127--127
 -ment co-di-ce
  []
 
-[46]) [47] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+[44]) [45] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/background.aux) (./Chapters/sel4.aux)
-(./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux))
+(./Chapters/sperimentazione.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 13FF3FFC172C3DA51B75E696D84482F0;743.
+(rerunfilecheck)             Checksum: 9DFCB146891ABBD580A6B80DAF1AC14D;795.
  ) 
 Here is how much of TeX's memory you used:
- 30090 strings out of 476001
- 579415 string characters out of 5793197
- 2227068 words of memory out of 5000000
- 49058 multiletter control sequences out of 15000+600000
- 615780 words of font info for 459 fonts, out of 8000000 for 9000
+ 30080 strings out of 476001
+ 578724 string characters out of 5793197
+ 2176068 words of memory out of 5000000
+ 49036 multiletter control sequences out of 15000+600000
+ 618829 words of font info for 465 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,121p,10983b,2676s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,130p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texliv
 e/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2023
@@ -1453,10 +1557,10 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on thesis.pdf (49 pages, 391123 bytes).
+Output written on thesis.pdf (47 pages, 388747 bytes).
 PDF statistics:
- 1009 PDF objects out of 1200 (max. 8388607)
- 920 compressed objects within 10 object streams
- 495 named destinations out of 1000 (max. 500000)
- 103660 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1012 PDF objects out of 1200 (max. 8388607)
+ 925 compressed objects within 10 object streams
+ 505 named destinations out of 1000 (max. 500000)
+ 105700 words of extra memory for PDF output out of 106986 (max. 10000000)
 
