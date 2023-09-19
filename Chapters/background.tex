@@ -1,5 +1,5 @@
-\chapter{\textit{Background}}
-In questo capitolo sarà presente una prima sezione che andrà ad offrire le conoscenze di base minime per comprendere cosa sia un sistema operativo e una breve classificazione di essi. Dopodiché seguirà la descrizione di alcuni concetti, come ad esempio lo \textit{scheduling della CPU}, che sono fondamentali per comprendere il resto dell'elaborato.
+\chapter{\textit{\uppercase{b}ackground}}
+In questo capitolo presenterà le conoscenze di base minime per comprendere cosa sia un sistema operativo e una breve classificazione di essi. Dopodiché seguirà la descrizione di alcuni concetti, come ad esempio lo \textit{scheduling della CPU}, che sono fondamentali per comprendere il resto dell'elaborato.
 
 \section{Cos'è un sistema operativo}
 Un sistema operativo (SO) è un \textit{software} che gestisce le risorse \textit{hardware} e \textit{software} di un sistema di elaborazione, fornendo servizi agli applicativi utente.
@@ -46,13 +46,13 @@ In Figura~\ref{fig:MonolithicVSmicrokernel} si possono vedere in maniera schemat
 \end{figure}
 \newpage
 
-\section{Scheduling della CPU}
+\section{\textit{\uppercase{s}cheduling} della CPU}
 Solitamente con il solo termine \textit{scheduling} si intende quello a breve termine della CPU, cioè la funzionalità che determina quale tra i processi (\textit{thread}) in attesa della CPU la otterranno. Chiaramente ci sono vari metodi per fare ciò, che prendono il nome di politiche di \textit{scheduling}, i quali si differenziano per modalità e prestazioni. Gli algoritmi che traducono questi metodi si chiamano algoritmi di \textit{scheduling}.
 
 Una particolare politica di \textit{scheduling} rilevante per questo testo è \textit{Round Robin} o \textit{scheduling circolare}: consiste nel determinare un \textit{time slice} (quanto di tempo) nel quale i processi ottengono la CPU. Una volta esaurito questo tempo, il processo viene interrotto e inserito in fondo alla cosiddetta coda dei pronti. In questo modo tutti i processi ottengono la CPU per un tempo massimo stabilito; inoltre è possibile stimare il tempo di attesa prima dell'esecuzione di ciascun processo in base al numero di processi che lo precedono.
 
 \section{Memoria virtuale}
-Un altro concetto fondamentale quando si parla di sistemi operativi è la gestione della memoria. Il SO deve garantire che ogni programma abbia a disposizione la giusta quantità di memoria necessaria per l'esecuzione, ed inoltre ognuno di essi deve accedere solo alla memoria a lui riservata. Un meccanismo adottato che accomuna quanto appena detto è quello di memoria virtuale.
+Un altro concetto fondamentale quando si parla di sistemi operativi è la gestione della memoria. Il SO deve garantire che ogni programma abbia a disposizione la giusta quantità di memoria necessaria per l'esecuzione, ed inoltre ognuno di essi deve accedere solo alla memoria a esso riservata. Un meccanismo adottato che accomuna quanto appena detto è quello di memoria virtuale.
 
 La memoria virtuale è un meccanismo che permette di simulare uno spazio di memoria centrale (memoria primaria) maggiore di quello fisicamente presente o disponibile, dando l'illusione all'utente di un enorme quantitativo di memoria. Questa tecnica porta con sé diversi vantaggi: uno tra questi la sicurezza dovuta all'isolamento della memoria; la possibilità di condivisione di alcune pagine di memoria tra più processi (es: le pagine contenenti le librerie possono essere usate in contemporanea da più processi senza conflitti) e infine l'ultimo, ma allo stesso tempo il principale vantaggio: avere a disposizione molta più memoria centrale di quella che in realtà è disponibile. 
 
@@ -60,5 +60,5 @@ Giustamente viene da chiedersi come tutto ciò sia possibile e il meccanismo all
 
 In presenza di memoria virtuale dunque non parleremo semplicemente di indirizzi di memoria, ma avremo una differenziazione tra indirizzi logici e indirizzi fisici. I programmi lavoreranno solo con indirizzi logici (quindi viene anche facilitata la programmazione) e poi a livello di CPU avverrà un processo di traduzione negli indirizzi fisici.
 
-\section{\textit{Hypervisor}}
-Un tema che si distacca un po' dai concetti di base dei sistemi operativi, ma che è rilevante per la comprensione del successivo capitolo è quello di \textit{hypervisor}. Chiamato anche \textit{virtual machine monitor} (VMM), è un tipo di \textit{sotware/firmware}, che permette di creare ed eseguire macchine virtuali. Un computer sul quale un \textit{hypervisor} esegue una o più macchine virtuali viene definito \textit{host machine}, mentre le singole macchina virtuali prendono il nome di \textit{guest machine}. Su ognuna è possibile eseguire un sistema operativo (anche diverso), in modo tale che questi siano isolati tra di loro; inoltre, al contrario di un emulatore, eseguirà la maggior parte delle istruzioni direttamente sulle risorse \textit{hardware} virtualizzate rese disponibili dall'\textit{hypervisor}.
+\section{\textit{\uppercase{h}ypervisor}}
+Un tema che si distacca un po' dai concetti di base dei sistemi operativi, ma che è rilevante per la comprensione del successivo capitolo è quello di \textit{hypervisor}. Chiamato anche \textit{virtual machine monitor} (VMM), è un tipo di \textit{sotware/firmware}, che permette di creare ed eseguire macchine virtuali. Un computer sul quale un \textit{hypervisor} esegue una o più macchine virtuali viene definito \textit{host machine}, mentre le singole macchine virtuali prendono il nome di \textit{guest machine}. Su ognuna è possibile eseguire un sistema operativo (anche diverso), in modo tale che questi siano isolati tra di loro; inoltre, al contrario di un emulatore, eseguirà la maggior parte delle istruzioni direttamente sulle risorse \textit{hardware} virtualizzate rese disponibili dall'\textit{hypervisor}.

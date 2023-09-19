@@ -1,8 +1,8 @@
 \chapter{Sperimentazione di seL4}
-In quest'ultimo capitolo viene affrontato il \textit{focus} della tesi, cioè la sperimentazione di \textit{seL4}. Seguiranno tutti gli \textit{step} che sono stati messi in pratica durante questa fase dello studio del sistema: dall'installazione di un sistema operativo in cui poter simulare \textit{seL4}, fino allo sperimentare con mano le varie funzionalità. Ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto realizzato finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC, ecc.
+In questo capitolo viene affrontato il \textit{focus} della tesi, cioè la sperimentazione di \textit{seL4}. Seguiranno tutti gli \textit{step} che sono stati messi in pratica durante questa fase dello studio del sistema: dall'installazione di un sistema operativo in cui poter simulare \textit{seL4}, fino allo sperimentare con mano le varie funzionalità. Ovviamente questo ha richiesto un approfondimento più tecnico e specifico, rispetto a quanto realizzato finora, di alcuni aspetti come la gestione della memoria fisica e virtuale, l'IPC, ecc.
 
 \section{Prerequisiti}
-Come prima cosa ho installato \textit{VirtualBox} (macchina virtuale) sul mio portatile in quanto, come consigliato dalle linee guida fornite da \textit{Trustworthy System} (TS), è ottimale lavorare in ambiente Linux. Inizialmente ho pensato di utilizzare una macchina virtuale con Linux, così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui operare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4, ho però ho incontrato una prima difficoltà: lo spazio nel portatile non era purtroppo adeguato e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità di memoria non trascurabile di GB. Ho di conseguenza dovuto cercare un'alternativa. Per sopperire al problema, mi sono procurato un SSD su cui sono andato a copiare la partizione creata in \textit{VirtualBox}, continuando la sperimentazione sull'SSD esterno collegato via USB.
+Come prima cosa ho installato \textit{VirtualBox} (macchina virtuale) sul mio portatile in quanto, come consigliato dalle linee guida fornite da \textit{Trustworthy System} (TS), è ottimale lavorare in ambiente Linux. Inizialmente ho pensato di utilizzare una macchina virtuale con Linux, così da lasciare inalterato il mio computer e comunque avere a disposizione un sistema operativo Linux su cui operare. Andando avanti con il \textit{set-up} del sistema per iniziare a lavorare su seL4, ho però incontrato una prima difficoltà: lo spazio nel portatile non era purtroppo adeguato e la macchina virtuale, considerando il sistema operativo e l'installazione dei vari prerequisiti per poter far girare il \textit{microkernel}, cominciava ad occupare una quantità di memoria non trascurabile. Ho di conseguenza dovuto cercare un'alternativa. Per sopperire al problema, mi sono procurato un SSD su cui sono andato a copiare la partizione creata in \textit{VirtualBox}, continuando la sperimentazione sull'SSD esterno collegato via USB.
 
 Per operare su seL4, è necessario avere installati sul sistema programmi che simulino un'architettura su cui farlo eseguire. Per fare ciò è fondamentale installare delle dipendenze (prerequisiti) cioè compilatori, emulatori \textit{software} vari e librerie.
 
@@ -112,7 +112,7 @@ cp -i misc/etc/settings ~/.isabelle/etc/settings
 Questa serie di comandi \textit{bash} darà come risultato:
 \begin{itemize}
 	\item la creazione di una cartella per le impostazioni utente di Isabelle;
-	\item l'installazione delle impostazione Isabelle per L4.verified \cite{l4v}, il quale è un \textit{repository} che contiene formalismi per la verifica di seL4;
+	\item l'installazione delle impostazioni Isabelle per L4.verified \cite{l4v}, il quale è un \textit{repository} che contiene formalismi per la verifica di seL4;
 	\item il \textit{download} di Scala, Java JDK, PolyML ed altri dimostratori (\textit{prover}) esterni;
 	\item la compilazione del Prover IDE (PIDE) jEdit di Isabelle.
 \end{itemize} 
@@ -354,7 +354,7 @@ printf("Success\n");
 Il codice completo del \textit{tutorial} è riportato in \cite{untyped}.
 
 \subsection{\textit{Virtual memory management}}
-SeL4 non fornisce strumenti per la gestione della memoria virtuale al di là delle primitive per la gestione dell'\textit{hardware}; quindi e il servizio di \textit{mapping} della memoria e lo \textit{swapping} devono essere gestiti a livello utente, che ha tutta la libertà di procedere in base alle esigenze del sistema. SeL4 mette dunque a disposizione degli oggetti appositi chiamati \textit{VSpace} (\textit{virtual address space}), simili ai CSpace, che sono composti da oggetti forniti dal \textit{kernel}, che variano in base all'architettura \textit{hardware} (x86\_64, RISC-V, ARM).
+SeL4 non fornisce strumenti per la gestione della memoria virtuale al di là delle primitive per la gestione dell'\textit{hardware}; quindi il servizio di \textit{mapping} della memoria e lo \textit{swapping} devono essere gestiti a livello utente, che ha tutta la libertà di procedere in base alle esigenze del sistema. SeL4 mette dunque a disposizione degli oggetti appositi chiamati \textit{VSpace} (\textit{virtual address space}), simili ai CSpace, che sono composti da oggetti forniti dal \textit{kernel}, che variano in base all'architettura \textit{hardware} (x86\_64, RISC-V, ARM).
 
 Per mappare le pagine sono necessari degli \textit{intermediate hardware virtual memory objects}: in pratica si deve creare una struttura intermedia, che varia in base all'architettura. Ad esempio nei sistemi x86\_64 per mappare una pagina sono necessari questi 3 oggetti: \texttt{seL4\_PDPT, seL4\_PageDirector,} e \texttt{seL4\_PageTable}. 
 
@@ -538,7 +538,8 @@ return 0;
 \end{lstlisting}
 
 Chiaramente il \texttt{seL4\_TCB\_Resume} va fatto sul nostro \texttt{tcb\_cap\_slot} e non su \texttt{seL4\_CapNull}. Ora il nuovo \textit{thread} viene eseguito e mostra a video\\
-\texttt{Hello2: arg1 0, arg2 0, arg3 0}.\\
+\texttt{Hello2: arg1 0, arg2 0, arg3 0}.
+
 I valori passati al nuovo \textit{thread} sono tutti 0. Se volessimo però passare al \textit{thread} valori differenti, si potrebbe utilizzare la funzione \texttt{sel4utils\_arch\_init\_local\_context}, con le dovute modifiche al codice:
 \begin{lstlisting}[language=C++]
 UNUSED seL4_UserContext regs = {0};

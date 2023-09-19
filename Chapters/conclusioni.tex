@@ -5,10 +5,12 @@ Partendo dal presupposto che, verosimilmente le persone a conoscenza dell'esiste
 
 Analizzando diversi elementi, si può affermare che, essendo seL4 un \textit{microkernel}, i servizi che può offrire sono davvero pochi; pensare di realizzare un sistema operativo che ricalchi i tre sopra menzionati, altamente \textit{user-friendly}, diffusi su scala globale ed utilizzabili nella maggior parte delle situazioni, risulterebbe davvero complesso, considerato l'elevato numero di elementi da sviluppare partendo da 0. Altro aspetto certamente non secondario è la sicurezza: per la distribuzione di massa non è necessario avere un livello di protezione così elevato; quando si tratta di salvaguardia dei dati, non esiste un vero e proprio limite, specialmente oggi, in un contesto globale in cui "i dati sono il nuovo petrolio"\footnote{Clive Humby, 2006}, ma è assolutamente necessaria una valutazione costi-benefici. Riporto il caso pratico della gestione degli accessi di ogni singolo file: per un utente finale meno esperto ciò renderebbe il sistema inutilizzabile. Prendendo come esempio Linux, poche persone al di fuori dell'ambito scientifico/informatico sono in grado di utilizzarlo; se si vanno poi ad aggiungere regole più stringenti nella gestione dei permessi, la conclusione è dunque lampante: sarà molto difficile realizzare un prodotto di utilizzo comune.
 
-Con questa mia osservazione non voglio escludere la possibilità che un giorno possa accadere, ma chiaramente richiederebbe un enorme impegno, ed essendo seL4 \textit{open-source}, questo implicherebbe la formazione e la crescita di una \textit{community} disposta a svilupparlo e a mantenerlo aggiornato.
+Con questa mia osservazione non voglio escludere la possibilità che un giorno possa accadere, ma chiaramente richiederebbe un enorme impegno, ed essendo seL4 \textit{open-source}, questo implicherebbe la formazione e la crescita di una \textit{community} disposta a svilupparlo e a mantenerlo aggiornato, come accade oggi per Linux.
+
+Dunque vediamo qualche utilizzo che è stato fatto di seL4. Ci sono stati vari progetti e ce ne sono altri ancora in corso d'opera, per semplicità ne nominerò alcuni che secondo me sono i più rilevanti. Un'importante collaborazione è stata quella in collaborazione con il DARPA (\textit{Defense Advanced Research Projects Agency}), in particolare per il cosiddetto \textit{High-Assurance Cyber Military Systems project}). Questo progetto consiste nello sviluppo di mezzi sia terrestri sia aerei altamente sicuri tanto da voler realizzare sistemi "inattaccabili"
 
 
-https://www.ilsoftware.it/kataos-sistema-operativo-sicuro-per-dispositivi-iot-e-machine-learning_25132/
+%https://www.ilsoftware.it/kataos-sistema-operativo-sicuro-per-dispositivi-%iot-e-machine-learning_25132/
 
-https://www.newscientist.com/article/mg22730392-600-unhackable-kernel-could-keep-all-computers-safe-from-cyberattack-2/
+%https://www.newscientist.com/article/mg22730392-600-unhackable-kernel-could-%keep-all-computers-safe-from-cyberattack-2/
 
