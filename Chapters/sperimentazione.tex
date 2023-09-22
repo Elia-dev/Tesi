@@ -147,7 +147,7 @@ Il che indica che seL4 può essere utilizzato in questo ambiente simulato, come 
   \label{fig:PrimaSimulazione}
 \end{figure}
 
-\section{Programmazione con le API livello \textit{kernel} di seL4}
+\section{Programmazione con le API livello kernel di seL4}
 Una volta procurati tutti i prerequisiti necessari e appurato che seL4 può essere eseguito senza problemi, è finalmente possibile iniziare a prendere familiarità con il sistema, seguendo \textit{tutorial} forniti dalla \textit{seL4 Foundation} \cite{seL4Tutorial}. Tali \textit{tutorial} contengono programmi semicompleti, creati appositamente per sperimentare e far comprendere le funzionalità del sistema, in particolare con le API di seL4 \cite{sel4API}.\\
 Come ormai già visto più volte sopra, si otterrà l'ambiente idoneo per eseguire i \textit{tutorial}, attraverso l'uso di \texttt{repo}:
 \begin{lstlisting}[language=bash]
@@ -158,7 +158,7 @@ repo sync
 \end{lstlisting}
 Ogni \textit{tutorial} ha un suo \textit{repository} da importare nell'ambiente di lavoro nel quale, tra gli altri \textit{file} e cartelle, c'è (solitamente) un \texttt{main.c}, che sarà quello su cui andare ad apportare le modifiche per completare il \textit{tutorial} stesso.
 
-\subsection{\textit{Capability}}
+\subsection{Capability}
 Come già detto nel capitolo precedente, una \textit{capability} è un \textit{token} unico, che dà accesso ad un'entità del sistema, un puntatore con dei diritti di accesso; in seL4 ci sono 3 tipi di \textit{capability}:
 \begin{enumerate}
 	\item \textit{capability} che controllano l'accesso ad entità del \textit{kernel}, come i \textit{thread control block} (TCB);
@@ -353,7 +353,7 @@ printf("Success\n");
 \end{lstlisting}
 Il codice completo del \textit{tutorial} è riportato in \cite{untyped}.
 
-\subsection{\textit{Virtual memory management}}
+\subsection{Virtual memory management}
 SeL4 non fornisce strumenti per la gestione della memoria virtuale al di là delle primitive per la gestione dell'\textit{hardware}; quindi il servizio di \textit{mapping} della memoria e lo \textit{swapping} devono essere gestiti a livello utente, che ha tutta la libertà di procedere in base alle esigenze del sistema. SeL4 mette dunque a disposizione degli oggetti appositi chiamati \textit{VSpace} (\textit{virtual address space}), simili ai CSpace, che sono composti da oggetti forniti dal \textit{kernel}, che variano in base all'architettura \textit{hardware} (x86\_64, RISC-V, ARM).
 
 Per mappare le pagine sono necessari degli \textit{intermediate hardware virtual memory objects}: in pratica si deve creare una struttura intermedia, che varia in base all'architettura. Ad esempio nei sistemi x86\_64 per mappare una pagina sono necessari questi 3 oggetti: \texttt{seL4\_PDPT, seL4\_PageDirector,} e \texttt{seL4\_PageTable}. 
@@ -422,7 +422,7 @@ seL4_X86_Page_Map(frame, seL4_CapInitThreadVSpace, TEST_VADDR, seL4_ReadWrite, s
 Il \textit{mapping} delle pagine può anche essere disfatto utilizzando \texttt{unmap} sulla pagina o su qualsiasi struttura intermedia di paginazione; in alternativa può essere eseguito eliminando la \textit{capability} finale di qualsiasi struttura di paginazione.\\
 Il codice completo del \textit{tutorial} è riportato in \cite{mapping}.
 
-\subsection{\textit{Thread}}
+\subsection{Thread}
 SeL4, per rappresentare l'esecuzione di un processo e gestirne i tempi di esecuzione, fornisce i \textit{thread}. Essi sono realizzati attraverso \textit{thread control block object} (TCBs), uno per ogni \textit{thread} del kernel.
 
 Come noto, in un SO è lo \textit{scheduler} a decidere quale processo e per quanto tempo può utilizzare la CPU. In seL4, come già visto nel capitolo precedente, la politica di \textit{scheduling} è un'integrazione di \textit{round-robin} e \textit{scheduling a priorità}: lo \textit{scheduler} sceglie i \textit{thread} con maggiore priorità che sono pronti e se ce ne sono con la stessa priorità, questi saranno scelti in ordine FIFO, seconda la politica \textit{round-robin}. La priorità è determinata da un \textit{range} che va da 0 (\texttt{seL4\_MinPrio}) a 255 (\texttt{seL4\_MaxPrio}). Oltre alla priorità, un TCBs contiene anche un \textit{maximum control priority} (MCP), che serve per controllare che un processo non modifichi la priorità di un altro processo (o di se stesso), impostandola più alta della sua. Quindi un processo che vuole modificare una priorità deve fornire la sua \textit{capability} (di \textit{thread}), in modo da determinare se è autorizzato a impostare quella priorità.

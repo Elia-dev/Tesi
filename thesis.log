@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  19 SEP 2023 14:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  19 SEP 2023 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1193,30 +1193,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  (./Chapters/background.tex
 Capitolo 1.
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 1.
-
 [7
 
 
 
 
 
-]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 13.
-
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 30.
-
-[8]
+] [8]
 <img/MonolithicVSmicrokernel.png, id=119, 1264.725pt x 301.125pt>
 File: img/MonolithicVSmicrokernel.png Graphic file (type png)
 <use img/MonolithicVSmicrokernel.png>
@@ -1226,39 +1209,7 @@ Package pdftex.def Info: img/MonolithicVSmicrokernel.png  used on input line 43
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 47.
-
-[9 <./img/MonolithicVSmicrokernel.png>]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 49.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 49.
-
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 60.
-
-[10]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 63.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 63.
-
-)
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 123.
-
-[11]
+ [9 <./img/MonolithicVSmicrokernel.png>] [10]) [11]
 \openout2 = `Chapters/sel4.aux'.
 
  (./Chapters/seL4.tex
@@ -1279,50 +1230,14 @@ Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 9.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13]
+[13] [14 <./img/seL4Hypervisor.png>]
+! Too many }'s.
+l.31 \section{Hard Real-Time Systems}}
+                                      
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
 
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 15.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 15.
-
-[14 <./img/seL4Hypervisor.png>]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 31.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 31.
-
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 34.
-
-[15] [16]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 57.
-
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 59.
-
-[17]) [18]
+[15] [16] [17]) [18]
 \openout2 = `Chapters/sperimentazione.aux'.
 
  (./Chapters/sperimentazione.tex
@@ -1366,19 +1281,10 @@ File: img/PrimaSimulazione.png Graphic file (type png)
 Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 145.
 (pdftex.def)             Requested size: 384.1122pt x 87.84769pt.
  [22]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 150.
-
-
 Underfull \hbox (badness 1205) in paragraph at lines 166--167
 []\T1/pplx/m/it/12 (+20) untyped ca-pa-bi-li-ty \T1/pplx/m/n/12 (+20) che so-no
  re-spon-sa-bi-li del-la ge-stio-ne del-la
  []
-
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 170.
 
 [23 <./img/PrimaSimulazione.png>]
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1401,54 +1307,20 @@ Underfull \hbox (badness 1152) in paragraph at lines 191--192
 m/it/12 (+20) bit \T1/pplx/m/n/12 (+20) di ognu-no di es-si:
  []
 
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 217.
-
-[25] [26]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 278.
-
-[27] [28]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 353.
-
-[29] [30]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 413.
-
-[31]
+[25] [26] [27] [28] [29] [30] [31]
 <img/Threads.png, id=472, 1056.94875pt x 199.74625pt>
 File: img/Threads.png Graphic file (type png)
 <use img/Threads.png>
 Package pdftex.def Info: img/Threads.png  used on input line 432.
 (pdftex.def)             Requested size: 384.1122pt x 72.59131pt.
- [32]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 469.
-
-[33 <./img/Threads.png>]
+ [32] [33 <./img/Threads.png>]
 Underfull \hbox (badness 2285) in paragraph at lines 478--479
 []\T1/pplx/m/n/12 (+20) Come si può evin-ce-re, al me-to-do vie-ne pas-sa-to un
  og-get-to
  []
 
-[34]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 543.
-
-[35] [36]
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 595.
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+[34] [35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
 []\T1/pplx/m/n/12 (+20) i da-ti del mes-sag-gio de-vo-no en-tra-re nel re-gi-st
 ro
  []
@@ -1456,28 +1328,19 @@ ro
 <img/PrimoAvvioIPC2.png, id=608, 406.51875pt x 108.405pt>
 File: img/PrimoAvvioIPC2.png Graphic file (type png)
 <use img/PrimoAvvioIPC2.png>
-Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 607.
+Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 608.
 (pdftex.def)             Requested size: 284.56117pt x 75.88297pt.
 [38 <./img/PrimoAvvioIPC2.png>]
 <img/DopoBadgeIPC.png, id=620, 405.515pt x 142.5325pt>
 File: img/DopoBadgeIPC.png Graphic file (type png)
 <use img/DopoBadgeIPC.png>
-Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 657.
+Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 658.
 (pdftex.def)             Requested size: 283.85855pt x 99.77205pt.
-
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 664.
-
-[39 <./img/DopoBadgeIPC.png>] [40])
-
-LaTeX Font Warning: Font shape `T1/pplx/m/scit' undefined
-(Font)              using `T1/pplx/m/it' instead on input line 125.
-
-[41]
+ [39 <./img/DopoBadgeIPC.png>] [40]) [41]
 \openout2 = `Chapters/conclusioni.aux'.
 
- (./Chapters/conclusioni.tex
+
+(./Chapters/conclusioni.tex
 Capitolo 4.
 [42
 
@@ -1598,13 +1461,13 @@ Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 9DFCB146891ABBD580A6B80DAF1AC14D;795.
  ) 
 Here is how much of TeX's memory you used:
- 30132 strings out of 476001
- 580126 string characters out of 5793197
+ 30111 strings out of 476001
+ 579697 string characters out of 5793197
  2176068 words of memory out of 5000000
- 49068 multiletter control sequences out of 15000+600000
- 619941 words of font info for 471 fonts, out of 8000000 for 9000
+ 49058 multiletter control sequences out of 15000+600000
+ 616200 words of font info for 465 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,23n,137p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,23n,119p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb><c:/texliv
 e/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb><c:/texlive/2023
@@ -1613,10 +1476,10 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on thesis.pdf (49 pages, 392555 bytes).
+Output written on thesis.pdf (49 pages, 393032 bytes).
 PDF statistics:
  1026 PDF objects out of 1200 (max. 8388607)
  937 compressed objects within 10 object streams
  508 named destinations out of 1000 (max. 500000)
- 109804 words of extra memory for PDF output out of 128383 (max. 10000000)
+ 103660 words of extra memory for PDF output out of 106986 (max. 10000000)
 

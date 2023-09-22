@@ -1,4 +1,4 @@
-\chapter{\textit{\uppercase{b}ackground}}
+\chapter{Background}
 In questo capitolo presenterà le conoscenze di base minime per comprendere cosa sia un sistema operativo e una breve classificazione di essi. Dopodiché seguirà la descrizione di alcuni concetti, come ad esempio lo \textit{scheduling della CPU}, che sono fondamentali per comprendere il resto dell'elaborato.
 
 \section{Cos'è un sistema operativo}
@@ -10,7 +10,7 @@ Uno degli obiettivi principali di un SO è quindi quello di garantire la sicurez
 All'interno di un SO si può isolare una specifica parte di codice, che è quella che permette al \textit{software} di interfacciarsi con l'\textit{hardware} e quindi l'accesso e la gestione delle risorse di un dispositivo. Questa specifica parte si chiama \textit{kernel}, che come suggerisce il nome (nocciolo dall'inglese), rappresenta la parte centrale di un sistema operativo su cui tutto il resto si appoggia.
 \newpage
 
-\section{Architettura \textit{software} di un sistema operativo}
+\section{Architettura software di un sistema operativo}
 Esistono vari modelli strutturali per i sistemi operativi: monolitici, modulari, a livelli, \textit{microkernel} ed ibridi. Ad oggi i più diffusi sono gli ibridi, che combinano i vari modelli tra di loro, ma che in gran parte si basano su sistemi monolitici. Quest'ultimi consistono in un unico \textit{file} binario statico, al cui interno sono definite tutte le funzionalità del \textit{kernel} e che viene eseguito in un unico spazio di indirizzi. Tutto ciò comporta dei vantaggi: 
 \begin{itemize}
 	\item[-] efficienza: motivo principale per cui la maggior parte dei sistemi operativi ancora oggi si basano su \textit{kernel} in gran parte monolitici. Lavorando nello stesso spazio di indirizzi e gestendo tutto attraverso chiamate a procedura, il SO risulterà molto reattivo e performante;
@@ -46,7 +46,7 @@ In Figura~\ref{fig:MonolithicVSmicrokernel} si possono vedere in maniera schemat
 \end{figure}
 \newpage
 
-\section{\textit{\uppercase{s}cheduling} della CPU}
+\section{Scheduling della CPU}
 Solitamente con il solo termine \textit{scheduling} si intende quello a breve termine della CPU, cioè la funzionalità che determina quale tra i processi (\textit{thread}) in attesa della CPU la otterranno. Chiaramente ci sono vari metodi per fare ciò, che prendono il nome di politiche di \textit{scheduling}, i quali si differenziano per modalità e prestazioni. Gli algoritmi che traducono questi metodi si chiamano algoritmi di \textit{scheduling}.
 
 Una particolare politica di \textit{scheduling} rilevante per questo testo è \textit{Round Robin} o \textit{scheduling circolare}: consiste nel determinare un \textit{time slice} (quanto di tempo) nel quale i processi ottengono la CPU. Una volta esaurito questo tempo, il processo viene interrotto e inserito in fondo alla cosiddetta coda dei pronti. In questo modo tutti i processi ottengono la CPU per un tempo massimo stabilito; inoltre è possibile stimare il tempo di attesa prima dell'esecuzione di ciascun processo in base al numero di processi che lo precedono.
@@ -60,5 +60,5 @@ Giustamente viene da chiedersi come tutto ciò sia possibile e il meccanismo all
 
 In presenza di memoria virtuale dunque non parleremo semplicemente di indirizzi di memoria, ma avremo una differenziazione tra indirizzi logici e indirizzi fisici. I programmi lavoreranno solo con indirizzi logici (quindi viene anche facilitata la programmazione) e poi a livello di CPU avverrà un processo di traduzione negli indirizzi fisici.
 
-\section{\textit{\uppercase{h}ypervisor}}
+\section{Hypervisor}
 Un tema che si distacca un po' dai concetti di base dei sistemi operativi, ma che è rilevante per la comprensione del successivo capitolo è quello di \textit{hypervisor}. Chiamato anche \textit{virtual machine monitor} (VMM), è un tipo di \textit{sotware/firmware}, che permette di creare ed eseguire macchine virtuali. Un computer sul quale un \textit{hypervisor} esegue una o più macchine virtuali viene definito \textit{host machine}, mentre le singole macchine virtuali prendono il nome di \textit{guest machine}. Su ognuna è possibile eseguire un sistema operativo (anche diverso), in modo tale che questi siano isolati tra di loro; inoltre, al contrario di un emulatore, eseguirà la maggior parte delle istruzioni direttamente sulle risorse \textit{hardware} virtualizzate rese disponibili dall'\textit{hypervisor}.
