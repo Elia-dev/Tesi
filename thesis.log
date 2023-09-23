@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  19 SEP 2023 19:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  23 SEP 2023 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1183,12 +1183,7 @@ Capitolo I.
 
 
 
-] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
-
- []
-
-) [6]
+] [5]) [6]
 \openout2 = `Chapters/background.aux'.
 
  (./Chapters/background.tex
@@ -1230,17 +1225,11 @@ Package pdftex.def Info: img/seL4Hypervisor.png  used on input line 9.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] [14 <./img/seL4Hypervisor.png>]
-! Too many }'s.
-l.31 \section{Hard Real-Time Systems}}
-                                      
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-[15] [16] [17]) [18]
+[13] [14 <./img/seL4Hypervisor.png>] [15] [16] [17]) [18]
 \openout2 = `Chapters/sperimentazione.aux'.
 
- (./Chapters/sperimentazione.tex
+
+(./Chapters/sperimentazione.tex
 Capitolo 3.
 (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1348,11 +1337,16 @@ Capitolo 4.
 
 
 
-] [43]) [44] (./thesis.bbl (./thesis.brf)
+] [43]) [44] [45] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
+ [46
 
+
+
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []\T1/pplx/m/n/12 (+20) JavaTpoint.  Hard and soft real-time ope-ra-
  []
@@ -1363,12 +1357,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--36
  javatpoint . com /
  []
 
-[45
-
-
-
-
-]
+[47]
 Underfull \hbox (badness 4120) in paragraph at lines 91--91
 []\T1/pplx/m/n/12 (+20) Elia Mat-tei-ni.  Tu-to-rial ca-pa-bi-li-ty co-di-ce co
 m-ple-to, 2023.
@@ -1452,20 +1441,28 @@ Underfull \hbox (badness 1062) in paragraph at lines 127--127
 -ment co-di-ce
  []
 
-[46]) [47] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+[48]) [49] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/background.aux) (./Chapters/sel4.aux)
 (./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package rerunfilecheck Info: File `thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 9DFCB146891ABBD580A6B80DAF1AC14D;795.
+
+Package rerunfilecheck Warning: File `thesis.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `thesis.brf':
+(rerunfilecheck)             Before: 075C4D50289E317B54AADA05E3B06B14;843
+(rerunfilecheck)             After:  9DFCB146891ABBD580A6B80DAF1AC14D;795.
  ) 
 Here is how much of TeX's memory you used:
- 30111 strings out of 476001
- 579697 string characters out of 5793197
+ 30121 strings out of 476001
+ 579806 string characters out of 5793197
  2176068 words of memory out of 5000000
- 49058 multiletter control sequences out of 15000+600000
- 616200 words of font info for 465 fonts, out of 8000000 for 9000
+ 49062 multiletter control sequences out of 15000+600000
+ 616410 words of font info for 468 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,119p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><c:/
@@ -1476,10 +1473,10 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on thesis.pdf (49 pages, 393032 bytes).
+Output written on thesis.pdf (51 pages, 395528 bytes).
 PDF statistics:
- 1026 PDF objects out of 1200 (max. 8388607)
- 937 compressed objects within 10 object streams
- 508 named destinations out of 1000 (max. 500000)
+ 1035 PDF objects out of 1200 (max. 8388607)
+ 944 compressed objects within 10 object streams
+ 510 named destinations out of 1000 (max. 500000)
  103660 words of extra memory for PDF output out of 106986 (max. 10000000)
 

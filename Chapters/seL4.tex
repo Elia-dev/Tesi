@@ -59,3 +59,13 @@ Come già detto nelle prime righe di questo capitolo, la famiglia dei \textit{mi
 
 Nonostante non fosse nelle prerogative dello sviluppo di seL4, questo alla fine, si è rivelato il più performante dei \textit{microkernel} della famiglia L4. Inoltre sono state scritte altre pubblicazioni indipendenti, che mettono a confronto seL4 con altri \textit{microkernel}, per studiarne le \textit{performance}, in particolare Fiasco.OC, Zicron e CertiKOS. Confrontando i costi dell'IPC si può vedere che seL4 ha un bel vantaggio, anche di oltre un fattore 2, rispetto agli altri \textit{microkernel}.
 Gli articoli che mostrano gli studi delle \textit{performance} sono riportati in \cite{skybridge} per quanto riguarda il confronto tra Fiasco.OC, Zicron e seL4, mentre in \cite{CertiKOS}, si trova il confronto fra CertiKOS e seL4.
+
+Per quanto riguarda la sicurezza, nel 2009 seL4 diventa il primo \textit{microkernel} in possesso di una verifica formale di correttezza funzionale a livello di codice sorgente, attraverso l'utilizzo del linguaggio matematico \textit{higher-order logic}(HOL). Un \textit{kernel} con questo tipo di verifica dunque, garantisce un alto livello di sicurezza e in particolare soddisfa queste 3 proprietà:
+\begin{enumerate}
+	\item \textit{confidentiality} (confidenzialità): seL4 non permette ad un'entità di leggere un dato senza avere il consenso esplicito di accesso in lettura al dato stesso;
+	\item \textit{integrity} (integrità)): seL4 non permette ad un'identità di modificare un dato se questa non ha il consenso esplicito di accesso in scrittura al dato;
+	\item \textit{availability} (disponibilità): seL4 non consente ad un'entità di impedire l'uso autorizzato di una risorsa da parte di un'altra entità.
+\end{enumerate}
+
+
+QUI
