@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  23 SEP 2023 17:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  24 SEP 2023 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1264,7 +1264,7 @@ m/it/12 (+20) com-po-nent ar-chi-tec-tu-re
  []
 
 [20] [21]
-<img/PrimaSimulazione.png, id=239, 477.28313pt x 109.1578pt>
+<img/PrimaSimulazione.png, id=242, 477.28313pt x 109.1578pt>
 File: img/PrimaSimulazione.png Graphic file (type png)
 <use img/PrimaSimulazione.png>
 Package pdftex.def Info: img/PrimaSimulazione.png  used on input line 145.
@@ -1297,7 +1297,7 @@ m/it/12 (+20) bit \T1/pplx/m/n/12 (+20) di ognu-no di es-si:
  []
 
 [25] [26] [27] [28] [29] [30] [31]
-<img/Threads.png, id=472, 1056.94875pt x 199.74625pt>
+<img/Threads.png, id=476, 1056.94875pt x 199.74625pt>
 File: img/Threads.png Graphic file (type png)
 <use img/Threads.png>
 Package pdftex.def Info: img/Threads.png  used on input line 432.
@@ -1314,13 +1314,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 600--601
 ro
  []
 
-<img/PrimoAvvioIPC2.png, id=608, 406.51875pt x 108.405pt>
+<img/PrimoAvvioIPC2.png, id=611, 406.51875pt x 108.405pt>
 File: img/PrimoAvvioIPC2.png Graphic file (type png)
 <use img/PrimoAvvioIPC2.png>
 Package pdftex.def Info: img/PrimoAvvioIPC2.png  used on input line 608.
 (pdftex.def)             Requested size: 284.56117pt x 75.88297pt.
 [38 <./img/PrimoAvvioIPC2.png>]
-<img/DopoBadgeIPC.png, id=620, 405.515pt x 142.5325pt>
+<img/DopoBadgeIPC.png, id=623, 405.515pt x 142.5325pt>
 File: img/DopoBadgeIPC.png Graphic file (type png)
 <use img/DopoBadgeIPC.png>
 Package pdftex.def Info: img/DopoBadgeIPC.png  used on input line 658.
@@ -1337,7 +1337,7 @@ Capitolo 4.
 
 
 
-] [43]) [44] [45] (./thesis.bbl (./thesis.brf)
+] [43] [44]) [45] (./thesis.bbl (./thesis.brf)
 \tf@brf=\write5
 \openout5 = `thesis.brf'.
 
@@ -1441,27 +1441,83 @@ Underfull \hbox (badness 1062) in paragraph at lines 127--127
 -ment co-di-ce
  []
 
-[48]) [49] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
+[48]
+Underfull \hbox (badness 4205) in paragraph at lines 141--141
+[]\T1/pplx/m/n/12 (+20) Michele Na-si.  Ka-taos: si-ste-ma ope-ra-ti-vo si-cu-r
+o per di-
+ []
+
+
+Underfull \hbox (badness 5036) in paragraph at lines 141--141
+\T1/pplx/m/n/12 (+20) spo-si-ti-vi iot e ma-chi-ne lear-ning, 2022.  Ul-ti-ma m
+o-di-fi-
+ []
+
+
+Underfull \hbox (badness 8151) in paragraph at lines 141--141
+\T1/pplx/m/n/12 (+20) ca 17 ot-to-bre 2022.  URL: [][]$\T1/fvm/m/n/12 https : /
+ / www . ilsoftware . it /
+ []
+
+
+Overfull \hbox (54.3639pt too wide) in paragraph at lines 141--141
+\T1/fvm/m/n/12 quale-[]vpn-[]usare-[]su-[]pc-[]3-[]motivi-[]per-[]scegliere-[]n
+ordvpn-[]a-[]379-[]e-[]mese/$[][]\T1/pplx/m/n/12 (-20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 149--149
+\T1/pplx/m/n/12 (+20) sa-fe from cy-be-rat-tack, 2015.  Ul-ti-ma mo-di-fi-ca 16
+ set-tem-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+\T1/pplx/m/n/12 (+20) bre 2015.  URL: [][]$\T1/fvm/m/n/12 https : / / www . new
+scientist . com / article /
+ []
+
+
+Overfull \hbox (151.61098pt too wide) in paragraph at lines 149--149
+\T1/fvm/m/n/12 mg22730392-[]600-[]unhackable-[]kernel-[]could-[]keep-[]all-[]co
+mputers-[]safe-[]from-[]cyberattack-[]2/$[][]\T1/pplx/m/n/12 (-20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+
+ []
+
+
+Underfull \hbox (badness 2503) in paragraph at lines 162--162
+[]\T1/pplx/m/n/12 (+20) Sam, Scott, and Ju-ne for Am-biML De-ve-lo-pers.  An-no
+un-
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 162--162
+\T1/pplx/m/n/12 (+20) cing ka-taos and spar-row, 2022.  Ul-ti-ma mo-di-fi-ca 14
+ ot-to-
+ []
+
+) [49] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/background.aux) (./Chapters/sel4.aux)
 (./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-Package rerunfilecheck Warning: File `thesis.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `thesis.brf':
-(rerunfilecheck)             Before: 075C4D50289E317B54AADA05E3B06B14;843
-(rerunfilecheck)             After:  9DFCB146891ABBD580A6B80DAF1AC14D;795.
+Package rerunfilecheck Info: File `thesis.brf' has not changed.
+(rerunfilecheck)             Checksum: 9DFCB146891ABBD580A6B80DAF1AC14D;795.
  ) 
 Here is how much of TeX's memory you used:
- 30121 strings out of 476001
- 579806 string characters out of 5793197
+ 30154 strings out of 476001
+ 580368 string characters out of 5793197
  2176068 words of memory out of 5000000
- 49062 multiletter control sequences out of 15000+600000
+ 49088 multiletter control sequences out of 15000+600000
  616410 words of font info for 468 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,119p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1473,10 +1529,10 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on thesis.pdf (51 pages, 395528 bytes).
+Output written on thesis.pdf (51 pages, 399963 bytes).
 PDF statistics:
- 1035 PDF objects out of 1200 (max. 8388607)
- 944 compressed objects within 10 object streams
- 510 named destinations out of 1000 (max. 500000)
+ 1051 PDF objects out of 1200 (max. 8388607)
+ 960 compressed objects within 10 object streams
+ 517 named destinations out of 1000 (max. 500000)
  103660 words of extra memory for PDF output out of 106986 (max. 10000000)
 

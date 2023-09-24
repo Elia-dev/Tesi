@@ -131,15 +131,43 @@ Zeyu Mi, Dingji Li, Zihan Yang, XinranWang, , and Haibo Chenh.
   microkernels, 2019.
 \newblock EuroSys Conference.
 
+\bibitem{KataOS}
+Michele Nasi.
+\newblock Kataos: sistema operativo sicuro per dispositivi iot e machine
+  learning, 2022.
+\newblock Ultima modifica 17 ottobre 2022.
+\newblock URL:
+  \url{https://www.ilsoftware.it/quale-vpn-usare-su-pc-3-motivi-per-scegliere-nordvpn-a-379-e-mese/}.
+
+\bibitem{BoeingLittleBird}
+NewScientist.
+\newblock Unhackable kernel could keep all computers safe from cyberattack,
+  2015.
+\newblock Ultima modifica 16 settembre 2015.
+\newblock URL:
+  \url{https://www.newscientist.com/article/mg22730392-600-unhackable-kernel-could-keep-all-computers-safe-from-cyberattack-2/}.
+
 \bibitem{ninja}
 Ninja-build.
 \newblock The ninja build system, 2022.
 \newblock Ultima modifica 30 agosto 2022.
 \newblock URL: \url{https://ninja-build.org/manual.html}.
 
+\bibitem{KataOSGoogle}
+Sam, Scott, and June for AmbiML~Developers.
+\newblock Announcing kataos and sparrow, 2022.
+\newblock Ultima modifica 14 ottobre 2022.
+\newblock URL:
+  \url{https://opensource.googleblog.com/2022/10/announcing-kataos-and-sparrow.html}.
+
 \bibitem{sistemiOperativi}
 A.~Silberschatz, P.B. Galvin, and G.~Gagne.
 \newblock {\em Sistemi Operativi - Concetti ed esempi}.
 \newblock Pearson, 10 edition, 2019.
+
+\bibitem{HACMSprojectTS}
+W3Techs.
+\newblock The hacms project @ data61.
+\newblock URL: \url{https://trustworthy.systems/projects/OLD/SMACCM/}.
 
 \end{thebibliography}
