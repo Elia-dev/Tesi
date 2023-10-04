@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  27 SEP 2023 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.29)  4 OCT 2023 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,7 +970,8 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 )
 (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
 (./Chapters/background.aux) (./Chapters/sel4.aux)
-(./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux))
+(./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux)
+(./Chapters/ringraziamenti.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
@@ -1004,8 +1005,7 @@ Package translations Info: no dictionary file `translations-basic-dictionary-it
 alian.trsl' found. on input line 94.
 Package backref Info: ** backref set up for natbib ** on input line 94.
 Package hyperref Info: Link coloring ON on input line 94.
- (./thesis.out)
-(./thesis.out)
+ (./thesis.out) (./thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
 
@@ -1017,7 +1017,8 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 94.
- (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
+
+(c:/texlive/2023/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (c:/texlive/2023/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1494,19 +1495,77 @@ Underfull \hbox (badness 1895) in paragraph at lines 162--162
  ot-to-
  []
 
-) [49] (./thesis.aux (./titlePage.aux) (./Chapters/introduzione.aux)
-(./Chapters/background.aux) (./Chapters/sel4.aux)
-(./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux))
+) [49]
+\openout2 = `Chapters/ringraziamenti.aux'.
+
+ (./Chapters/ringraziamenti.tex [50
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 22--24
+
+ []
+
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.130 \include{Chapters/ringraziamenti}
+                                        [2]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.133 \end{document}
+                     [3
+
+
+] (./thesis.aux (./titlePage.aux)
+(./Chapters/introduzione.aux) (./Chapters/background.aux) (./Chapters/sel4.aux)
+(./Chapters/sperimentazione.aux) (./Chapters/conclusioni.aux)
+(./Chapters/ringraziamenti.aux))
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `thesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 9DFCB146891ABBD580A6B80DAF1AC14D;795.
  ) 
 Here is how much of TeX's memory you used:
- 30154 strings out of 476001
- 580368 string characters out of 5793197
+ 30191 strings out of 476001
+ 581763 string characters out of 5793197
  2176068 words of memory out of 5000000
- 49088 multiletter control sequences out of 15000+600000
+ 49116 multiletter control sequences out of 15000+600000
  616410 words of font info for 468 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,119p,10983b,2579s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1518,10 +1577,10 @@ s/type1/public/bera/fvmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/a
 msfonts/latxfont/lcircle1.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
 >
-Output written on thesis.pdf (51 pages, 400020 bytes).
+Output written on thesis.pdf (55 pages, 403112 bytes).
 PDF statistics:
- 1051 PDF objects out of 1200 (max. 8388607)
- 960 compressed objects within 10 object streams
- 517 named destinations out of 1000 (max. 500000)
+ 1066 PDF objects out of 1200 (max. 8388607)
+ 971 compressed objects within 10 object streams
+ 519 named destinations out of 1000 (max. 500000)
  103660 words of extra memory for PDF output out of 106986 (max. 10000000)
 
